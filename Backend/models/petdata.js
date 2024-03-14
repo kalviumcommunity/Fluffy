@@ -11,7 +11,12 @@ const petSchema = new mongoose.Schema({
     image: String,
     description: String,
     lastSeen: String, 
-    dateLost: String
+    dateLost: String,
+    owner:{
+        name:String,
+        email:String,
+        phone:Number
+    }
 });
 
 const PetModal = mongoose.model("petdatas", petSchema);
