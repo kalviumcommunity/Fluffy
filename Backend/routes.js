@@ -22,6 +22,22 @@ app.post("/main/postdata",(req, res)=>{
     .catch(err => res.status(500).json({error: err.message}))
 })
 
+app.put("/main/editdata/:id", (req, res) => {
+    const id = req.params.id;
+    const update = req.body;
+    PetModal.findByIdAndUpdate(id, update, { new: true })
+        .then(updatedPet => {
+            if (!updatedPet) {
+                return res.status(404).json({ error: "Pet not found" });
+            }
+            res.json(updatedPet);
+        })
+        .catch(err => {
+            console.error("Error updating pet:", err);
+            res.status(500).json({ error: "Failed to update pet" });
+        });
+});
+
 
 app.listen(1001,()=>{
     console.log("Server is running at http://localhost:1001")
