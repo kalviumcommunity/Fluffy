@@ -15,6 +15,14 @@ app.get("/main",(req, res)=>{
     .catch(err => res.status(500).json({error:err.message}))
 }) 
 
+app.post("/main/postdata",(req, res)=>{
+    const data = req.body
+    PetModal.create(data)
+    .then(pets => res.json(pets))
+    .catch(err => res.status(500).json({error: err.message}))
+})
+
+
 app.listen(1001,()=>{
     console.log("Server is running at http://localhost:1001")
 })
