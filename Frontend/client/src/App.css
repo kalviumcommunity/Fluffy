@@ -1,30 +1,111 @@
-/* 
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Edu+SA+Beginner:wght@600&family=Fredoka:wght@400;500&family=Manrope:wght@600&family=Mukta:wght@600&family=Playpen+Sans:wght@500&family=Red+Hat+Display&family=Sedgwick+Ave+Display&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tektur&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin: 0 90px;
+  /* background-color: #272525; */
+  /* color: white; */
+  height: 500vh;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 7px;
+  margin: 16px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  font-family: 'Shantell Sans', cursive; 
+  font-weight: 500; 
+  font-size: 2rem;
+  /* color: white; */
+}
+
+.sideDiv {
+  position: fixed;
+  top: 0;
+  right: -55%; 
+  width: 30%;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  transition: right 0.4s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.open {
+  right: 0;
+}
+
+.closeButton {
+  cursor: pointer;
 }
 
 
-.bac {
-  height: 800px;
-  background-color: black;
+/* slider css */
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  height: 40vh;
+  width: 100%;
+  z-index: -1;
 }
 
-.b2 {
-  height: 800px;
-  background-color: aqua;
+.image {
+  position: absolute;
+  top: 0;
+  right: -100%; 
+  height: 100%;
+  width: auto;
+  opacity: 0; 
+  transition: opacity 1s ease-in-out, right 1s ease-in-out; 
+  border-radius: 15px;
 }
 
-.b3 {
-  height: 800px;
-  background-color: brown;
+.image.active {
+  right: 0; 
+  opacity: 1; 
 }
 
-.b4{
-  height: 800px;
-  background-color: blue;
-}
- */
 
+/* paragraph css */
+
+.para1{
+  margin: 20px 200px;
+  /* background-color:; */
+}
+
+
+#head1{
+  font-size: 3rem;
+  padding: 10px;
+}
+
+h2 {
+  padding: 15px;
+}
+p{
+  padding: 15px;
+}
+
+/* a{
+  color:#FFFF00;
+} */
