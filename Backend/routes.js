@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors');
 const {petSchema} = require("./models/petdata")
 const PetModal = require("./models/petdata")
 
@@ -7,6 +8,7 @@ const PetModal = require("./models/petdata")
 mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net/Fluffy?retryWrites=true&w=majority&appName=Cluster0")
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get("/main",(req, res)=>{
