@@ -17,23 +17,25 @@ function Adoption() {
   return (
     <>
       <Navbar />
-      <div style={{position:"relative", padding:"10px"}}>
-        <img src={Black} alt="" style={{ height: "50vh", width: "100%",objectFit:"cover", filter: "brightness(70%)", }} />
-        <div style={{ lineHeight:"1.6"}}>
-        <div style={{ position: "absolute", top: "2%", left: "-53%",margin:"0 850px", color: "white", textAlign: "start" }}>
-                <div>
-                    <h2 style={{fontSize:"2.5rem"}}>Adoption at Fluffy</h2>
-                    <p style={{fontSize:"1rem"}}>They come in all shapes and sizes, with different histories, characters and disabilities. But they have one thing in common: They are all in need of a helping hand. </p>
-                </div>
-            <button style={{  width: "100px", height: "100px", padding: "10px", fontSize: "1rem", background: "#6504b5", color: "white", borderRadius: "50%", border: "none", cursor: "pointer" }}>Adopt Me</button>
-            </div>
+      <div>
+        <img src={Black} alt="" style={{ height: "50vh", width: "100%",objectFit:"cover", filter: "brightness(60%)", }} />
       </div>
 
+      <div style={{ lineHeight:"1.6"}}>
+        <div style={{position:"absolute",top:"15%", left:"-53%", margin:"0 790px ",textAlign:"start", color:"white"}}>
+            <div>
+                <h2 style={{fontSize:"3rem"}}>Adoption at Fluffy</h2>
+                <p style={{fontSize:"1rem"}}>They come in all shapes and sizes, with different histories, characters and disabilities. But they have one thing in common: They are all in need of a helping hand. </p>
+            </div>
+            <button style={{padding:"10px 30px", marginTop:'30px', fontSize:"1rem", background:"crimson",color:"white", borderRadius:"10px", border:"none", cursor:"pointer"}}>
+                Adopt Me
+            </button>
+        </div>
 
 
         <div style={{padding:"50px 305px"}}>
             <div>
-                <h2 style={{color:"#6504b5", textDecoration:"underline", textAlign:"center", padding:"30px"}}>Welcome to Fluffy: Where Every Adoption Tells a Story</h2>
+                <h2 style={{color:"#6504b5"}}>Welcome to Fluffy: Where Every Adoption Tells a Story</h2>
                 <p>
                 At Fluffy, we believe in the transformative power of pet adoption. Every year, millions of pets end up in shelters, waiting for their forever homes. By adopting a pet from Fluffy, not only are you giving an animal a second chance at life, but you're also gaining a loyal companion who will bring joy and love into your home.
                 </p>
@@ -42,7 +44,7 @@ function Adoption() {
                 </p>
                 <hr />
                 <div>
-                    <h3 style={{color:"#6504b5", textDecoration:"underline"}}>Paws and You: Things to Consider Before Adopting a Dog</h3>
+                    <h3 style={{color:"#6504b5"}}>Paws and You: Things to Consider Before Adopting a Dog</h3>
                     <p>
                     Bringing a furry friend into your life can be an enriching experience but it also comes with its fair share of responsibilities. Before you decide to adopt a dog, it’s essential to consider various factors to ensure a happy and healthy relationship between you and your future four-legged companion. Here are some things to keep in mind before you take the plunge into pet parenthood.
                     </p>
@@ -92,9 +94,9 @@ function Adoption() {
                 </div>
             </div>
         </div>
-        <hr />
-        <div style={{ padding: "50px 100px"}}>
-            <h1 style={{textAlign:"center", color:"#6504b5", textDecoration:"underline"}}>Adopt Me</h1>
+   
+        <div style={{ margin: "0 100px" }}>
+            <h2>Adopt Me</h2>
             <hr />
             <div>
                 {pets.map((pet, index) => (
@@ -102,14 +104,14 @@ function Adoption() {
                             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0px 30px" }}>
                                 <div style={{ padding: "15px" }}>
                                     <h2>{pet.name}</h2>
-                                    <p style={{color:"#6504b5"}}>{pet.breed} 🔻 {pet.born}</p>
+                                    <p><span style={{ color: "red" }}>{pet.breed}</span> 🔺 {pet.born}</p>
                                     <hr />
-                                    <p style={{color:"#6504b5 "}}>{pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}</p>
+                                    <p>{pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}</p>
                                     <hr />
-                                    <h5 style={{textDecoration:"underline"}}>Description</h5>
+                                    <h5>Description</h5>
                                     <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
                                     <div>
-                                        <button  style={{ background: "#6504b5", border: "none", color: "white", padding: "5px 15px", borderRadius: "5px" }}>Adopt</button>
+                                        <button  style={{ background: "red", border: "none", color: "white", padding: "5px 15px", borderRadius: "5px" }}>Adopt</button>
                                     </div>
                                 </div>
                                 <img src={pet.image} alt="" style={{ borderRadius: "10px", height: "350px", width: "470px", objectFit: "cover" }} />
