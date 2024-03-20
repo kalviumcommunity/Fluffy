@@ -7,16 +7,11 @@
   /* font-weight: 600; */
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
-  height: 500vh;
+  /* height: 500vh; */
 }
 
 
 p {
   font-weight: lighter;
 }
-
