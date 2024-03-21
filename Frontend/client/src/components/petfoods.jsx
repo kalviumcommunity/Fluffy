@@ -40,7 +40,7 @@ function PetToys() {
           </h2>
           <p style={{ fontSize: "1rem" }}>
             Our high-quality pet food is packed with essential vitamins and
-            minerals to keep your pet happy and healthy inside and out.
+            minerals to keep your pet happy and healthy inside and out..
           </p>
           <button
             style={{
@@ -135,8 +135,8 @@ function PetToys() {
           </div>
           <div>
             <p>
-              By understanding your pet's unique needs – species, age, activity
-              level, breed, and any health concerns – you can choose a food that
+              By understanding your pet's unique needs : species, age, activity
+              level, breed, and any health concerns, you can choose a food that
               provides the optimal nutrition for a long and healthy life. When
               in doubt, consult your veterinarian for personalized guidance on
               your pet's dietary journey!
