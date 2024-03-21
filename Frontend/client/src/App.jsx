@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './HomeComponents/Home'
 import Adoption from './components/Adoption';
 import Pettoys from './components/pettoys';
+import Petfoods from './components/petfoods'
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     <>
       {/* <Home/> */}
       {/* <Adoption/> */}
-      <Pettoys/>
+      {/* <Pettoys/> */}
+      <Petfoods/>
     </>
   )
 }

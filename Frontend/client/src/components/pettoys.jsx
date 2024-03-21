@@ -13,6 +13,7 @@ function PetToys() {
           src={main}
           alt="Adopt"
           style={{
+            borderRadius:"25px",
             height: "50vh",
             width: "100%",
             objectFit: "cover",
@@ -22,11 +23,17 @@ function PetToys() {
         <div
           style={{
             position: "absolute",
-            top: "1.2%",
-            left: "-52%",
-            margin: "0 900px",
+            top:"0.2%",
+            left: "-53%",
+            margin: "0 800px",
             color: "white",
-            textAlign: "start",
+            textAlign: "center",
+            background: "rgba(0, 0, 0, 0.5)", 
+            height: "50vh",
+            width: "45%", 
+            backdropFilter: "blur(5px)", 
+            padding: "80px",
+            borderRadius: "25px 0px 0px 25px", 
           }}
         >
           <h2 style={{ fontSize: "2.5rem" }}>
@@ -53,7 +60,7 @@ function PetToys() {
           </button>
         </div>
 
-        <div style={{ padding: "50px 305px" }}>
+        <section style={{ padding: "50px 320px" }}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -142,7 +149,7 @@ function PetToys() {
               you're contributing to their overall well-being and happiness.
             </p>
           </div>
-        </div>
+        </section>
 
         <section style={{ padding: "50px 300px" }}>
           <h2
