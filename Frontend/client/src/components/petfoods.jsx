@@ -4,62 +4,78 @@ import Black from "../images/adopt2.webp";
 import Black2 from "../images/dog.webp";
 import main from "../images/food.png";
 
-function PetToys() {
+function Petfoods() {
   return (
     <>
       <Navbar />
-      <div style={{ position: "relative", padding: "10px", lineHeight: "1.6" }}>
-        <img
-          src={main}
-          alt="Adopt"
+      <div>
+        <section
           style={{
-            borderRadius: "25px",
-            height: "50vh",
-            width: "100%",
-            objectFit: "cover",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "0.21%",
-            right: "-53%",
-            margin: "0 800px",
-            color: "white",
-            textAlign: "center",
-            background: "rgba(0, 0, 0, 0.5)",
-            height: "50vh",
-            width: "45%",
-            backdropFilter: "blur(6px)",
-            padding: "60px",
-            borderRadius: "0 25px 25px 0",
+            display: "flex",
+            position: "relative",
+            padding: "10px",
+            lineHeight: "1.6",
           }}
         >
-          <h2 style={{ fontSize: "3rem" }}>
-            Spoil Your Furry Friend: Top-Rated Pet Food
-          </h2>
-          <p style={{ fontSize: "1rem" }}>
-            Our high-quality pet food is packed with essential vitamins and
-            minerals to keep your pet happy and healthy inside and out..
-          </p>
-          <button
+          <div
             style={{
-              width: "100px",
-              height: "100px",
-              padding: "10px",
-              fontSize: "1rem",
-              background: "#388E3C",
-              color: "white",
-              borderRadius: "100%",
-              border: "none",
-              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              background: "#F0FFDE",
+              height: "60vh",
+              padding: "70px",
+              borderRadius: "25px 0px 0px 25px",
+              flex: "1",
             }}
           >
-            Explore
-          </button>
-        </div>
+            <h2
+              style={{
+                fontSize: "3rem",
+                color: "#388E3C",
+                textAlign: "center",
+              }}
+            >
+              Spoil Your Furry Friend: Top-Rated Pet Food
+            </h2>
+            <p
+              style={{ fontSize: "1rem", color: "black", textAlign: "center" }}
+            >
+              Our high-quality pet food is packed with essential vitamins and
+              minerals to keep your pet happy and healthy inside and out.
+            </p>
+            <div style={{ textAlign: "center" }}>
+              <button
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  padding: "10px",
+                  fontSize: "1rem",
+                  background: "#388E3C",
+                  color: "white",
+                  borderRadius: "100%",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Explore
+              </button>
+            </div>
+          </div>
+          <img
+            src={main}
+            alt="Adopt"
+            style={{
+              borderRadius: "0px 25px 25px 0px",
+              height: "60vh",
+              width: "50vw",
+              flex: "1",
+              objectFit: "cover",
+            }}
+          />
+        </section>
 
-        <section style={{ padding: "50px 320px" }}>
+        <section style={{ padding: "50px 350px", background: "#F9FFF3" }}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -145,20 +161,19 @@ function PetToys() {
         </section>
 
         <hr style={{ borderTop: "3px solid darkgreen" }} />
-        <section style={{ padding: "50px 275px" }}>
+        <section style={{ padding: "50px 320px" }}>
           <h2
             style={{
               color: "#388E3C",
               textDecoration: "underline",
               textAlign: "center",
+              paddingBottom: "50px",
             }}
           >
             Explore Our Pet's Foods
           </h2>
-          <div style={{ padding: "30px" }}>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
-            >
+          <div style={{ padding: "20px" }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <img
                 src={Black2}
                 alt=""
@@ -269,9 +284,10 @@ function PetToys() {
             </div>
           </div>
         </section>
-        <section style={{ padding: "50px 280px" }}>
+        <section style={{ padding: "50px 320px" }}>
           <h2
             style={{
+              paddingBottom: "50px",
               color: "#4CAF50",
               textDecoration: "underline",
               textAlign: "center",
@@ -279,7 +295,6 @@ function PetToys() {
           >
             Explore Our Cat's Food
           </h2>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
           <div>
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
@@ -393,47 +408,10 @@ function PetToys() {
               />
             </div>
           </div>
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>Catnip Toys</h3>
-                <p>
-                  Treat your cat to the ultimate sensory experience with our
-                  catnip toys! Made with high-quality catnip, these toys will
-                  stimulate your cat's senses and provide hours of playful
-                  excitement.
-                </p>
-                <button
-                  style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "50px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "15px",
-                }}
-              />
-            </div>
-          </div>
         </section>
       </div>
     </>
-  );
+  )
 }
 
-export default PetToys;
+export default Petfoods;
