@@ -1,72 +1,86 @@
 import React from "react";
 import Navbar from "../HomeComponents/Navbar";
 import Black from "../images/adopt2.webp";
-import Black2 from '../images/adopt1.webp';
-import main from '../images/dog.webp';
+import Black2 from "../images/adopt1.webp";
+import main from "../images/dog.webp";
 
-function PetToys() {
+function Pettoys() {
   return (
     <>
       <Navbar />
-      <div style={{ position: "relative", padding: "10px" }}>
-        <img
-          src={main}
-          alt="Adopt"
+      <div>
+        <section
           style={{
-            borderRadius:"25px",
-            height: "50vh",
-            width: "100%",
-            objectFit: "cover",
-            filter: "brightness(70%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top:"0.2%",
-            left: "-53%",
-            margin: "0 800px",
-            color: "white",
-            textAlign: "center",
-            background: "rgba(0, 0, 0, 0.5)", 
-            height: "50vh",
-            width: "45%", 
-            backdropFilter: "blur(5px)", 
-            padding: "80px",
-            borderRadius: "25px 0px 0px 25px", 
+            display: "flex",
+            padding: "10px",
+            position: "relative",
+            lineHeight: "1.6",
           }}
         >
-          <h2 style={{ fontSize: "2.5rem" }}>
-            Pawsome Playtime: Unleash the Fun with Our Pet Toys!
-          </h2>
-          <p style={{ fontSize: "1rem" }}>
-            Keep boredom at bay with exciting toys that fuel your pet's natural
-            instincts for play.
-          </p>
-          <button
+          <img
+            src={main}
+            alt="Adopt"
             style={{
-              width: "100px",
-              height: "100px",
-              padding: "10px",
-              fontSize: "1rem",
-              background: "crimson",
-              color: "white",
-              borderRadius: "50%",
-              border: "none",
-              cursor: "pointer",
+              borderRadius: "25px 0 0 25px",
+              height: "60vh",
+              flex: 1,
+              objectFit: "cover",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center", // Center the content vertically
+              background: "#BFE1FF",
+              height: "60vh",
+              padding: "70px",
+              borderRadius: "0px 25px 25px 0px",
+              flex: "1",
             }}
           >
-            Explore
-          </button>
-        </div>
+            <h2
+              style={{
+                fontSize: "2.5rem",
+                color: "#00008B",
+                textAlign: "center",
+              }}
+            >
+              Pawsome Playtime: Unleash the Fun with Our Pet Toys!
+            </h2>
+            <p
+              style={{ fontSize: "1rem", color: "black", textAlign: "center" }}
+            >
+              Keep boredom at bay with exciting toys that fuel your pet's
+              natural instincts for play.
+            </p>
+            <div style={{ textAlign: "center" }}>
+              <button
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  padding: "10px",
+                  fontSize: "1rem",
+                  background: "#00008B",
+                  color: "white",
+                  borderRadius: "50%",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Explore
+              </button>
+            </div>
+          </div>
+        </section>
 
-        <section style={{ padding: "50px 320px" }}>
+        <section style={{ padding: "50px 350px", background: "#D4E8FF" }}>
           <h2
             style={{
               fontSize: "2.5rem",
               padding: "20px",
               textAlign: "center",
-              color: "crimson",
+              color: "#00008B",
               textDecoration: "underline",
             }}
           >
@@ -80,21 +94,21 @@ function PetToys() {
             </p>
           </div>
           <div>
-            <h5 style={{ color: "crimson" }}>
-              Mental Stimulation and Boredom Relief
+            <h5 style={{ color: "#00008B" }}>
+              Mental Stimulation and Bo#00008Bom Relief
             </h5>
             <p>
               In the wild, animals spend a significant amount of time hunting,
               stalking, and playing. Even domesticated pets retain these
               instincts. Toys provide an outlet for these natural behaviors,
-              keeping them mentally stimulated and preventing boredom. A bored
-              pet is more likely to engage in destructive chewing, barking, or
-              scratching.
+              keeping them mentally stimulated and preventing bo#00008Bom. A
+              bo#00008B pet is more likely to engage in destructive chewing,
+              barking, or scratching.
             </p>
           </div>
           <hr />
           <div>
-            <h5 style={{ color: "crimson" }}>Exercise and Physical Health</h5>
+            <h5 style={{ color: "#00008B" }}>Exercise and Physical Health</h5>
             <p>
               {" "}
               Play with toys gets your pet moving, which is crucial for
@@ -106,7 +120,7 @@ function PetToys() {
           </div>
           <hr />
           <div>
-            <h5 style={{ color: "crimson" }}>Dental Health</h5>
+            <h5 style={{ color: "#00008B" }}>Dental Health</h5>
             <p>
               Chew toys, especially for puppies and kittens, help satisfy their
               natural urge to chew. This can help prevent them from chewing on
@@ -116,7 +130,7 @@ function PetToys() {
           </div>
           <hr />
           <div>
-            <h5 style={{ color: "crimson" }}>Bonding and Training</h5>
+            <h5 style={{ color: "#00008B" }}>Bonding and Training</h5>
             <p>
               Playing fetch, tug-of-war, or other interactive games with your
               pet is a fantastic way to bond with them. You can use toys to
@@ -126,21 +140,22 @@ function PetToys() {
           </div>
           <hr />
           <div>
-            <h5 style={{ color: "crimson" }}>Stress Relief</h5>
+            <h5 style={{ color: "#00008B" }}>Stress Relief</h5>
             <p>
               Just like us, pets can get stressed too. Play provides a healthy
               outlet for their energy and helps them relax. Interactive toys or
               puzzle feeders that challenge them mentally can be particularly
-              beneficial in reducing stress levels.
+              beneficial in #00008Bucing stress levels.
             </p>
           </div>
           <div>
-            <h5 style={{ color: "crimson" }}>Variety is Key</h5>
+            <h5 style={{ color: "#00008B" }}>Variety is Key</h5>
             <p>
-              Just like us, pets can get bored with the same old toys. Rotate
-              their toys periodically to keep things interesting. Consider
-              choosing toys that cater to their natural instincts: squeaky toys
-              for dogs, feathery wands for cats, and chew toys for both.
+              Just like us, pets can get bo#00008B with the same old toys.
+              Rotate their toys periodically to keep things interesting.
+              Consider choosing toys that cater to their natural instincts:
+              squeaky toys for dogs, feathery wands for cats, and chew toys for
+              both.
             </p>
           </div>
           <div>
@@ -151,17 +166,17 @@ function PetToys() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 300px" }}>
+        <section style={{ padding: "50px 320px" }}>
           <h2
             style={{
-              color: "crimson",
+              color: "#00008B",
               textDecoration: "underline",
               textAlign: "center",
+              paddingBottom: "50px",
             }}
           >
             Explore Our Dog's Toys
           </h2>
-          <hr />
           <div>
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
@@ -169,7 +184,12 @@ function PetToys() {
               <img
                 src={Black2}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
               <div style={{ padding: "20px" }}>
                 <h3>Chew Toys</h3>
@@ -180,7 +200,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -201,7 +221,12 @@ function PetToys() {
               <img
                 src={Black2}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
               <div style={{ padding: "20px" }}>
                 <h3>Interactive Toys</h3>
@@ -212,7 +237,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -233,7 +258,12 @@ function PetToys() {
               <img
                 src={Black2}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
               <div style={{ padding: "20px" }}>
                 <h3>Plush Toys</h3>
@@ -243,7 +273,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -263,7 +293,12 @@ function PetToys() {
               <img
                 src={Black2}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
               <div style={{ padding: "20px" }}>
                 <h3>Fetch Toys</h3>
@@ -275,7 +310,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -292,19 +327,18 @@ function PetToys() {
         <section style={{ padding: "50px 310px" }}>
           <h2
             style={{
-              color: "crimson",
+              color: "#00008B",
               textDecoration: "underline",
               textAlign: "center",
+              paddingBottom: "50px",
             }}
           >
             Explore Our Cat's Toys
           </h2>
-          <hr />
           <div>
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
-              
               <div style={{ padding: "20px" }}>
                 <h3>Interactive Toys</h3>
                 <p>
@@ -315,7 +349,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -329,7 +363,12 @@ function PetToys() {
               <img
                 src={Black}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
             </div>
           </div>
@@ -338,7 +377,6 @@ function PetToys() {
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
-              
               <div style={{ padding: "20px" }}>
                 <h3>Scratching Posts</h3>
                 <p>
@@ -350,7 +388,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -364,7 +402,12 @@ function PetToys() {
               <img
                 src={Black}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
             </div>
           </div>
@@ -373,18 +416,17 @@ function PetToys() {
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
-              
               <div style={{ padding: "20px" }}>
                 <h3>Feather Toys</h3>
                 <p>
                   Stimulate your cat's hunting instincts with our feather toys!
-                  Watch as your cat pounces and chases after these feathered
+                  Watch as your cat pounces and chases after these feather
                   wonders, providing mental and physical exercise while having a
                   blast.
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -398,7 +440,12 @@ function PetToys() {
               <img
                 src={Black}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
             </div>
           </div>
@@ -406,7 +453,6 @@ function PetToys() {
             <div
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
-              
               <div style={{ padding: "20px" }}>
                 <h3>Catnip Toys</h3>
                 <p>
@@ -417,7 +463,7 @@ function PetToys() {
                 </p>
                 <button
                   style={{
-                    background: "red",
+                    background: "#00008B",
                     border: "none",
                     color: "white",
                     marginTop: "50px",
@@ -431,7 +477,12 @@ function PetToys() {
               <img
                 src={Black}
                 alt=""
-                style={{ height: "40vh", width: "20vw", objectFit: "cover" }}
+                style={{
+                  height: "40vh",
+                  width: "20vw",
+                  objectFit: "cover",
+                  borderRadius: "15px",
+                }}
               />
             </div>
           </div>
@@ -441,4 +492,4 @@ function PetToys() {
   );
 }
 
-export default PetToys;
+export default Pettoys;

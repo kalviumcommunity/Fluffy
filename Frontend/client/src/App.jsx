@@ -3,8 +3,9 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './HomeComponents/Home'
 import Adoption from './components/Adoption';
-import Pettoys from './components/pettoys';
-import Petfoods from './components/petfoods'
+import Pettoys from './components/Pettoys';
+import Petfoods from './components/Petfoods'
+import Lostandfound from './components/Lostandfound';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       {/* <Home/> */}
       {/* <Adoption/> */}
       {/* <Pettoys/> */}
-      <Petfoods/>
+      {/* <Petfoods/> */}
+      <Lostandfound/>
     </>
   )
 }
