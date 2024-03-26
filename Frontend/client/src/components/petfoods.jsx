@@ -6,7 +6,7 @@ import main from "../images/food.png";
 
 function Petfoods() {
   return (
-    <>
+    <div>
       <Navbar />
       <div>
         <section
@@ -75,7 +75,7 @@ function Petfoods() {
           />
         </section>
 
-        <section style={{ padding: "50px 350px", background: "#F9FFF3" }}>
+        <section style={{ padding: "50px 360px", background: "#F9FFF3" }}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -161,7 +161,7 @@ function Petfoods() {
         </section>
 
         <hr style={{ borderTop: "3px solid darkgreen" }} />
-        <section style={{ padding: "50px 320px" }}>
+        <section style={{ padding: "50px 300px" }}>
           <h2
             style={{
               color: "#388E3C",
@@ -284,7 +284,7 @@ function Petfoods() {
             </div>
           </div>
         </section>
-        <section style={{ padding: "50px 320px" }}>
+        <section style={{ padding: "50px 300px" }}>
           <h2
             style={{
               paddingBottom: "50px",
@@ -410,8 +410,16 @@ function Petfoods() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   )
 }
 
 export default Petfoods;
+
+
+
+{/* <h4 >Read more :</h4>
+<a href="https://www.transitionslifecare.org/2020/05/27/the-importance-of-pets-in-our-lives/#:~:text=If%20you%20spend%20around%2015,the%20body's%20natural%20stress%20hormone." style={{ color: '#007bff', textDecoration: 'none', lineHeight: '1.6' }}>The Importance of Pets in Our Lives</a><br />
+<a href="https://newsinhealth.nih.gov/2018/02/power-pets#:~:text=Nothing%20compares%20to%20the%20joy,their%20emotional%20and%20social%20skills." style={{ color: '#007bff', textDecoration: 'none', lineHeight: '1.6' }}>The Power of Pets</a><br />
+<a href="https://www.businessinsider.com/reasons-why-having-a-pet-is-good-for-you?IR=T#:~:text=Owning%20a%20pet%20can%20help%20reduce%20stress,the%20%22love%20hormone.%22%20This%20is%20responsible%20for" style={{ color: '#007bff', textDecoration: 'none', lineHeight: '1.6' }}>Reasons why having a pet is good for you!.</a><br />
+<a href="https://www.washingtonpost.com/news/animalia/wp/2017/11/03/pets-arent-wonder-drugs-heres-why-we-love-them-anyway/" style={{ color: '#007bff', textDecoration: 'none', lineHeight: '1.6' }}>Why do we love Our Pets?</a><br /> */}

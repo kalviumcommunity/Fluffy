@@ -17,7 +17,7 @@ function Adoption() {
   }, []);
 
   return (
-    <>
+    <div>
       <Navbar />
       <div>
         <section
@@ -87,7 +87,7 @@ function Adoption() {
           />
         </section>
 
-        <section style={{ padding: "50px 350px", background: "#F5F0FF" }}>
+        <section style={{ padding: "50px 360px", background: "#F5F0FF" }}>
           <div>
             <h1
               style={{
@@ -239,7 +239,7 @@ function Adoption() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 220px" }}>
+        <section style={{ padding: "50px 200px" }}>
           <h1
             style={{
               textAlign: "center",
@@ -305,7 +305,7 @@ function Adoption() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   )
 }
 

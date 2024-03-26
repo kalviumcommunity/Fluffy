@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const {petSchema} = require("./models/petdata")
+const {petUsersSchema} = require("./models/petusers")
 const PetModal = require("./models/petdata")
+const PetUsersModal = require("./models/petusers")
 
 
 mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net/Fluffy?retryWrites=true&w=majority&appName=Cluster0")
@@ -10,6 +12,25 @@ mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
+// SignUp route request-response
+app.get('/logins', (req, res) => {
+    PetUsersModal.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(500).json({ error: err.message }));
+});
+
+app.post("/users",(req, res)=>{
+    const data = req.body
+    PetUsersModal.create(data)
+    .then(pets => res.json(pets))
+    .catch(err => res.status(500).json({error: err.message}))
+})
+
+
+
+// 4 API requests
 
 app.get("/main",(req, res)=>{
     PetModal.find()

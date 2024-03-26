@@ -6,7 +6,7 @@ import main from "../images/dog.webp";
 
 function Pettoys() {
   return (
-    <>
+    <div>
       <Navbar />
       <div>
         <section
@@ -74,7 +74,7 @@ function Pettoys() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 350px", background: "#D4E8FF" }}>
+        <section style={{ padding: "50px 360px", background: "#D4E8FF" }}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -166,7 +166,7 @@ function Pettoys() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 320px" }}>
+        <section style={{ padding: "50px 300px" }}>
           <h2
             style={{
               color: "#00008B",
@@ -324,7 +324,7 @@ function Pettoys() {
             </div>
           </div>
         </section>
-        <section style={{ padding: "50px 310px" }}>
+        <section style={{ padding: "50px 300px" }}>
           <h2
             style={{
               color: "#00008B",
@@ -488,7 +488,7 @@ function Pettoys() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
