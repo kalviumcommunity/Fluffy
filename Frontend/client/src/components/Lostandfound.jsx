@@ -1,6 +1,6 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../HomeComponents/Navbar";
-import axios from 'axios';
+import axios from "axios";
 
 import main from "../images/dog.webp";
 
@@ -17,7 +17,7 @@ function Lostandfound() {
   }, []);
 
   return (
-    <>
+    <div>
       <Navbar />
       <div>
         <section
@@ -94,7 +94,7 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 350px", background: "#FFECEC" }}>
+        <section style={{ padding: "50px 360px", background: "#FFECEC" }}>
           <h1
             style={{
               textAlign: "center",
@@ -124,8 +124,7 @@ function Lostandfound() {
             <p>
               When lost, pets often exhibit anxious behavior. They might be
               timid or hesitant around strangers and may whimper or try to bolt.
-              Be patient and gentle. Here are some additional details to look
-              out for:
+              Be patient and gentle.Here are some additional details to look out for:
             </p>
             <ul style={{ listStyleType: "disc", padding: 0 }}>
               <li>
@@ -133,7 +132,7 @@ function Lostandfound() {
                 patterns, scars, or missing limbs can help identify the owner.
               </li>
               <li>
-                +Is the pet wearing any other accessories? A leash, harness, or
+                Is the pet wearing any other accessories? A leash, harness, or
                 bandana might have the owner's contact information.
               </li>
               <li>
@@ -152,7 +151,7 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 220px" }}>
+        <section style={{ padding: "50px 200px" }}>
           <h1
             style={{
               textAlign: "center",
@@ -218,7 +217,7 @@ function Lostandfound() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
