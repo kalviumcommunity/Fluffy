@@ -22,7 +22,6 @@ function App() {
         <Route path="/pet-foods" element={<Petfoods/>}/>
         <Route path="/pet-toys" element={<Pettoys/>}/>
         <Route path="/lost-and-found" element={<Lostandfound/>}/>
-
       </Routes>
     </Router>
   );

@@ -25,7 +25,7 @@ function Navbar() {
           alignItems: "center",
           background: "white",
           color: "black",
-          zIndex: 1,
+          zIndex: 3,
           borderBottom: "1px solid gray",
         }}
       >
