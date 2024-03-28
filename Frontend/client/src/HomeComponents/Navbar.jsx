@@ -77,8 +77,8 @@ function Navbar() {
           <div style={{ paddingTop: "20px" }}>
             <p><Link to="/" style={{ color: "white", textDecoration: "none" }}> Home </Link></p>
             <p><Link to="/apopt-a-pet" style={{ color: "white", textDecoration: "none" }}> Adopt a pet </Link></p>
-            <p><Link to="/pet-foods" style={{ color: "white", textDecoration: "none" }}> Buy petfood for your pet </Link></p>
             <p> <Link to="/pet-toys" style={{ color: "white", textDecoration: "none" }}> Buy pettoy for your pet  </Link></p>
+            <p><Link to="/pet-foods" style={{ color: "white", textDecoration: "none" }}> Buy petfood for your pet </Link></p>
             <p><Link to="/lost-and-found" style={{ color: "white", textDecoration: "none" }}> Report your lost pet </Link></p>
             <p><Link to="/signup" style={{ color: "white", textDecoration: "none" }}> Signup </Link></p>
             <p><Link to="/signin" style={{ color: "white", textDecoration: "none" }}> Signup </Link></p>

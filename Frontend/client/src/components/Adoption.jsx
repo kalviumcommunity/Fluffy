@@ -56,8 +56,6 @@ function Adoption() {
               minerals to keep your pet happy and healthy inside and out.
             </p>
             <div style={{ textAlign: "center" }}>
-              {" "}
-              {/* Center the button */}
               <button
                 style={{
                   width: "100px",
