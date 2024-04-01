@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Image from "../images/dog.webp";
+// import Cookies from 'js-cookie';
 
-function SignUp() {
+function AdoptPet() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,16 +19,19 @@ function SignUp() {
       const response = await axios.post("http://localhost:1001/users", {
         name: name,
         email: email,
-        password: password,
+        phone: phone,
+        address: address,
       });
       console.log("Posted Successfully", response);
       console.log("Name:", name);
       console.log("Email:", email);
-      console.log("Password:", password);
+      console.log("Phone:", phone);
+      console.log("Address:", address)
       setName("");
       setEmail("");
-      setPassword("");
-      navigate("/");
+      setPhone("");
+      setAddress("");
+      navigate("/adopt-a-pet");
     } catch (err) {
       console.error("Error signing up:", err);
     }
@@ -40,47 +44,44 @@ function SignUp() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundImage: "linear-gradient(to bottom right, #0061FF, #60EFFF)",
+        backgroundImage: "linear-gradient(to bottom right,#A106F4, #E707FA)",
         color: "black",
       }}
     >
       <div
         style={{
-          display:"flex",
-          justifyContent:"center",
-          alignItems:"center",
-          width: "550px",
-          height:"550px",
-          padding:"30px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "650px",
+          width: "650px",
           backgroundColor: "white",
-          borderRadius: "50%",
-          boxShadow: "0px 0px 10px rgba(0, 0, 0, 1)",
+          borderRadius: "50% ",
+          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
         }}
       >
-
-        <form onSubmit={handleSubmit}>
-          <h2 style={{ textAlign: "center" }}>Sign Up</h2>
+        <form onSubmit={handleSubmit} style={{width:"22vw"}}>
+          <h2 style={{ textAlign: "center" }}>Adoption Form</h2>
           <hr />
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ marginBottom: "20px" }}>
             <label style={{ color: "black" }}>Name :</label>
             <input
               type="text"
-              placeholder="Enter your name in small"
+              placeholder="Enter your name"
               onChange={(e) => setName(e.target.value)}
               value={name}
               style={{
                 width: "100%",
                 padding: "10px",
                 border: "none",
-                borderBottom:"1px solid gray",
+                borderBottom: "1px solid gray",
                 backgroundColor: "white",
                 color: "black",
               }}
               required
             />
           </div>
-
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ marginBottom: "20px" }}>
             <label style={{ color: "black" }}>Email :</label>
             <input
               type="email"
@@ -98,16 +99,15 @@ function SignUp() {
               required
             />
           </div>
-
-          <div style={{ marginBottom: "10px" }}>
-            <label style={{ color: "black" }}>Password :</label>
+          <div style={{ marginBottom: "20px" }}>
+            <label style={{ color: "black" }}>Phone :</label>
             <input
-              type={showPassword ? "text" : "password"}
-              placeholder="use atleast 7 characters"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              type="number"
+              placeholder="Enter your phone number"
+              onChange={(e) => setPhone(e.target.value)}
+              value={phone}
               style={{
-                width: "80%",
+                width: "100%",
                 padding: "10px",
                 border: "none",
                 borderBottom:"1px solid gray",
@@ -116,23 +116,24 @@ function SignUp() {
               }}
               required
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
+          </div>
+          <div style={{ marginBottom: "20px" }}>
+            <label style={{ color: "black" }}>Address :</label>
+            <input
+              type="text"
+              placeholder="Enter your address"
+              onChange={(e) => setAddress(e.target.value)}
+              value={address}
               style={{
-                marginLeft: "7px",
-                padding: "10px 5px",
-                width: "60px",
+                width: "100%",
+                padding: "10px",
+                border: "none",
+                borderBottom:"1px solid gray",
                 backgroundColor: "white",
-                border: "1px solid black",
                 color: "black",
-                borderRadius: "5px",
-                cursor: "pointer",
-                textAlign: "center",
               }}
-            >
-              {showPassword ? "Hide" : "Show"}
-            </button>
+              required
+            />
           </div>
 
           <button
@@ -149,14 +150,11 @@ function SignUp() {
           >
             Submit
           </button>
-          <p style={{ paddingTop: "10px", textAlign:"center" }}>
-            Already an User? <Link to="/signin">SignIn</Link> here.
-          </p>
+
         </form>
       </div>
-     
     </div>
   );
 }
 
-export default SignUp;
+export default AdoptPet;
