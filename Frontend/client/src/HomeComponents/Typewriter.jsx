@@ -4,10 +4,10 @@ function Typewriter() {
   const [textIndex, setTextIndex] = useState(0);
   const [text, setText] = useState(""); // Add text state variable here
   const dataText = [
-    "Adopt a Snuggler! .",
-    "Food for Bottomless Pits .",
-    "Destroy This, Not Your Furniture .",
-    "Lost Your Escape Artist? We are on it . ",
+    "Find your furever friend!",
+    "Fuel happy tails with nutritious food!",
+    "Unleash the fun with exciting toys!",
+    "Lost pet? We'll help you reunite!",
   ];
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Typewriter() {
           typeWriter(text, i + 1, fnCallback);
         }, 100);
       } else if (typeof fnCallback === "function") {
-        setTimeout(fnCallback, 700);
+        setTimeout(fnCallback, 1000);
       }
     };
 
@@ -39,13 +39,23 @@ function Typewriter() {
     startTextAnimation(textIndex);
 
     return () => {
-      // Cleanup function here if necessary
+        clearInterval()
     };
   }, [textIndex]);
 
   return (
     <div>
-      <h1>{text}</h1>
+      <h1
+        style={{
+          fontSize: "2.8em",
+          height: "5vh",
+          color: "red",
+          textDecoration:"underline",
+          fontFamily:"monospace"
+        }}
+      >
+        {text}
+      </h1>
     </div>
   );
 }

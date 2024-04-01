@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../HomeComponents/Navbar.jsx";
 import main from "../images/adopt2.webp";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Adoption() {
   const [pets, setPets] = useState([]);
@@ -273,17 +274,22 @@ function Adoption() {
                     <h5>Description</h5>
                     <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
                     <div>
-                      <button
-                        style={{
-                          background: "#6504b5",
-                          border: "none",
-                          color: "white",
-                          padding: "5px 15px",
-                          borderRadius: "5px",
-                        }}
+                      <Link
+                        to="/adoption-form"
+                        style={{ textDecoration: "none" }}
                       >
-                        Adopt
-                      </button>
+                        <button
+                          style={{
+                            background: "#6504b5",
+                            border: "none",
+                            color: "white",
+                            padding: "5px 15px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          Adopt
+                        </button>
+                      </Link>
                     </div>
                   </div>
                   <img
@@ -302,9 +308,14 @@ function Adoption() {
             ))}
           </div>
         </section>
+        <section style={{position:"sticky", bottom:"0",borderTop:"1px solid gray",padding:"7px 250px",background:"white",height:"40px"}}>
+          <p>
+            <strong><a href="#" style={{textDecoration:"none", color:"red"}}>&lt;&lt; Back</a></strong>
+          </p>
+        </section>
       </div>
     </div>
-  )
+  );
 }
 
 export default Adoption;
