@@ -308,10 +308,25 @@ function Adoption() {
             ))}
           </div>
         </section>
-        <section style={{position:"sticky", bottom:"0",borderTop:"1px solid gray",padding:"7px 250px",background:"white",height:"40px"}}>
-          <p>
-            <strong><a href="#" style={{textDecoration:"none", color:"red"}}>&lt;&lt; Back</a></strong>
-          </p>
+        <section
+          style={{
+            position: "sticky",
+            bottom: "0",
+            borderTop: "1px solid gray",
+            padding: "7px 250px",
+            background: "white",
+            height: "40px",
+          }}
+        >
+          <Link to="/" style={{ textDecoration: "none", color: "red" }}> 
+            <p>
+              <strong>
+                <a href="#" style={{ textDecoration: "none", color: "red" }}>
+                  &lt;&lt; Back
+                </a>
+              </strong>
+            </p>
+          </Link>
         </section>
       </div>
     </div>

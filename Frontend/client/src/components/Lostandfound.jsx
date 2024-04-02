@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../HomeComponents/Navbar";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import main from "../images/dog.webp";
 
@@ -124,7 +125,8 @@ function Lostandfound() {
             <p>
               When lost, pets often exhibit anxious behavior. They might be
               timid or hesitant around strangers and may whimper or try to bolt.
-              Be patient and gentle.Here are some additional details to look out for:
+              Be patient and gentle.Here are some additional details to look out
+              for:
             </p>
             <ul style={{ listStyleType: "disc", padding: 0 }}>
               <li>
@@ -152,16 +154,35 @@ function Lostandfound() {
         </section>
 
         <section style={{ padding: "50px 200px" }}>
-          <h1
+          <div
             style={{
-              textAlign: "center",
-              textDecoration: "underline",
-              color: "crimson",
-              paddingBottom: "50px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Dogs in Our Care
-          </h1>
+            <h1
+              style={{
+                color: "crimson",
+              }}
+            >
+              Dogs in Our Care
+            </h1>
+            <Link to="/report-pet">
+              <button
+                style={{
+                  padding: "10px",
+                  border: "none",
+                  borderRadius: "5px",
+                  background: "crimson",
+                  color: "white",
+                }}
+              >
+                Add your lost pet
+              </button>
+            </Link>
+          </div>
+          <hr />
           <div>
             {pets.map((pet, index) => (
               <div key={index}>
@@ -215,6 +236,22 @@ function Lostandfound() {
               </div>
             ))}
           </div>
+        </section>
+        <section
+          style={{
+            position: "sticky",
+            bottom: "0",
+            borderTop: "1px solid gray",
+            padding: "7px 250px",
+            background: "white",
+            height: "40px",
+          }}
+        >
+          <Link to="/" style={{ textDecoration: "none", color: "crimson" }}>
+            <p>
+              <strong>&lt;&lt; Back</strong>
+            </p>
+          </Link>
         </section>
       </div>
     </div>

@@ -29,7 +29,7 @@ function Home() {
                 marginTop: "100px",
                 padding: "10px",
                 fontSize: "1rem",
-                backgroundImage: "linear-gradient(to top right, red , hotpink)", // Corrected syntax
+                backgroundImage: "linear-gradient(to top right, red , hotpink)", 
                 color: "white",
                 borderRadius: "100%",
                 border: "none",
