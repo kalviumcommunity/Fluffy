@@ -13,6 +13,7 @@ const petSchema = new mongoose.Schema({
     description: String,
     lastSeen: String, 
     dateLost: String,
+    from:String,
     owner:{
         name:String,
         email:String,

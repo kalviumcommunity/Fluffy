@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../HomeComponents/Navbar";
+import {Link} from 'react-router-dom'
 import Black from "../images/adopt2.webp";
 import Black2 from "../images/adopt1.webp";
 import main from "../images/dog.webp";
@@ -486,6 +487,24 @@ function Pettoys() {
               />
             </div>
           </div>
+        </section>
+        <section
+          style={{
+            position: "sticky",
+            bottom: "0",
+            borderTop: "1px solid gray",
+            padding: "7px 250px",
+            background: "white",
+            height: "40px",
+          }}
+        >
+          <Link to="/" style={{ textDecoration: "none", color: "red" }}> 
+            <p>
+              <strong>
+                  &lt;&lt; Back
+              </strong>
+            </p>
+          </Link>
         </section>
       </div>
     </div>
