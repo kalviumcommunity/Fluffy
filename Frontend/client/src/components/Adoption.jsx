@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 function Adoption() {
   const [pets, setPets] = useState([]);
+  const [filteredPets, setFilteredPets] = useState([]);
+  const [selectedAnimal, setSelectedAnimal] = useState(null);
 
   useEffect(() => {
     axios
@@ -16,6 +18,19 @@ function Adoption() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (selectedAnimal) {
+      const filtered = pets.filter((pet) => pet.animal === selectedAnimal);
+      setFilteredPets(filtered);
+    } else {
+      setFilteredPets(pets);
+    }
+  }, [selectedAnimal, pets]);
+
+  const handleAnimalChange = (animal) => {
+    setSelectedAnimal(animal);
+  };
 
   return (
     <div>
@@ -238,46 +253,70 @@ function Adoption() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 200px" }}>
-          <h1
+        <section style={{ padding: "50px 150px" }}>
+          <div
             style={{
-              textAlign: "center",
-              textDecoration: "underline",
-              color: "#6504b5",
-              paddingBottom: "50px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Adopt Me
-          </h1>
+            <h1 style={{ color: "#6504b5" }}>Pets in Our Care</h1>
+            <div>
+              <button
+                onClick={() => handleAnimalChange("dog")}
+                style={{
+                  marginRight: "10px",
+                  padding: "10px",
+                  border: "none",
+                  borderRadius: "5px",
+                  background: "#6504b5",
+                  color: "white",
+                }}
+              >
+                Dogs
+              </button>
+              <button
+                onClick={() => handleAnimalChange("cat")}
+                style={{
+                  padding: "10px",
+                  border: "none",
+                  borderRadius: "5px",
+                  background: "#6504b5",
+                  color: "white",
+                }}
+              >
+                Cats
+              </button>
+            </div>
+          </div>
+          <hr />
           <div>
-            {pets.map((pet, index) => (
+            {filteredPets.map((pet, index) => (
               <div key={index}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "0px 30px",
-                  }}
-                >
-                  <div style={{ padding: "15px" }}>
-                    <h2>{pet.name}</h2>
-                    <p>
-                      <span style={{ color: "#6504b5" }}>{pet.breed}</span> 🔺{" "}
-                      {pet.born}
-                    </p>
-                    <hr />
-                    <p>
-                      {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
-                    </p>
-                    <hr />
-                    <h5>Description</h5>
-                    <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
-                    <div>
-                      <Link
-                        to="/adoption-form"
-                        style={{ textDecoration: "none" }}
-                      >
+                {pet.animal === "dog" && (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: "0px 30px",
+                    }}
+                  >
+                    <div style={{ padding: "15px" }}>
+                      <h2>{pet.name}</h2>
+                      <p>
+                        <span style={{ color: "#6504b5" }}>{pet.breed}</span> 🔺{" "}
+                        {pet.livesin}
+                      </p>
+                      <hr />
+                      <p>
+                        {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
+                      </p>
+                      <hr />
+                      <h5>Description</h5>
+                      <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
+                      <div>
                         <button
                           style={{
                             background: "#6504b5",
@@ -287,27 +326,76 @@ function Adoption() {
                             borderRadius: "5px",
                           }}
                         >
-                          Adopt
+                          Call us
                         </button>
-                      </Link>
+                      </div>
                     </div>
+                    <img
+                      src={pet.image}
+                      alt=""
+                      style={{
+                        borderRadius: "10px",
+                        height: "350px",
+                        width: "470px",
+                        objectFit: "cover",
+                      }}
+                    />
                   </div>
-                  <img
-                    src={pet.image}
-                    alt=""
+                )}
+                {pet.animal === "cat" && (
+                  <div
                     style={{
-                      borderRadius: "10px",
-                      height: "350px",
-                      width: "470px",
-                      objectFit: "cover",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: "0px 30px",
                     }}
-                  />
-                </div>
+                  >
+                    <div style={{ padding: "15px" }}>
+                      <h2>{pet.name}</h2>
+                      <p>
+                        <span style={{ color: "#6504b5" }}>{pet.breed}</span> 🔺{" "}
+                        {pet.livesin}
+                      </p>
+                      <hr />
+                      <p>
+                        {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
+                      </p>
+                      <hr />
+                      <h5>Description</h5>
+                      <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
+                      <div>
+                        <button
+                          style={{
+                            background: "#6504b5",
+                            border: "none",
+                            color: "white",
+                            padding: "5px 15px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          Call us
+                        </button>
+                      </div>
+                    </div>
+                    <img
+                      src={pet.image}
+                      alt=""
+                      style={{
+                        borderRadius: "10px",
+                        height: "350px",
+                        width: "470px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                )}
                 <hr />
               </div>
             ))}
           </div>
         </section>
+
         <section
           style={{
             position: "sticky",
@@ -318,13 +406,9 @@ function Adoption() {
             height: "40px",
           }}
         >
-          <Link to="/" style={{ textDecoration: "none", color: "red" }}> 
+          <Link to="/" style={{ textDecoration: "none", color: "#6504b5" }}>
             <p>
-              <strong>
-                <a href="#" style={{ textDecoration: "none", color: "red" }}>
-                  &lt;&lt; Back
-                </a>
-              </strong>
+              <strong>&lt;&lt; Back</strong>
             </p>
           </Link>
         </section>

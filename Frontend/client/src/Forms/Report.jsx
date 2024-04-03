@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Report() {
   // Pet's Details...
+  const [petanimal, setPetAnimal] = useState("")
   const [petname, setPetName] = useState("");
   const [petbreed, setPetBreed] = useState("");
   const [petage, setPetAge] = useState("");
@@ -29,13 +30,14 @@ function Report() {
 
     try {
       const response = await axios.post("http://localhost:1001/main/postdata", {
+        animal:petanimal,
         name: petname,
         breed: petbreed,
         age: petage,
         gender: petgender,
         size: petsize,
         color: petcolor,
-        Image: petimage,
+        image: petimage,
         description: petdescription,
         lastSeen: petlastseen,
         dateLost: petdatelost,
@@ -71,15 +73,15 @@ function Report() {
         style={{
           backgroundColor: "white",
           height:"100vh",
-
+          
         }}
       >
         <form
           onSubmit={handleSubmit}
           style={{
             maxWidth: "800px",
-            backgroundColor: "white",
             padding: "20px",
+
           }}
         >
           <h2 style={{ textAlign: "center", color: "crimson" }}>Report Form</h2>
@@ -97,8 +99,8 @@ function Report() {
             <div style={{ marginBottom: "20px" }}>
               <label style={{ color: "black" }}>Pet Animal :</label>
               <select
-                onChange={(e) => setPetAge(e.target.value)}
-                value={petage}
+                onChange={(e) => setPetAnimal(e.target.value)}
+                value={petanimal}
                 style={{
                   width: "100%",
                   padding: "10px",
