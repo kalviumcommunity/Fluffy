@@ -16,7 +16,7 @@ function Home() {
     <>
       <Navbar />
       <Parallax>
-        <div style={{height:"95vh", display:"flex",justifyContent:"center", alignItems:"center", padding:"20px",backgroundImage: 'linear-gradient(to top right, #00f2fe, cyan,purple, hotpink)' }}>
+        <div style={{height:"95vh", display:"flex",justifyContent:"center", alignItems:"center", padding:"20px",backgroundImage: 'linear-gradient(to top left,#C3C3FF,violet,purple)',border:"none" }}>
           <div style={{display:"flex",flexDirection:"column", textAlign:"start", padding:"30px", height:"50vh", width:"40vw", background:"white", borderRadius:"10px 0px 0px 10px"}}>
             <h1>Welcome to Fluffy.</h1>
             <Typewriter/>
@@ -34,6 +34,7 @@ function Home() {
                 borderRadius: "100%",
                 border: "none",
                 cursor: "pointer",
+                fontFamily:"monospace"
               }}
             >
               Explore
@@ -72,6 +73,7 @@ function Home() {
                       borderRadius: "100%",
                       border: "none",
                       cursor: "pointer",
+                      fontFamily:"monospace"
                     }}
                   >
                       Adopt Me
@@ -108,6 +110,7 @@ function Home() {
                   borderRadius: "100%",
                   border: "none",
                   cursor: "pointer",
+                  fontFamily:"monospace"
                 }}
               >
                 Explore
@@ -144,6 +147,7 @@ function Home() {
                   borderRadius: "50%",
                   border: "none",
                   cursor: "pointer",
+                  fontFamily:"monospace"
                 }}
               >
                 Explore
@@ -157,7 +161,7 @@ function Home() {
     </Parallax>
     <Parallax className="image" bgImage={Lostandfound} strength={420}>
       <div className='content'>
-        <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
           <h2 style={{ fontSize: '2.7em', color: 'crimson', fontFamily:"monospace", width:"70vw",marginBottom:"20px", borderBottom:"5px dashed crimson" }}>Lost Your Escape Artist? We're Pet P.I.s!</h2>
           <div style={{position:"relative", width: '1000px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ position: 'relative', width: '900px', height: '500px', overflow: 'hidden', boxShadow: '0 25px 35px rgba(0,0,0,0.1)' }}>
@@ -180,6 +184,7 @@ function Home() {
                   borderRadius: "50%",
                   border: "none",
                   cursor: "pointer",
+                  fontFamily:"monospace"
                 }}
               >
                 Report
