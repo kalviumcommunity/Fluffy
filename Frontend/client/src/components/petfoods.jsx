@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../HomeComponents/Navbar";
-import {Link} from 'react-router-dom'
-import Black from "../images/adopt2.webp";
-import Black2 from "../images/dog.webp";
+import { Link } from "react-router-dom";
+import Black from "../images/adopt1.webp";
+import Black2 from "../images/adopt2.webp";
 import main from "../images/food.png";
 
 function Petfoods() {
@@ -51,7 +51,7 @@ function Petfoods() {
                   width: "100px",
                   height: "100px",
                   padding: "10px",
-                  fontSize: "1rem",
+                  fontSize: "1.1rem",
                   background: "#388E3C",
                   color: "white",
                   borderRadius: "100%",
@@ -162,7 +162,7 @@ function Petfoods() {
         </section>
 
         <hr style={{ borderTop: "3px solid darkgreen" }} />
-        <section style={{ padding: "50px 300px" }}>
+        <section style={{ padding: "50px 250px" }}>
           <h2
             style={{
               color: "#388E3C",
@@ -186,25 +186,35 @@ function Petfoods() {
                 }}
               />
               <div style={{ padding: "20px" }}>
-                <h3>From Tiny Paws to Mighty Walks: Puppy Food</h3>
-                <p>
-                  Fuel their playful spirit and support healthy growth for epic
-                  adventures to come! This puppy food provides the perfect
-                  foundation for strong bodies and sharp minds. #GrowingPaws
-                  #FuelTheFun
+                <h4>From Tiny Tails to Big Barks: Doggie Delights</h4>
+                <p style={{ fontSize: "0.9rem" }}>
+                  Keep tails wagging and woofs booming with our delightful dog
+                  treats! A recipe for boundless energy and mischievous fun. Get
+                  ready for tail-wagging adventures and paw-some memories!..
                 </p>
-                <button
+                <blockquote
                   style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "50px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
+                    color: "#007bff",
+                    fontFamily:
+                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
                   }}
                 >
-                  Explore
-                </button>
+                  #HappyTails #FuelTheFun #PawsomeEats #HealthyHounds
+                </blockquote>
+                <Link to="/dog-foods">
+                  <button
+                    style={{
+                      background: "#388E3C",
+                      border: "none",
+                      color: "white",
+                      marginTop: "40px",
+                      padding: "5px 15px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Explore
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -224,19 +234,28 @@ function Petfoods() {
                 }}
               />
               <div style={{ padding: "20px" }}>
-                <h3>Unleashing Their Potential: Young Dog Food</h3>
-                <p>
-                  From playful pup to powerful partner. This young dog food
-                  offers balanced nutrition to build strong muscles, healthy
-                  joints, and a radiant coat. Every adventure starts with the
-                  right fuel! #GrowingStrong #AdventureAwaits
+                <h4>Doggie Delights: Treats that Wag!</h4>
+                <p style={{ fontSize: "0.9rem" }}>
+                  From curious pups to treat-loving superstars, our delicious
+                  dog treats guarantee wagging tails with every bite. Treat time
+                  is fun time!..
                 </p>
+                <blockquote
+                  style={{
+                    color: "#007bff",
+                    fontFamily:
+                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+                  }}
+                >
+                  #WagAndTreat #TreatTime #Procrastinate
+                </blockquote>
+
                 <button
                   style={{
                     background: "#388E3C",
                     border: "none",
                     color: "white",
-                    marginTop: "50px",
+                    marginTop: "40px",
                     padding: "5px 15px",
                     borderRadius: "5px",
                   }}
@@ -247,43 +266,6 @@ function Petfoods() {
             </div>
           </div>
           <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
-            >
-              <img
-                src={Black2}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "15px",
-                }}
-              />
-              <div style={{ padding: "20px" }}>
-                <h3>A Lifetime of Love: Senior Dog Food</h3>
-                <p>
-                  Nourish your cherished companion for every golden moment. This
-                  senior dog food provides tailored nutrition for their
-                  continued health and well-being. Embrace every walk and cuddle
-                  with your best friend. #SeniorLove #LoyalCompanions
-                </p>
-                <button
-                  style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "50px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
-              </div>
-            </div>
-          </div>
         </section>
         <section style={{ padding: "50px 300px" }}>
           <h2
@@ -301,19 +283,30 @@ function Petfoods() {
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
               <div style={{ padding: "20px" }}>
-                <h3>From Curious Kittens to Agile Hunters: Kitten Food</h3>
-                <p>
+                <h3>
+                  From Curious Kittens to Agile Hunters: Cat-tastic Cuisine
+                </h3>
+                <p style={{ fontSize: "0.9rem" }}>
                   Fuel their playful curiosity and support healthy development
-                  for a lifetime of purrs! This kitten food provides the perfect
-                  foundation for strong bodies and sharp minds. #GrowingWhiskers
-                  #FuelThePurrfectLife
+                  for a lifetime of purrs! Our cat food provides the purr-fect
+                  foundation for strong bodies and sharp minds. Let the whisker
+                  adventures begin!..
                 </p>
+                <blockquote
+                  style={{
+                    color: "#007bff",
+                    fontFamily:"'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+                  }}
+                >
+                  {" "}
+                  #Purrfection #WhiskerWonder #CatCuisine #MeowMagic
+                </blockquote>
                 <button
                   style={{
                     background: "#388E3C",
                     border: "none",
                     color: "white",
-                    marginTop: "50px",
+                    marginTop: "40px",
                     padding: "5px 15px",
                     borderRadius: "5px",
                   }}
@@ -339,57 +332,24 @@ function Petfoods() {
               style={{ display: "flex", alignItems: "center", padding: "20px" }}
             >
               <div style={{ padding: "20px" }}>
-                <h3>Unleashing the Inner Athlete: Young Cat Food</h3>
-                <p>
-                  From playful pounce to powerful grace. This young cat food
-                  offers balanced nutrition for building lean muscle, healthy
-                  joints, and a gleaming coat. Every adventure starts with the
-                  right fuel! #GrowingStrong #AgileGrace
+                <h3>
+                  Unleashing the Inner Purr: Pawsitively Purrfect Cat Treats
+                </h3>
+                <p style={{ fontSize: "0.9rem" }}>
+                  From playful pounces to graceful leaps, our purrfect cat
+                  treats offer a tantalizing mix of flavor and fun! Fuel their
+                  adventures and keep those purrs coming with every tasty bite.
+                  Treat time is playtime!..
                 </p>
+                <blockquote style={{ color: "#007bff" ,fontFamily:"'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}}>
+                  #PurrfectTreats #MeowMoments #NomNomNom{" "}
+                </blockquote>
                 <button
                   style={{
                     background: "#388E3C",
                     border: "none",
                     color: "white",
-                    marginTop: "50px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "15px",
-                }}
-              />
-            </div>
-          </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>A Lifetime of Companionship: Senior Cat Food</h3>
-                <p>
-                  Nourish your cherished companion for every golden nap. This
-                  senior cat food provides tailored nutrition for their
-                  continued health and well-being. Embrace every cuddle and purr
-                  with your best friend. #SeniorLove #LoyalCompanions
-                </p>
-                <button
-                  style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "50px",
+                    marginTop: "40px",
                     padding: "5px 15px",
                     borderRadius: "5px",
                   }}
@@ -420,20 +380,15 @@ function Petfoods() {
             height: "40px",
           }}
         >
-          <Link to="/" style={{ textDecoration: "none", color: "red" }}> 
+          <Link to="/" style={{ textDecoration: "none", color: "#388E3C" }}>
             <p>
-              <strong>
-                  &lt;&lt; Back
-              </strong>
+              <strong>&lt;&lt; Back</strong>
             </p>
           </Link>
         </section>
       </div>
     </div>
-  )
+  );
 }
 
 export default Petfoods;
-
-
-

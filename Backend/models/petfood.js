@@ -8,7 +8,8 @@ const petFoodSchema = new mongoose.Schema({
     rating: {
         stars:Number,
         numberOfReviews:Number,
-      }
+      },
+    image:String,
 })
 
 const petFoodModal = mongoose.model("petfoods",petFoodSchema);

@@ -15,7 +15,7 @@ function Report() {
   const [petdescription, setPetDescription] = useState("");
   const [petlastseen, setPetLastSeen] = useState("");
   const [petdatelost, setPetDateLost] = useState("");
-  const [petfrom, setPetFrom] = useState("");
+  const [petlivesin, setpetLivesIn] = useState("");
   const navigate = useNavigate();
 
   //Owner's Details...
@@ -41,7 +41,7 @@ function Report() {
         description: petdescription,
         lastSeen: petlastseen,
         dateLost: petdatelost,
-        from:petfrom
+        from:petlivesin
       });
       console.log("Posted Successfully", response);
       setPetName("");
@@ -61,7 +61,7 @@ function Report() {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "80%",
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-end",
@@ -71,27 +71,27 @@ function Report() {
     >
       <div
         style={{
-          backgroundColor: "white",
-          height:"100vh",
-          
+          background: "white",
+          height:"100%",
+          borderTop:"3px dashed crimson",
+          borderBottom:"3px dashed crimson",
+          padding:"20px"
         }}
       >
         <form
           onSubmit={handleSubmit}
           style={{
-            maxWidth: "800px",
+            width: "70vw",
             padding: "20px",
-
           }}
         >
           <h2 style={{ textAlign: "center", color: "crimson" }}>Report Form</h2>
-          {/* <hr /> */}
+          <hr />
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "20px",
-              maxWidth: "800px",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gap: "20px 40px",
               backgroundColor: "white",
               padding: "30px",
             }}
@@ -293,9 +293,9 @@ function Report() {
               <label style={{ color: "black" }}>Pet From :</label>
               <input
                 type="text"
-                placeholder="Enter pet's name"
-                onChange={(e) => setPetFrom(e.target.value)}
-                value={petfrom}
+                placeholder="Enter where do you live?"
+                onChange={(e) => setpetLivesIn(e.target.value)}
+                value={petlivesin}
                 style={{
                   width: "100%",
                   padding: "10px",

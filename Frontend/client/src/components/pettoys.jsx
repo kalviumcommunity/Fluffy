@@ -96,14 +96,14 @@ function Pettoys() {
           </div>
           <div>
             <h5 style={{ color: "#00008B" }}>
-              Mental Stimulation and Bo#00008Bom Relief
+              Mental Stimulation and Stress Relief
             </h5>
             <p>
               In the wild, animals spend a significant amount of time hunting,
               stalking, and playing. Even domesticated pets retain these
               instincts. Toys provide an outlet for these natural behaviors,
-              keeping them mentally stimulated and preventing bo#00008Bom. A
-              bo#00008B pet is more likely to engage in destructive chewing,
+              keeping them mentally stimulated and preventing boredom. A
+              bored pet is more likely to engage in destructive chewing,
               barking, or scratching.
             </p>
           </div>
@@ -146,13 +146,14 @@ function Pettoys() {
               Just like us, pets can get stressed too. Play provides a healthy
               outlet for their energy and helps them relax. Interactive toys or
               puzzle feeders that challenge them mentally can be particularly
-              beneficial in #00008Bucing stress levels.
+              beneficial in reducing stress levels.
             </p>
           </div>
+          <hr />
           <div>
             <h5 style={{ color: "#00008B" }}>Variety is Key</h5>
             <p>
-              Just like us, pets can get bo#00008B with the same old toys.
+              Just like us, pets can get bored with the same old toys.
               Rotate their toys periodically to keep things interesting.
               Consider choosing toys that cater to their natural instincts:
               squeaky toys for dogs, feathery wands for cats, and chew toys for
@@ -498,7 +499,7 @@ function Pettoys() {
             height: "40px",
           }}
         >
-          <Link to="/" style={{ textDecoration: "none", color: "red" }}> 
+          <Link to="/" style={{ textDecoration: "none", color: "#00008B" }}> 
             <p>
               <strong>
                   &lt;&lt; Back

@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 const {petSchema} = require("./models/petdata")
 const {petUsersSchema} = require("./models/petusers")
+const {petFoodSchema} = require("./models/petfood")
 const PetModal = require("./models/petdata")
 const PetUsersModal = require("./models/petusers")
+const PetFoodModal = require("./models/petfood")
 
 
 mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net/Fluffy?retryWrites=true&w=majority&appName=Cluster0")
@@ -32,11 +34,20 @@ app.post("/users",(req, res)=>{
 
 // 4 API requests
 
+// for pets data
 app.get("/main",(req, res)=>{
     PetModal.find()
     .then(pets => res.json(pets))
     .catch(err => res.status(500).json({error:err.message}))
 }) 
+
+// for pet foods
+app.get("/main/petfoods", (req, res) => {
+    PetFoodModal.find()
+    .then(petfood => res.json(petfood))
+    .catch(err => res.status(500).json({error:err.message}))
+})
+
 
 app.post("/main/postdata",(req, res)=>{
     const data = req.body

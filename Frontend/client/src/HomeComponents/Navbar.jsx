@@ -56,7 +56,7 @@ function Navbar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            width: "11.5vw",
+            width: "18vw",
           }}
         >
           <button
@@ -80,12 +80,26 @@ function Navbar() {
             style={{
               color: "black",
               textDecoration: "none",
-              border: "1px solid black",
-              padding: "5px 10px",
-              borderRadius: "5px",
+              // padding: "5px",
             }}
           >
-            Signup
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid black",
+                borderRadius: "5px",
+                padding: "5px 10px",
+              }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
+                alt=""
+                style={{ height: "20px",paddingRight:"5px" }}
+              />
+              Signup/SignIn
+            </div>
           </Link>
         </div>
       </nav>
@@ -103,7 +117,7 @@ function Navbar() {
           padding: "30px",
           transition: "right 0.5s ease",
           boxShadow: "0 0 10px rgba(0, 0 , 0, 0.5)",
-          zIndex:3
+          zIndex: 3,
         }}
       >
         <span

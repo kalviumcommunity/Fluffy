@@ -4,7 +4,7 @@ function Typewriter() {
   const [textIndex, setTextIndex] = useState(0);
   const [text, setText] = useState(""); // Add text state variable here
   const dataText = [
-    "Find your furever friend!",
+    "Adopt! Find your furr ever friend!",
     "Fuel happy tails with nutritious food!",
     "Unleash the fun with exciting toys!",
     "Lost pet? We'll help you reunite!",
@@ -49,9 +49,9 @@ function Typewriter() {
         style={{
           fontSize: "2.8em",
           height: "5vh",
+          fontFamily:"monospace",
           color: "red",
-          textDecoration:"underline",
-          fontFamily:"monospace"
+          textDecoration:"underline", 
         }}
       >
         {text}
