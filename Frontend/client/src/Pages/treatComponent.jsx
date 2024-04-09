@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Navbar from "../HomeComponents/Navbar";
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+import {Link} from "react-router-dom"
+import Navbar from '../HomeComponents/Navbar';
 
-function FoodComponent() {
-  const [foods, setFoods] = useState([]);
+function treatComponent() {
+    const [foods, setFoods] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("puppy");
 
   useEffect(() => {
@@ -21,8 +21,8 @@ function FoodComponent() {
   };
 
   const filteredFoods = selectedCategory
-    ? foods.filter((food) => food.age === selectedCategory && food.type === "dog food")
-    : foods.filter((food) => food.type === "dog food");
+    ? foods.filter((food) => food.age === selectedCategory && food.type === "dog treat")
+    : foods.filter((food) => food.type === "dog treat");
 
   return (
     <div>
@@ -159,4 +159,5 @@ function FoodComponent() {
   );
 }
 
-export default FoodComponent;
+
+export default treatComponent

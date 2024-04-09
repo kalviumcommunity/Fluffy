@@ -249,19 +249,20 @@ function Petfoods() {
                 >
                   #WagAndTreat #TreatTime #Procrastinate
                 </blockquote>
-
-                <button
-                  style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "40px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
+                <Link to="/dog-treats">
+                  <button
+                    style={{
+                      background: "#388E3C",
+                      border: "none",
+                      color: "white",
+                      marginTop: "40px",
+                      padding: "5px 15px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Explore
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
