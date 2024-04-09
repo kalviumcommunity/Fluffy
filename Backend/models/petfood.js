@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 
 const petFoodSchema = new mongoose.Schema({
     brand:String,
+    type:String,
     productName:String,
     age:String,
     price:Number,

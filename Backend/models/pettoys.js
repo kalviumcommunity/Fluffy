@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
 
 const petToysSchema = new mongoose.Schema({
-    name:String,
+    brand:String,
+    productName:String,
     type:String,
+    price:Number,
     rating:{
         stars:Number,
         noOfReviews:Number
-    }
+    },
+    image:String
 })
 
 const petToysModal = mongoose.model("pettoys",petToysSchema);

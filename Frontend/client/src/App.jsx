@@ -12,6 +12,7 @@ import SignIn from './Forms/SignIn';
 import SignUp from "./Forms/SignUp";
 import AdoptPet from "./Forms/AdoptPet";
 import FoodComponent from "./Pages/foodComponent"
+import TreatComponent from "./Pages/treatComponent";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/adopt-a-pet" element={<Adoption/>}/>
         <Route path="/pet-foods" element={<Petfoods/>}/>
         <Route path="/dog-foods" element={<FoodComponent/>}/>
+        <Route path="/dog-treats" element={<TreatComponent/>} />
         <Route path="/pet-toys" element={<Pettoys/>}/>
         <Route path="/lost-and-found" element={<Lostandfound/>}/>
       </Routes>
