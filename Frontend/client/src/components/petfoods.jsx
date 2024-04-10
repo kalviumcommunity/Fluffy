@@ -296,24 +296,27 @@ function Petfoods() {
                 <blockquote
                   style={{
                     color: "#007bff",
-                    fontFamily:"'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+                    fontFamily:
+                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
                   }}
                 >
                   {" "}
                   #Purrfection #WhiskerWonder #CatCuisine #MeowMagic
                 </blockquote>
-                <button
-                  style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "40px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
+                <Link to="/cat-foods">
+                  <button
+                    style={{
+                      background: "#388E3C",
+                      border: "none",
+                      color: "white",
+                      marginTop: "40px",
+                      padding: "5px 15px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Explore
+                  </button>
+                </Link>
               </div>
               <img
                 src={Black}
@@ -342,21 +345,29 @@ function Petfoods() {
                   adventures and keep those purrs coming with every tasty bite.
                   Treat time is playtime!..
                 </p>
-                <blockquote style={{ color: "#007bff" ,fontFamily:"'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}}>
-                  #PurrfectTreats #MeowMoments #NomNomNom{" "}
-                </blockquote>
-                <button
+                <blockquote
                   style={{
-                    background: "#388E3C",
-                    border: "none",
-                    color: "white",
-                    marginTop: "40px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
+                    color: "#007bff",
+                    fontFamily:
+                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
                   }}
                 >
-                  Explore
-                </button>
+                  #PurrfectTreats #MeowMoments #NomNomNom{" "}
+                </blockquote>
+                <Link to="/cat-treats">
+                  <button
+                    style={{
+                      background: "#388E3C",
+                      border: "none",
+                      color: "white",
+                      marginTop: "40px",
+                      padding: "5px 15px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Explore
+                  </button>
+                </Link>
               </div>
               <img
                 src={Black}

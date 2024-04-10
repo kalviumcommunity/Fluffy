@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Navbar from "../HomeComponents/Navbar";
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+import {Link} from "react-router-dom"
+import Navbar from '../../HomeComponents/Navbar';
 
-function FoodComponent() {
-  const [foods, setFoods] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("puppy");
+function Cattreat() {
+    const [treats, setTreats] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("kitten");
 
   useEffect(() => {
     axios
       .get("http://localhost:1001/main/petfoods")
       .then((result) => {
-        setFoods(result.data);
+        setTreats(result.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -20,15 +20,15 @@ function FoodComponent() {
     setSelectedCategory(category);
   };
 
-  const filteredFoods = selectedCategory
-    ? foods.filter((food) => food.age === selectedCategory && food.type === "dog food")
-    : foods.filter((food) => food.type === "dog food");
+  const filteredTreats = selectedCategory
+    ? treats.filter((treat) => treat.age === selectedCategory && treat.type === "cat treat" && treat.animal === "cat")
+    : treats.filter((treat) => treat.type === "cat treat" && treat.animal === "cat");
 
   return (
     <div>
       <Navbar />
       <h1 style={{ textAlign: "center", padding: "15px", color: "#388E3C" }}>
-        All Dog foods
+        All Cat treats
       </h1>
       <div>
         <strong
@@ -45,20 +45,20 @@ function FoodComponent() {
               borderRight: "1px solid black",
               padding: "5px",
               cursor: "pointer",
-              color: selectedCategory === "puppy" ? "red" : "#388E3C",
+              color: selectedCategory === "kitten" ? "red" : "#388E3C",
             }}
-            onClick={() => handleCategoryClick("puppy")}
+            onClick={() => handleCategoryClick("kitten")}
           >
-            Puppy
+            Kitten
           </p>
           <p
             style={{
               borderRight: "1px solid black",
               padding: "5px",
               cursor: "pointer",
-              color: selectedCategory === "adult" ? "red" : "#388E3C",
+              color: selectedCategory === "adult cat" ? "red" : "#388E3C",
             }}
-            onClick={() => handleCategoryClick("adult")}
+            onClick={() => handleCategoryClick("adult cat")}
           >
             Adult
           </p>
@@ -67,16 +67,16 @@ function FoodComponent() {
               borderRight: "1px solid black",
               padding: "5px",
               cursor: "pointer",
-              color: selectedCategory === "senior" ? "red" : "#388E3C",
+              color: selectedCategory === "senior cat" ? "red" : "#388E3C",
             }}
-            onClick={() => handleCategoryClick("senior")}
+            onClick={() => handleCategoryClick("senior cat")}
           >
             Senior
           </p>
         </strong>
       </div>
-      {filteredFoods.map((food, index) => (
-        <section key={index} style={{ margin: "30px 365px " }}>
+      {filteredTreats.map((food, index) => (
+        <section key={index} style={{ margin: "30px 360px " }}>
           <div
             style={{
               display: "flex",
@@ -85,7 +85,7 @@ function FoodComponent() {
             }}
           >
             <img src={food.image} alt="" style={{ height: "300px" }} />
-            <div>
+            <div style={{padding:"15px"}}>
               <strong
                 style={{
                   color: "gray",
@@ -159,4 +159,5 @@ function FoodComponent() {
   );
 }
 
-export default FoodComponent;
+
+export default Cattreat;

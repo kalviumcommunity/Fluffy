@@ -56,7 +56,7 @@ function Navbar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            width: "18vw",
+            width: "16.5vw",
           }}
         >
           <button
@@ -96,7 +96,7 @@ function Navbar() {
               <img
                 src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
                 alt=""
-                style={{ height: "20px",paddingRight:"5px" }}
+                style={{ height: "20px",}}
               />
               Signup/SignIn
             </div>

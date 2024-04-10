@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios';
-import {Link} from "react-router-dom"
-import Navbar from '../HomeComponents/Navbar';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Navbar from "../../HomeComponents/Navbar";
 
-function treatComponent() {
-    const [foods, setFoods] = useState([]);
+function Dogfood() {
+  const [foods, setFoods] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("puppy");
 
   useEffect(() => {
@@ -21,8 +21,8 @@ function treatComponent() {
   };
 
   const filteredFoods = selectedCategory
-    ? foods.filter((food) => food.age === selectedCategory && food.type === "dog treat")
-    : foods.filter((food) => food.type === "dog treat");
+    ? foods.filter((food) => food.age === selectedCategory && food.type === "dog food" && food.animal === "dog")
+    : foods.filter((food) => food.type === "dog food" && food.animal === "dog");
 
   return (
     <div>
@@ -56,9 +56,9 @@ function treatComponent() {
               borderRight: "1px solid black",
               padding: "5px",
               cursor: "pointer",
-              color: selectedCategory === "adult" ? "red" : "#388E3C",
+              color: selectedCategory === "adult dog" ? "red" : "#388E3C",
             }}
-            onClick={() => handleCategoryClick("adult")}
+            onClick={() => handleCategoryClick("adult dog")}
           >
             Adult
           </p>
@@ -67,16 +67,16 @@ function treatComponent() {
               borderRight: "1px solid black",
               padding: "5px",
               cursor: "pointer",
-              color: selectedCategory === "senior" ? "red" : "#388E3C",
+              color: selectedCategory === "senior dog" ? "red" : "#388E3C",
             }}
-            onClick={() => handleCategoryClick("senior")}
+            onClick={() => handleCategoryClick("senior dog")}
           >
             Senior
           </p>
         </strong>
       </div>
       {filteredFoods.map((food, index) => (
-        <section key={index} style={{ margin: "30px 365px " }}>
+        <section key={index} style={{ margin: "30px 360px " }}>
           <div
             style={{
               display: "flex",
@@ -85,7 +85,7 @@ function treatComponent() {
             }}
           >
             <img src={food.image} alt="" style={{ height: "300px" }} />
-            <div>
+            <div style={{padding:"15px"}}>
               <strong
                 style={{
                   color: "gray",
@@ -159,5 +159,4 @@ function treatComponent() {
   );
 }
 
-
-export default treatComponent
+export default Dogfood;
