@@ -11,6 +11,7 @@ const petFoodSchema = new mongoose.Schema({
         numberOfReviews:Number,
       },
     image:String,
+    animal:String
 })
 
 const petFoodModal = mongoose.model("petfoods",petFoodSchema);
