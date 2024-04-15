@@ -162,7 +162,7 @@ function Petfoods() {
         </section>
 
         <hr style={{ borderTop: "3px solid darkgreen" }} />
-        <section style={{ padding: "50px 250px" }}>
+        <section style={{ padding: "0px 300px" }}>
           <h2
             style={{
               color: "#388E3C",
@@ -173,7 +173,7 @@ function Petfoods() {
           >
             Explore Our Pet's Foods
           </h2>
-          <div style={{ padding: "20px" }}>
+          <div style={{ padding: "30px" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <img
                 src={Black2}
@@ -182,10 +182,10 @@ function Petfoods() {
                   height: "40vh",
                   width: "20vw",
                   objectFit: "cover",
-                  borderRadius: "15px",
+                  borderRadius: "10px",
                 }}
               />
-              <div style={{ padding: "20px" }}>
+              <div style={{ padding: "30px" }}>
                 <h4>From Tiny Tails to Big Barks: Doggie Delights</h4>
                 <p style={{ fontSize: "0.9rem" }}>
                   Keep tails wagging and woofs booming with our delightful dog
@@ -212,7 +212,7 @@ function Petfoods() {
                       borderRadius: "5px",
                     }}
                   >
-                    Explore
+                    Explore dog foods
                   </button>
                 </Link>
               </div>
@@ -221,7 +221,7 @@ function Petfoods() {
           <hr style={{ borderTop: "3px solid darkgreen" }} />
           <div>
             <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
+              style={{ display: "flex", alignItems: "center", padding: "30px" }}
             >
               <img
                 src={Black2}
@@ -230,10 +230,10 @@ function Petfoods() {
                   height: "40vh",
                   width: "20vw",
                   objectFit: "cover",
-                  borderRadius: "15px",
+                  borderRadius: "10px",
                 }}
               />
-              <div style={{ padding: "20px" }}>
+              <div style={{ padding: "30px" }}>
                 <h4>Doggie Delights: Treats that Wag!</h4>
                 <p style={{ fontSize: "0.9rem" }}>
                   From curious pups to treat-loving superstars, our delicious
@@ -260,7 +260,7 @@ function Petfoods() {
                       borderRadius: "5px",
                     }}
                   >
-                    Explore
+                    Explore dog treats
                   </button>
                 </Link>
               </div>
@@ -268,7 +268,7 @@ function Petfoods() {
           </div>
           <hr style={{ borderTop: "3px solid darkgreen" }} />
         </section>
-        <section style={{ padding: "50px 300px" }}>
+        <section style={{ padding: "0px 300px" }}>
           <h2
             style={{
               paddingBottom: "50px",
@@ -281,7 +281,7 @@ function Petfoods() {
           </h2>
           <div>
             <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
+              style={{ display: "flex", alignItems: "center", padding: "30px" }}
             >
               <div style={{ padding: "20px" }}>
                 <h3>
@@ -314,7 +314,7 @@ function Petfoods() {
                       borderRadius: "5px",
                     }}
                   >
-                    Explore
+                    Explore cat foods
                   </button>
                 </Link>
               </div>
@@ -325,7 +325,7 @@ function Petfoods() {
                   height: "40vh",
                   width: "20vw",
                   objectFit: "cover",
-                  borderRadius: "15px",
+                  borderRadius: "10px",
                 }}
               />
             </div>
@@ -333,7 +333,7 @@ function Petfoods() {
           <hr style={{ borderTop: "3px solid darkgreen" }} />
           <div>
             <div
-              style={{ display: "flex", alignItems: "center", padding: "20px" }}
+              style={{ display: "flex", alignItems: "center", padding: "30px" }}
             >
               <div style={{ padding: "20px" }}>
                 <h3>
@@ -365,7 +365,7 @@ function Petfoods() {
                       borderRadius: "5px",
                     }}
                   >
-                    Explore
+                    Explore cat treats
                   </button>
                 </Link>
               </div>
@@ -376,7 +376,8 @@ function Petfoods() {
                   height: "40vh",
                   width: "20vw",
                   objectFit: "cover",
-                  borderRadius: "15px",
+                  borderRadius: "10px",
+                  boxShadow:"1px 2px 10px 2px rgb(0,0,0.5)"
                 }}
               />
             </div>

@@ -6,7 +6,8 @@ const {petUsersSchema} = require("./models/petusers")
 const {petFoodSchema} = require("./models/petfood")
 const PetModal = require("./models/petdata")
 const PetUsersModal = require("./models/petusers")
-const PetFoodModal = require("./models/petfood")
+const PetFoodModal = require("./models/petfood");
+const petToysModal = require("./models/pettoys");
 
 
 mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net/Fluffy?retryWrites=true&w=majority&appName=Cluster0")
@@ -46,6 +47,14 @@ app.get("/main/petfoods", (req, res) => {
     PetFoodModal.find()
     .then(petfood => res.json(petfood))
     .catch(err => res.status(500).json({error:err.message}))
+})
+
+// for pet toys
+
+app.get("/main/pettoys", (req, res) => {
+    petToysModal.find()
+    .then(pettoys => res.json(pettoys))
+    .catch(err => res.status(500).json({error: err.message}))
 })
 
 

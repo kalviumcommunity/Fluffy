@@ -15,22 +15,26 @@ import Dogfood from "./Pages/Dogs/Dogfood"
 import Dogtreat from "./Pages/Dogs/Dogtreat";
 import Catfood from "./Pages/Cats/Catfood";
 import Cattreat from "./Pages/Cats/Cattreat"
+import Dogtoys from "./Pages/Dogs/Dogtoys"
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route index path="/" element={<Home/>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/adoption-form" element={<AdoptPet/>} />
         <Route path="/adopt-a-pet" element={<Adoption/>}/>
+
         <Route path="/pet-foods" element={<Petfoods/>}/>
         <Route path="/dog-foods" element={<Dogfood/>}/>
         <Route path="/dog-treats" element={<Dogtreat/>} />
         <Route path="/cat-foods" element={<Catfood/>}/>
         <Route path="/cat-treats" element={<Cattreat/>}/>
+
         <Route path="/pet-toys" element={<Pettoys/>}/>
+        <Route path="/dog's-toys" element={<Dogtoys/>} />
         <Route path="/lost-and-found" element={<Lostandfound/>}/>
       </Routes>
     </Router>
