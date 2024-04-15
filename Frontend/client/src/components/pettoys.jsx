@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../HomeComponents/Navbar";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Black from "../images/adopt2.webp";
 import Black2 from "../images/adopt1.webp";
 import main from "../images/dog.webp";
@@ -102,9 +102,9 @@ function Pettoys() {
               In the wild, animals spend a significant amount of time hunting,
               stalking, and playing. Even domesticated pets retain these
               instincts. Toys provide an outlet for these natural behaviors,
-              keeping them mentally stimulated and preventing boredom. A
-              bored pet is more likely to engage in destructive chewing,
-              barking, or scratching.
+              keeping them mentally stimulated and preventing boredom. A bored
+              pet is more likely to engage in destructive chewing, barking, or
+              scratching.
             </p>
           </div>
           <hr />
@@ -153,11 +153,10 @@ function Pettoys() {
           <div>
             <h5 style={{ color: "#00008B" }}>Variety is Key</h5>
             <p>
-              Just like us, pets can get bored with the same old toys.
-              Rotate their toys periodically to keep things interesting.
-              Consider choosing toys that cater to their natural instincts:
-              squeaky toys for dogs, feathery wands for cats, and chew toys for
-              both.
+              Just like us, pets can get bored with the same old toys. Rotate
+              their toys periodically to keep things interesting. Consider
+              choosing toys that cater to their natural instincts: squeaky toys
+              for dogs, feathery wands for cats, and chew toys for both.
             </p>
           </div>
           <div>
@@ -200,18 +199,20 @@ function Pettoys() {
                   durable chew toys. Choose from a variety of shapes and
                   textures for hours of satisfying chewing.
                 </p>
-                <button
-                  style={{
-                    background: "#00008B",
-                    border: "none",
-                    color: "white",
-                    marginTop: "50px",
-                    padding: "5px 15px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Explore
-                </button>
+                <Link to="/dog's-toys">
+                  <button
+                    style={{
+                      background: "#00008B",
+                      border: "none",
+                      color: "white",
+                      marginTop: "50px",
+                      padding: "5px 15px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Explore o
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -499,11 +500,9 @@ function Pettoys() {
             height: "40px",
           }}
         >
-          <Link to="/" style={{ textDecoration: "none", color: "#00008B" }}> 
+          <Link to="/" style={{ textDecoration: "none", color: "#00008B" }}>
             <p>
-              <strong>
-                  &lt;&lt; Back
-              </strong>
+              <strong>&lt;&lt; Back</strong>
             </p>
           </Link>
         </section>

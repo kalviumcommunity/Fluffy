@@ -20,6 +20,7 @@ function Navbar() {
           position: "sticky",
           top: 0,
           padding: "5px",
+          // width:"177vh",
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
