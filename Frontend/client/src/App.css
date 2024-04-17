@@ -7,7 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -25,3 +25,109 @@
   height: 100vh;
   width: 100%;
 }
+
+/* scroll css for ADOPTION */
+
+#adoption::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#adoption::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#adoption::-webkit-scrollbar-thumb {
+  background:#6504b5;
+  border-radius: 25px;
+}
+
+#adoption::-webkit-scrollbar-thumb:hover {
+  background: white; /* Color of the scrollbar thumb on hover */
+  border: 1px solid black;
+}
+
+#adoption::-webkit-scrollbar-track:hover {
+  background: #6504b5;
+} 
+
+/* scroll css for REPORT */
+
+#report::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#report::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+
+}
+
+#report::-webkit-scrollbar-thumb {
+  background:red;
+  border-radius: 25px;
+}
+
+#report::-webkit-scrollbar-thumb:hover {
+  background: white; /* Color of the scrollbar thumb on hover */
+  border: 1px solid black;
+}
+
+#report::-webkit-scrollbar-track:hover {
+  background: crimson;
+} 
+
+/* Scroll css for PETFOOD */
+
+
+#petfood::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#petfood::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#petfood::-webkit-scrollbar-thumb {
+  background:#388E3C;
+  border-radius: 25px;
+}
+
+#petfood::-webkit-scrollbar-thumb:hover {
+  background: white; /* Color of the scrollbar thumb on hover */
+  border: 1px solid black;
+}
+
+#petfood::-webkit-scrollbar-track:hover {
+  background: #388E3C;
+} 
+
+/* Scroll css for PETTOY */
+
+#pettoy::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#pettoy::-webkit-scrollbar-track {
+  background: white; 
+  border-radius: 25px;
+  margin: 100px;
+}
+
+#pettoy::-webkit-scrollbar-thumb {
+  background:#00008B;
+  border-radius: 25px;
+}
+
+#pettoy::-webkit-scrollbar-thumb:hover {
+  background: white; /* Color of the scrollbar thumb on hover */
+  border: 1px solid black;
+}
+
+#pettoy::-webkit-scrollbar-track:hover {
+  background: #00008B;
+} 

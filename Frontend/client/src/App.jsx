@@ -16,6 +16,7 @@ import Dogtreat from "./Pages/Dogs/Dogtreat";
 import Catfood from "./Pages/Cats/Catfood";
 import Cattreat from "./Pages/Cats/Cattreat"
 import Dogtoys from "./Pages/Dogs/Dogtoys"
+import Cattoys from "./Pages/Cats/Cattoys";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
         <Route path="/pet-toys" element={<Pettoys/>}/>
         <Route path="/dog's-toys" element={<Dogtoys/>} />
+        <Route path="/cat's-toys" element={<Cattoys/>} />
         <Route path="/lost-and-found" element={<Lostandfound/>}/>
       </Routes>
     </Router>

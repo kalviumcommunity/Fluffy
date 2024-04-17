@@ -76,6 +76,7 @@ function Pettoys() {
         </section>
 
         <section style={{ padding: "50px 360px", background: "#D4E8FF" }}>
+          <div id="pettoy" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -84,7 +85,7 @@ function Pettoys() {
               color: "#00008B",
               textDecoration: "underline",
             }}
-          >
+            >
             Why Your Pets Needs Toys
           </h2>
           <div>
@@ -164,6 +165,7 @@ function Pettoys() {
               By providing your pet with a variety of stimulating and safe toys,
               you're contributing to their overall well-being and happiness.
             </p>
+          </div>
           </div>
         </section>
 
@@ -350,6 +352,7 @@ function Pettoys() {
                   have everything to engage your cat's natural instincts and
                   provide hours of fun.
                 </p>
+                <Link to="/cat's-toys">
                 <button
                   style={{
                     background: "#00008B",
@@ -359,9 +362,10 @@ function Pettoys() {
                     padding: "5px 15px",
                     borderRadius: "5px",
                   }}
-                >
-                  Explore
+                  >
+                  Explore o
                 </button>
+                  </Link>
               </div>
               <img
                 src={Black}

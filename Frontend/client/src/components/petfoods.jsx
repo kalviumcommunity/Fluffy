@@ -76,7 +76,8 @@ function Petfoods() {
           />
         </section>
 
-        <section style={{ padding: "50px 360px", background: "#F9FFF3" }}>
+        <section style={{ padding: "50px 340px", background: "#F9FFF3" }}>
+          <div id="petfood" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -85,10 +86,10 @@ function Petfoods() {
               color: "#388E3C",
               textDecoration: "underline",
             }}
-          >
+            >
             Tailored Meals: Why Your Pet Needs Specific Food
           </h2>
-          <div>
+            <div>
             <p>
               Just like you wouldn't eat the same thing every day, your furry
               friend shouldn't either! Pets have unique dietary needs that vary
@@ -159,6 +160,7 @@ function Petfoods() {
               your pet's dietary journey!
             </p>
           </div>
+        </div>
         </section>
 
         <hr style={{ borderTop: "3px solid darkgreen" }} />
@@ -170,7 +172,7 @@ function Petfoods() {
               textAlign: "center",
               paddingBottom: "50px",
             }}
-          >
+            >
             Explore Our Pet's Foods
           </h2>
           <div style={{ padding: "30px" }}>
@@ -184,7 +186,7 @@ function Petfoods() {
                   objectFit: "cover",
                   borderRadius: "10px",
                 }}
-              />
+                />
               <div style={{ padding: "30px" }}>
                 <h4>From Tiny Tails to Big Barks: Doggie Delights</h4>
                 <p style={{ fontSize: "0.9rem" }}>

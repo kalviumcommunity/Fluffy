@@ -17,10 +17,10 @@ function Navbar() {
     <>
       <nav
         style={{
-          position: "sticky",
+          // position: "sticky",
           top: 0,
           padding: "5px",
-          // width:"177vh",
+          width:"100%",
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
