@@ -101,8 +101,8 @@ function Adoption() {
           />
         </section>
 
-        <section style={{ padding: "50px 360px", background: "#F5F0FF" }}>
-          <div>
+        <section style={{ padding: "50px 340px", background: "#F5F0FF", }}>
+          <div id="adoption" style={{overflow:"auto", height:"70vh",padding:"25px"}}>
             <h1
               style={{
                 color: "#6504b5",

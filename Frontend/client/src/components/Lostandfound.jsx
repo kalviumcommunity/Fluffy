@@ -109,7 +109,8 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 360px", background: "#FFECEC" }}>
+        <section style={{ padding: "50px 340px", background: "#fff8f8" }}>
+          <div id="report" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
           <h1
             style={{
               textAlign: "center",
@@ -120,7 +121,6 @@ function Lostandfound() {
           >
             Report a Lost or Found Pet
           </h1>
-          <div>
             <p>
               Has your furry friend gone missing? Don't lose hope! At Fluffy ,
               we specialize in reuniting lost pets with their families. We've
