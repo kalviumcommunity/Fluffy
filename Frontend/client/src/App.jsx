@@ -15,8 +15,8 @@ import Dogfood from "./Pages/Dogs/Dogfood"
 import Dogtreat from "./Pages/Dogs/Dogtreat";
 import Catfood from "./Pages/Cats/Catfood";
 import Cattreat from "./Pages/Cats/Cattreat"
-import Dogtoys from "./Pages/Dogs/Dogtoys"
-import Cattoys from "./Pages/Cats/Cattoys";
+import Dogtoys from "./apicalls.jsx/Pettoydata.jsx/Dogtoys"
+import Cattoys from "./apicalls.jsx/Pettoydata.jsx/Cattoys";
 
 function App() {
   return (

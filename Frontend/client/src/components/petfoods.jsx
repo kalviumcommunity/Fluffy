@@ -23,7 +23,7 @@ function Petfoods() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              background: "#F0FFDE",
+              background: "#e6f3c9",
               height: "60vh",
               padding: "70px",
               borderRadius: "25px 0px 0px 25px",
@@ -76,7 +76,7 @@ function Petfoods() {
           />
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#F9FFF3" }}>
+        <section style={{ padding: "50px 340px", background: "#e6f3c9" }}>
           <div id="petfood" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
           <h2
             style={{
@@ -163,8 +163,7 @@ function Petfoods() {
         </div>
         </section>
 
-        <hr style={{ borderTop: "3px solid darkgreen" }} />
-        <section style={{ padding: "0px 300px" }}>
+        <section style={{ padding: "100px 300px" }}>
           <h2
             style={{
               color: "#388E3C",
