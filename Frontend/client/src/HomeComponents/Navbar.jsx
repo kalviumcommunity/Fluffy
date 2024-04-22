@@ -17,7 +17,7 @@ function Navbar() {
     <>
       <nav
         style={{
-          // position: "sticky",
+          position: "sticky",
           top: 0,
           padding: "5px",
           width:"100%",

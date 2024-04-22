@@ -44,13 +44,10 @@ body::-webkit-scrollbar {
 }
 
 #adoption::-webkit-scrollbar-thumb:hover {
-  background: white; /* Color of the scrollbar thumb on hover */
-  border: 1px solid black;
+  cursor: pointer;
 }
 
-#adoption::-webkit-scrollbar-track:hover {
-  background: #6504b5;
-} 
+
 
 /* scroll css for REPORT */
 
@@ -71,13 +68,9 @@ body::-webkit-scrollbar {
 }
 
 #report::-webkit-scrollbar-thumb:hover {
-  background: white; /* Color of the scrollbar thumb on hover */
-  border: 1px solid black;
+  cursor: pointer;
 }
 
-#report::-webkit-scrollbar-track:hover {
-  background: crimson;
-} 
 
 /* Scroll css for PETFOOD */
 
@@ -98,13 +91,8 @@ body::-webkit-scrollbar {
 }
 
 #petfood::-webkit-scrollbar-thumb:hover {
-  background: white; /* Color of the scrollbar thumb on hover */
-  border: 1px solid black;
+  cursor: pointer;
 }
-
-#petfood::-webkit-scrollbar-track:hover {
-  background: #388E3C;
-} 
 
 /* Scroll css for PETTOY */
 
@@ -124,10 +112,5 @@ body::-webkit-scrollbar {
 }
 
 #pettoy::-webkit-scrollbar-thumb:hover {
-  background: white; /* Color of the scrollbar thumb on hover */
-  border: 1px solid black;
+  cursor: pointer;
 }
-
-#pettoy::-webkit-scrollbar-track:hover {
-  background: #00008B;
-} 
