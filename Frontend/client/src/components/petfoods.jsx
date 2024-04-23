@@ -163,7 +163,7 @@ function Petfoods() {
         </div>
         </section>
 
-        <section style={{ padding: "100px 300px" }}>
+        <section style={{margin:"100px 110px" }}>
           <h2
             style={{
               color: "#388E3C",
@@ -174,215 +174,21 @@ function Petfoods() {
             >
             Explore Our Pet's Foods
           </h2>
-          <div style={{ padding: "30px" }}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img
-                src={Black2}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-                />
-              <div style={{ padding: "30px" }}>
-                <h4>From Tiny Tails to Big Barks: Doggie Delights</h4>
-                <p style={{ fontSize: "0.9rem" }}>
-                  Keep tails wagging and woofs booming with our delightful dog
-                  treats! A recipe for boundless energy and mischievous fun. Get
-                  ready for tail-wagging adventures and paw-some memories!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #HappyTails #FuelTheFun #PawsomeEats #HealthyHounds
-                </blockquote>
-                <Link to="/dog-foods">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore dog foods
-                  </button>
-                </Link>
-              </div>
+          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", justifyContent: "space-between", alignItems: "center"}}>
+            <Link to="/dog-foods" style={{textDecoration:"none"}}>
+            <div style={{ border: "2px solid #388E3C", borderRadius: "6.5px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Dog food and Treats</div>
             </div>
-          </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <img
-                src={Black2}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-              />
-              <div style={{ padding: "30px" }}>
-                <h4>Doggie Delights: Treats that Wag!</h4>
-                <p style={{ fontSize: "0.9rem" }}>
-                  From curious pups to treat-loving superstars, our delicious
-                  dog treats guarantee wagging tails with every bite. Treat time
-                  is fun time!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #WagAndTreat #TreatTime #Procrastinate
-                </blockquote>
-                <Link to="/dog-treats">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore dog treats
-                  </button>
-                </Link>
-              </div>
+            </Link>
+            <Link to="/cat-foods" style={{textDecoration:"none"}}>
+            <div style={{ border: "2px solid #388E3C", borderRadius: "6.5px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Cat food and Treats</div>
             </div>
+            </Link>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-        </section>
-        <section style={{ padding: "0px 300px" }}>
-          <h2
-            style={{
-              paddingBottom: "50px",
-              color: "#4CAF50",
-              textDecoration: "underline",
-              textAlign: "center",
-            }}
-          >
-            Explore Our Cat's Food
-          </h2>
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>
-                  From Curious Kittens to Agile Hunters: Cat-tastic Cuisine
-                </h3>
-                <p style={{ fontSize: "0.9rem" }}>
-                  Fuel their playful curiosity and support healthy development
-                  for a lifetime of purrs! Our cat food provides the purr-fect
-                  foundation for strong bodies and sharp minds. Let the whisker
-                  adventures begin!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  {" "}
-                  #Purrfection #WhiskerWonder #CatCuisine #MeowMagic
-                </blockquote>
-                <Link to="/cat-foods">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore cat foods
-                  </button>
-                </Link>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-              />
-            </div>
-          </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>
-                  Unleashing the Inner Purr: Pawsitively Purrfect Cat Treats
-                </h3>
-                <p style={{ fontSize: "0.9rem" }}>
-                  From playful pounces to graceful leaps, our purrfect cat
-                  treats offer a tantalizing mix of flavor and fun! Fuel their
-                  adventures and keep those purrs coming with every tasty bite.
-                  Treat time is playtime!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #PurrfectTreats #MeowMoments #NomNomNom{" "}
-                </blockquote>
-                <Link to="/cat-treats">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore cat treats
-                  </button>
-                </Link>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                  boxShadow:"1px 2px 10px 2px rgb(0,0,0.5)"
-                }}
-              />
-            </div>
-          </div>
+
         </section>
         <section
           style={{

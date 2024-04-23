@@ -10,13 +10,14 @@ import Petfood from '../images/foodbackground.png';
 import Pettoys from '../images/toysbackground.png';
 import Lostandfound from '../images/reportbackground.png'
 import Typewriter from "./Typewriter";
+import Footer from "./Footer";
 
 function Home() {
   return (
     <>
       <Navbar />
       <Parallax>
-        <div style={{height:"95vh", display:"flex",justifyContent:"center", alignItems:"center", padding:"20px",backgroundImage: 'linear-gradient(to bottom right,aqua,lightblue,violet,purple)',border:"none" }}>
+        <div style={{height:"90vh", display:"flex",justifyContent:"center", alignItems:"center", padding:"20px",backgroundImage: 'linear-gradient(to bottom right,aqua,lightblue,violet,purple)',border:"none" }}>
           <div style={{display:"flex",flexDirection:"column", textAlign:"start", padding:"30px", height:"50vh", width:"40vw", background:"white", borderRadius:"10px 0px 0px 10px"}}>
             <h1>Welcome to Fluffy.</h1>
             <Typewriter/>
@@ -196,7 +197,7 @@ function Home() {
         </section>
       </div>
     </Parallax>
-      
+    <Footer/>
     </>
   );
 }
