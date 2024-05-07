@@ -85,10 +85,10 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#ffe0e6" }}>
+        <section style={{ padding: "50px 300px", background: "#ffe0e6",lineHeight:"1.6" }}>
           <div
             id="report"
-            style={{ overflow: "auto", height: "70vh", padding: "25px" }}
+            style={{ overflow: "auto", height: "75vh", padding: "25px" }}
           >
             <h1
               style={{

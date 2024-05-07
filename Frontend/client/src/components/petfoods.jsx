@@ -76,8 +76,8 @@ function Petfoods() {
           />
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#e6f3c9" }}>
-          <div id="petfood" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
+        <section style={{ padding: "50px 300px", background: "#e6f3c9",lineHeight:"1.6" }}>
+          <div id="petfood" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -97,8 +97,8 @@ function Petfoods() {
               "one-size-fits-all" pet food isn't ideal:
             </p>
           </div>
-          <div>
-            <h5 style={{ color: "#388E3C" }}>Species Matters</h5>
+          <div style={{paddingTop:"30px"}}>
+            <h4 style={{ color: "#388E3C" }}>Species Matters</h4>
             <p>
               Cats and dogs, our most common companions, have vastly different
               dietary requirements. Cats are obligate carnivores, needing animal
@@ -108,9 +108,9 @@ function Petfoods() {
               protein and dog food offering a more balanced mix.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Life Stages</h5>
+            <h4 style={{ color: "#388E3C" }}>Life Stages</h4>
             <p>
               A spunky puppy needs more protein and calories for growth than a
               senior dog looking to maintain a healthy weight. Similarly,
@@ -120,9 +120,9 @@ function Petfoods() {
               stage.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Activity Level</h5>
+            <h4 style={{ color: "#388E3C" }}>Activity Level</h4>
             <p>
               Think of your pet as a furry athlete! A high-energy Border Collie
               will burn calories much faster than a lounging pug. Active pets
@@ -131,9 +131,9 @@ function Petfoods() {
               management.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Breed Matters</h5>
+            <h4 style={{ color: "#388E3C" }}>Breed Matters</h4>
             <p>
               A Great Dane has different nutritional needs than a Chihuahua.
               Large-breed puppies especially need food designed for healthy bone
@@ -141,9 +141,9 @@ function Petfoods() {
               sizes for easier chewing and digestion.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Health Concerns</h5>
+            <h4 style={{ color: "#388E3C" }}>Health Concerns</h4>
             <p>
               Just like us, pets can have allergies, digestive issues, or other
               health problems. Special diets with limited ingredients,

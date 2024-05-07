@@ -1,12 +1,11 @@
 // Adoption.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../HomeComponents/Navbar.jsx";
 import main from "../images/adopt2.webp";
-import axios from "axios";
-import AdoptionPetdata from '../apicalls.jsx/AdoptionPetdata.jsx'
+import AdoptionPetdata from '../apicalls.jsx/AdoptionPetdata.jsx';
+import Footer from "../HomeComponents/Footer.jsx";
 
 function Adoption() {
-
   return (
     <div>
       <Navbar />
@@ -23,17 +22,17 @@ function Adoption() {
             style={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center", // Center the content vertically
+              justifyContent: "center",
               background: "#E6E6FA",
               height: "60vh",
               padding: "70px",
               borderRadius: "25px 0px 0px 25px",
-              flex: "1",
+              lineHeight:"1.6 "
             }}
           >
             <h2
               style={{
-                fontSize: "3rem",
+                fontSize: "2.5rem",
                 color: "#6504b5",
                 textAlign: "center",
               }}
@@ -41,12 +40,12 @@ function Adoption() {
               Spoil Your Furry Friend: Top-Rated Pet Food
             </h2>
             <p
-              style={{ fontSize: "1rem", color: "black", textAlign: "center" }}
+              style={{ fontSize: "1rem", color: "black", textAlign: "center", }}
             >
               Our high-quality pet food is packed with essential vitamins and
               minerals to keep your pet happy and healthy inside and out.
             </p>
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center",paddingTop:"30px"}}>
               <button
                 style={{
                   width: "100px",
@@ -76,18 +75,19 @@ function Adoption() {
           />
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#F5F0FF", }}>
-          <div id="adoption" style={{overflow:"auto", height:"70vh",padding:"25px"}}>
-            <h1
+        <section style={{ padding: "50px 300px", background: "#F5F0FF",lineHeight:"1.6" }}>
+          <div id="adoption" style={{ overflow: "auto", height: "75vh", padding: "25px" }}>
+            <h4
               style={{
                 color: "#6504b5",
                 textAlign: "center",
                 textDecoration: "underline",
-                paddingBottom: "30px",
+                paddingBottom: "50px",
+                fontSize:"1.8em"
               }}
             >
-              Welcome to Fluffy: Where Every Adoption Tells a Story
-            </h1>
+              Welcome to Fluffy <br /> Where Every Adoption Tells a Story
+            </h4>
             <p>
               At Fluffy, we believe in the transformative power of pet adoption.
               Every year, millions of pets end up in shelters, waiting for their
@@ -104,17 +104,18 @@ function Adoption() {
               choose to adopt from Fluffy, you're not just getting a pet –
               you're making a difference in the lives of animals in need.
             </p>
-            <hr />
+            <hr style={{ margin: "20px 0" }} />
             <div>
               <h3
                 style={{
                   color: "#6504b5",
                   textAlign: "center",
                   textDecoration: "underline",
-                  paddingBottom: "30px",
+                  padding: "30px",
+                  fontSize:"1.5em"
                 }}
               >
-                Paws and You: Things to Consider Before Adopting a Dog
+                Paws and You <br /> Things to Consider Before Adopting a Dog
               </h3>
               <p>
                 Bringing a furry friend into your life can be an enriching
@@ -125,9 +126,9 @@ function Adoption() {
                 companion. Here are some things to keep in mind before you take
                 the plunge into pet parenthood.
               </p>
-
+                <div style={{display:"flex",justifyContent:"space-between",flexDirection:"column",height:"150vh",paddingTop:"20px"}}>
               <div>
-                <h5 style={{ color: "#6504b5" }}>Lifestyle assessment</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px" }}>Lifestyle assessment</h4>
                 <p>
                   Start by evaluating your daily routine and lifestyle. Dogs
                   require time, attention and exercise. This can directly can
@@ -137,9 +138,9 @@ function Adoption() {
                   more time to dedicate to a furry friend.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}> Space and environment</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}> Space and environment</h4>
                 <p>
                   Dogs, regardless of their size, need ample space to move
                   around and play. Assess your living situation, whether it’s an
@@ -149,11 +150,11 @@ function Adoption() {
                   needs of the dog you’re considering.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px" }}>
                   Allergies and health concerns
-                </h5>
+                </h4>
                 <p>
                   Allergies can be a significant consideration when adopting a
                   dog. Some breeds are known to be hypoallergenic, while others
@@ -162,9 +163,9 @@ function Adoption() {
                   associated costs of veterinary care.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>Breed characteristics</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Breed characteristics</h4>
                 <p>
                   Each dog breed has unique characteristics, including size,
                   energy levels, grooming needs and temperament. Research
@@ -173,9 +174,9 @@ function Adoption() {
                   outdoor adventures or a more laid-back companion.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>Financial commitment</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Financial commitment</h4>
                 <p>
                   Caring for a dog comes with various costs, including food,
                   grooming, veterinary care, and supplies. Be prepared for the
@@ -184,9 +185,9 @@ function Adoption() {
                   safety net for your pet is crucial.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>Time and training</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Time and training</h4>
                 <p>
                   Dogs require time and patience for training. Puppies, in
                   particular, need consistent training to become well-behaved
@@ -194,9 +195,9 @@ function Adoption() {
                   invest in training and socialising your new companion.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>Long-term commitment</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Long-term commitment</h4>
                 <p>
                   Dogs have relatively long lifespans, and adopting one is a
                   commitment that lasts many years. Consider your plans, such as
@@ -205,9 +206,9 @@ function Adoption() {
                   commitment and responsibility of pet parenthood.
                 </p>
               </div>
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
               <div>
-                <h5 style={{ color: "#6504b5" }}>Shelter or breeder</h5>
+                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Shelter or breeder</h4>
                 <p>
                   Decide whether to adopt from a shelter or purchase from a
                   reputable breeder. Both options have pros and cons, but
@@ -225,12 +226,18 @@ function Adoption() {
                 into your life.
               </p>
             </div>
+
+
+                </div>
           </div>
         </section>
 
-       <section>
-        <AdoptionPetdata/>
-       </section>
+        <section>
+          <AdoptionPetdata />
+        </section>
+        <section>
+          <Footer />
+        </section>
       </div>
     </div>
   );

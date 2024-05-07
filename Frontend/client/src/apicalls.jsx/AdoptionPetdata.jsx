@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function AdoptionPetdata() {
+function AdoptPetdata() {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState(null);
@@ -28,6 +28,7 @@ function AdoptionPetdata() {
   const handleAnimalChange = (animal) => {
     setSelectedAnimal(animal);
   };
+
   return (
     <div>
       <section style={{ padding: "50px 150px" }}>
@@ -38,7 +39,7 @@ function AdoptionPetdata() {
             alignItems: "center",
           }}
         >
-          <h1 style={{ color: "#6504b5" }}>Pets in Our Care</h1>
+          <h1 style={{ color: "#6504b5", fontSize: "1.9em" }}>Pets in Our Care</h1>
           <div>
             <button
               onClick={() => handleAnimalChange("dog")}
@@ -67,39 +68,41 @@ function AdoptionPetdata() {
             </button>
           </div>
         </div>
-        <hr />
-        <div>
+        <hr style={{ margin: "20px 0" }} />
+        <div style={{ height: "100%" }}>
           {filteredPets.map((pet, index) => (
-            <div key={index}>
+            <div key={index} style={{ marginBottom: "20px" }}>
               {pet.animal === "dog" && (
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "0px 30px",
+                    padding: "0px 50px",
+                    height: "50vh"
                   }}
                 >
-                  <div style={{ padding: "15px" }}>
-                    <h2>{pet.name}</h2>
+                  <div style={{ padding: "0px 20px"}}>
+                    <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
+                    <hr style={{ margin: "15px 0" }} />
                     <p>
                       <span style={{ color: "#6504b5" }}>{pet.breed}</span> 🔺{" "}
                       {pet.livesin}
                     </p>
-                    <hr />
+                    <hr style={{ margin: "15px 0" }} />
                     <p>
                       {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
                     </p>
-                    <hr />
-                    <h5>Description</h5>
-                    <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
-                    <div>
+                    <hr style={{ margin: "15px 0" }} />
+                    <h5 style={{ fontSize: '1em' }}>Description</h5>
+                    <p id="adoption" style={{ fontSize: "0.9rem", paddingTop: "10px", lineHeight: "1.5", width: "35vw", overflowY: "auto", height: "10vh", margin: "0", wordWrap: "break-word" }}>{pet.description}</p>
+                    <div style={{ marginTop: "20px" }}>
                       <button
                         style={{
                           background: "#6504b5",
                           border: "none",
                           color: "white",
-                          padding: "5px 15px",
+                          padding: "10px 20px",
                           borderRadius: "5px",
                         }}
                       >
@@ -125,29 +128,31 @@ function AdoptionPetdata() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "0px 30px",
+                    padding: "0px 50px",
+                    height: "50vh"
                   }}
                 >
-                  <div style={{ padding: "15px" }}>
-                    <h2>{pet.name}</h2>
+                  <div style={{ padding: "0px 20px"}}>
+                    <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
+                    <hr style={{ margin: "15px 0" }} />
                     <p>
                       <span style={{ color: "#6504b5" }}>{pet.breed}</span> 🔺{" "}
                       {pet.livesin}
                     </p>
-                    <hr />
+                    <hr style={{ margin: "15px 0" }} />
                     <p>
                       {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
                     </p>
-                    <hr />
-                    <h5>Description</h5>
-                    <p style={{ fontSize: "0.9rem" }}>{pet.description}</p>
-                    <div>
+                    <hr style={{ margin: "15px 0" }} />
+                    <h5 style={{ fontSize: '1em' }}>Description</h5>
+                    <p id="adoption" style={{ fontSize: "0.9rem", paddingTop: "10px", lineHeight: "1.5", width: "35vw", overflowY: "auto", height: "10vh", margin: "0", wordWrap: "break-word" }}>{pet.description}</p>
+                    <div style={{ marginTop: "20px" }}>
                       <button
                         style={{
                           background: "#6504b5",
                           border: "none",
                           color: "white",
-                          padding: "5px 15px",
+                          padding: "10px 20px",
                           borderRadius: "5px",
                         }}
                       >
@@ -167,7 +172,7 @@ function AdoptionPetdata() {
                   />
                 </div>
               )}
-              <hr />
+              <hr style={{ margin: "20px 0" }} />
             </div>
           ))}
         </div>
@@ -192,4 +197,4 @@ function AdoptionPetdata() {
   );
 }
 
-export default AdoptionPetdata;
+export default AdoptPetdata

@@ -32,7 +32,7 @@ function Pettoys() {
             style={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center", // Center the content vertically
+              justifyContent: "center", 
               background: "#BFE1FF",
               height: "60vh",
               padding: "70px",
@@ -75,8 +75,8 @@ function Pettoys() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 360px", background: "#D4E8FF" }}>
-          <div id="pettoy" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
+        <section style={{ padding: "50px 300px", background: "#D4E8FF",lineHeight:"1.6" }}>
+          <div id="pettoy" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
           <h2
             style={{
               fontSize: "2.5rem",
@@ -95,10 +95,10 @@ function Pettoys() {
               furry (or feathery) friend:
             </p>
           </div>
-          <div>
-            <h5 style={{ color: "#00008B" }}>
+          <div style={{paddingTop:"30px"}}>
+            <h4 style={{ color: "#00008B" }}>
               Mental Stimulation and Stress Relief
-            </h5>
+            </h4>
             <p>
               In the wild, animals spend a significant amount of time hunting,
               stalking, and playing. Even domesticated pets retain these
@@ -108,9 +108,9 @@ function Pettoys() {
               scratching.
             </p>
           </div>
-          <hr />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#00008B" }}>Exercise and Physical Health</h5>
+            <h4 style={{ color: "#00008B" }}>Exercise and Physical Health</h4>
             <p>
               {" "}
               Play with toys gets your pet moving, which is crucial for
@@ -120,9 +120,9 @@ function Pettoys() {
               toys can provide a great workout.
             </p>
           </div>
-          <hr />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#00008B" }}>Dental Health</h5>
+            <h4 style={{ color: "#00008B" }}>Dental Health</h4>
             <p>
               Chew toys, especially for puppies and kittens, help satisfy their
               natural urge to chew. This can help prevent them from chewing on
@@ -130,9 +130,9 @@ function Pettoys() {
               also help scrape away plaque and keep teeth clean.
             </p>
           </div>
-          <hr />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#00008B" }}>Bonding and Training</h5>
+            <h4 style={{ color: "#00008B" }}>Bonding and Training</h4>
             <p>
               Playing fetch, tug-of-war, or other interactive games with your
               pet is a fantastic way to bond with them. You can use toys to
@@ -140,9 +140,9 @@ function Pettoys() {
               fun and positive experience.
             </p>
           </div>
-          <hr />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#00008B" }}>Stress Relief</h5>
+            <h4 style={{ color: "#00008B" }}>Stress Relief</h4>
             <p>
               Just like us, pets can get stressed too. Play provides a healthy
               outlet for their energy and helps them relax. Interactive toys or
@@ -150,9 +150,9 @@ function Pettoys() {
               beneficial in reducing stress levels.
             </p>
           </div>
-          <hr />
+          <hr style={{ margin: "20px 0" }} />
           <div>
-            <h5 style={{ color: "#00008B" }}>Variety is Key</h5>
+            <h4 style={{ color: "#00008B" }}>Variety is Key</h4>
             <p>
               Just like us, pets can get bored with the same old toys. Rotate
               their toys periodically to keep things interesting. Consider

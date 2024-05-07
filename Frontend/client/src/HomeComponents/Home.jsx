@@ -49,7 +49,7 @@ function Home() {
           </div>
         </div>
       </Parallax>
-      <Parallax className="image" bgImage={Adopt} strength={420}>
+      <Parallax className="image" bgImage={Adopt} strength={400}>
       <div className='content'>
         <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h2 style={{ fontSize: '2.7em', color: '#6504b5', fontFamily:"monospace", width:"70vw",marginBottom:"20px", borderBottom:"5px dashed #6504b5"}}>Single? Adopt a Stalker (We Mean Snuggler!) </h2>
@@ -58,7 +58,7 @@ function Home() {
             <div style={{ position: 'relative', width: '900px', height: '500px', overflow: 'hidden', boxShadow: '0 25px 35px rgba(0,0,0,0.1)' }}>
               <img src={Pet2} alt="" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
             </div>
-            <div style={{ position: 'absolute', right: '-80px', marginTop: '400px', marginBottom: '100px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #6504b5', borderRadius: '5px' }}>
+            <div style={{ position: 'absolute', right: '-80px', marginTop: '350px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #6504b5', borderRadius: '5px' }}>
               <p>
               Tired of boring shelters? We've got playful pups, cuddly kittens, and wise senior dogs - all desperate for a couch and someone to blame for hairballs. Adopt, don't shop - it's good for your heart and your Insta feed!
               </p>
@@ -86,7 +86,7 @@ function Home() {
         </section>
       </div>
     </Parallax>
-    <Parallax className="image" bgImage={Petfood} strength={420}>
+    <Parallax className="image" bgImage={Petfood} strength={400}>
       <div className='content'>
         <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h2 style={{fontSize: '2.7em', color: '#388E3C', fontFamily:"monospace", width:"70vw",marginBottom:"20px", borderBottom:"5px dashed #388E3C" }}>Feed Your bottomless Pit (Don't Worry, We Have Food!)</h2>
@@ -94,9 +94,9 @@ function Home() {
             <div style={{ position: 'relative', width: '900px', height: '500px', overflow: 'hidden', boxShadow: '0 25px 35px rgba(0,0,0,0.1)' }}>
               <img src={Pet} alt="" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
             </div>
-            <div style={{ position: 'absolute', right: '-80px', marginTop: '400px', marginBottom: '100px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #388E3C', borderRadius: '5px' }}>
+            <div style={{ position: 'absolute', right: '-80px', marginTop: '350px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #388E3C', borderRadius: '5px' }}>
               <p>
-              We offer gourmet pet food that won't leave your wallet whimpering. From drool-worthy kibble to luscious wet food, we have everything to keep your fur baby happy and begging for more. Confused? Our staff speaks fluent "Woof" and "Meow."
+               From drool-worthy kibble to luscious wet food, we have everything to keep your fur baby happy and begging for more. Confused? Our staff speaks fluent "Woof" and "Meow."
               </p>
               <div style={{ textAlign: "center" }}>
               <Link to="/pet-foods" style={{ color: "white" }}>
@@ -123,7 +123,7 @@ function Home() {
         </section>
       </div>
     </Parallax>
-    <Parallax className="image" bgImage={Pettoys} strength={420}>
+    <Parallax className="image" bgImage={Pettoys} strength={400}>
       <div className='content'>
         <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h2 style={{fontSize: '2.7em', color: '#00008B', fontFamily:"monospace", width:"70vw",marginBottom:"20px", borderBottom:"5px dashed #00008B" }}>Destroy This, Not Your Furniture (Epic Toys!) </h2>
@@ -131,7 +131,7 @@ function Home() {
             <div style={{ position: 'relative', width: '900px', height: '500px', overflow: 'hidden', boxShadow: '0 25px 35px rgba(0,0,0,0.1)' }}>
               <img src={Pet} alt="" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
             </div>
-            <div style={{ position: 'absolute', right: '-80px', marginTop: '400px', marginBottom: '100px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #00008B', borderRadius: '5px' }}>
+            <div style={{ position: 'absolute', right: '-80px', marginTop: '350px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid #00008B', borderRadius: '5px' }}>
               <p>
               We have epic toys to keep your pet entertained for hours (or until they destroy the furniture). Balls for speed demons, puzzles for brainiacs, and plushie cuddlers for everyone! Bonus: our toys are built tough!
               </p>
@@ -160,7 +160,7 @@ function Home() {
         </section>
       </div>
     </Parallax>
-    <Parallax className="image" bgImage={Lostandfound} strength={420}>
+    <Parallax className="image" bgImage={Lostandfound} strength={400}>
       <div className='content'>
         <section style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
           <h2 style={{ fontSize: '2.7em', color: 'crimson', fontFamily:"monospace", width:"70vw",marginBottom:"20px", borderBottom:"5px dashed crimson" }}>Lost Your Escape Artist? We're Pet P.I.s!</h2>
@@ -168,7 +168,7 @@ function Home() {
             <div style={{ position: 'relative', width: '900px', height: '500px', overflow: 'hidden', boxShadow: '0 25px 35px rgba(0,0,0,0.1)' }}>
               <img src={Pet} alt="" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
             </div>
-            <div style={{ position: 'absolute', right: '-80px', marginTop: '400px', marginBottom: '100px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid crimson', borderRadius: '5px' }}>
+            <div style={{ position: 'absolute', right: '-80px', marginTop: '350px', padding: '25px', background: 'white', zIndex: 1, maxWidth: '450px', color: 'black', boxShadow: '0 25px 35px rgba(0,0,0,0.1)', borderBottom: '6px solid crimson', borderRadius: '5px' }}>
               <p>
               Don't panic! Report your missing pet and our team of crack detectives (aka enthusiastic volunteers) will find your furball faster than a squirrel with a nut!
               </p>
