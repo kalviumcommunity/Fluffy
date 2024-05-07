@@ -34,7 +34,7 @@ function Lostandfound() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              background: "#FFCCCC",
+              background: "lightpink",
               height: "60vh",
               padding: "70px",
               borderRadius: "0px 25px 25px 0px",
@@ -85,10 +85,10 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#fff8f8" }}>
+        <section style={{ padding: "50px 300px", background: "#ffe0e6",lineHeight:"1.6" }}>
           <div
             id="report"
-            style={{ overflow: "auto", height: "70vh", padding: "25px" }}
+            style={{ overflow: "auto", height: "75vh", padding: "25px" }}
           >
             <h1
               style={{

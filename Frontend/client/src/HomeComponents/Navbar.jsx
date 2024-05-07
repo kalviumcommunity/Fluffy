@@ -33,7 +33,7 @@ function Navbar() {
         <div style={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
             <img
-              src={Logo}
+              src="https://cdn-icons-png.flaticon.com/128/2809/2809922.png"
               alt=""
               style={{ height: "40px", marginRight: "0px" }}
             />
@@ -77,11 +77,35 @@ function Navbar() {
             Navbar
           </button>
           <Link
+            to="/your-cart"
+            style={{
+              color: "black",
+              textDecoration: "none",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid black",
+                borderRadius: "5px",
+                padding: "5px 10px",
+              }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
+                alt=""
+                style={{ height: "20px",}}
+              />
+              Cart
+            </div>
+          </Link>
+          <Link
             to="/signup"
             style={{
               color: "black",
               textDecoration: "none",
-              // padding: "5px",
             }}
           >
             <div

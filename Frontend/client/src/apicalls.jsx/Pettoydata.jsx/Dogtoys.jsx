@@ -28,7 +28,7 @@ function Dogtoys() {
     <div>
       <Navbar />
       <h1 style={{ textAlign: "center", padding: "15px", color: "#00008B" }}>
-        All Dog Toys
+        All Dog's Toys
       </h1>
       <div>
         <strong
@@ -148,7 +148,7 @@ function Dogtoys() {
           <hr />
         </section>
       ))}
-      <section
+     <section
         style={{
           position: "sticky",
           bottom: "0",
@@ -156,14 +156,24 @@ function Dogtoys() {
           padding: "7px 250px",
           background: "white",
           height: "40px",
+          display:"flex",
+          justifyContent:"space-between",
         }}
       >
         <Link
           to="/pet-toys"
-          style={{ textDecoration: "none", color: "#388E3C" }}
+          style={{ textDecoration: "none", color: "#00008B" }}
         >
           <p>
             <strong>&lt;&lt; Back</strong>
+          </p>
+        </Link>
+        <Link
+          to="/cat-toys"
+          style={{ textDecoration: "none", color: "#00008B" }}
+        >
+          <p>
+            <strong>Cat Toys &gt;&gt;</strong>
           </p>
         </Link>
       </section>

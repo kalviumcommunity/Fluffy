@@ -156,14 +156,24 @@ function Cattoys() {
           padding: "7px 250px",
           background: "white",
           height: "40px",
+          display:"flex",
+          justifyContent:"space-between",
         }}
       >
         <Link
           to="/pet-toys"
-          style={{ textDecoration: "none", color: "#388E3C" }}
+          style={{ textDecoration: "none", color: "#00008B" }}
         >
           <p>
             <strong>&lt;&lt; Back</strong>
+          </p>
+        </Link>
+        <Link
+          to="/dog-toys"
+          style={{ textDecoration: "none", color: "#00008B" }}
+        >
+          <p>
+            <strong>Dog toys &gt;&gt;</strong>
           </p>
         </Link>
       </section>

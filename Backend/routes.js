@@ -8,6 +8,7 @@ const PetModal = require("./models/petdata")
 const PetUsersModal = require("./models/petusers")
 const PetFoodModal = require("./models/petfood");
 const petToysModal = require("./models/pettoys");
+const CartModal = require("./models/cart");
 
 
 mongoose.connect("mongodb+srv://Snegan29:snegan2914@cluster0.nvjojc5.mongodb.net/Fluffy?retryWrites=true&w=majority&appName=Cluster0")
@@ -54,6 +55,22 @@ app.get("/main/petfoods", (req, res) => {
 app.get("/main/pettoys", (req, res) => {
     petToysModal.find()
     .then(pettoys => res.json(pettoys))
+    .catch(err => res.status(500).json({error: err.message}))
+})
+
+// get cart 
+app.get("/main/yourcart", (req, res) => {
+    CartModal.find()
+    .then(products => res.json(products))
+    .catch(err => res.status(500).json({error: err.message}))
+})
+
+// post cart
+
+app.post("/main/addtocart",(req, res)=>{
+    const data = req.body
+    CartModal.create(data)
+    .then(products => res.json(products))
     .catch(err => res.status(500).json({error: err.message}))
 })
 
