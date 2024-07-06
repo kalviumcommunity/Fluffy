@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,26 +15,24 @@ function Navbar() {
   return (
     <>
       <nav
-        style={{
-          position: "sticky",
-          top: 0,
-          padding: "5px",
-          width:"100%",
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          background: "white",
-          color: "black",
-          zIndex: 2,
-          borderBottom: "1px solid gray",
-        }}
+       style={{
+        // position: "fixed",
+        top: 0,
+        padding: "5px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-around",
+        alignContent: "center",
+        background: "white", 
+        zIndex: 2,
+      }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
             <img
-              src={Logo}
+              src="https://cdn-icons-png.flaticon.com/128/2809/2809922.png"
               alt=""
-              style={{ height: "40px", marginRight: "0px" }}
+              style={{ height: "5vh", marginRight: "0px" }}
             />
           </Link>
           <Link
@@ -43,10 +40,7 @@ function Navbar() {
             style={{
               textDecoration: "none",
               fontSize: "1.5rem",
-              background: "linear-gradient(45deg, orange, red)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
+              color: "black",
             }}
           >
             Fluffy
@@ -55,51 +49,41 @@ function Navbar() {
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "16.5vw",
+            alignContent: "center",
+            alignItems:"center",
+            justifyContent: "space-evenly",
+            width: "10vw",
           }}
         >
-          <button
-            onClick={toggleSideDiv}
+          <img onClick={toggleSideDiv} src="https://cdn-icons-png.flaticon.com/128/6015/6015685.png" alt="" style={{height:"3.3vh",cursor:"pointer"}} />
+          <Link
+            to="/your-cart"
             style={{
-              border: "none",
-              background: "black",
-              color: "white",
+              color: "black",
               textDecoration: "none",
-              cursor: "pointer",
-              padding: "5px 10px",
-              transition: "right 0.5s ease",
-              borderRadius: "5px",
             }}
-            className="navbar-button"
           >
-            Navbar
-          </button>
+            <div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/3002/3002254.png"
+                alt=""
+                style={{ height: "3.5vh",}}
+              />
+            </div>
+          </Link>
           <Link
             to="/signup"
             style={{
               color: "black",
               textDecoration: "none",
-              // padding: "5px",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "1px solid black",
-                borderRadius: "5px",
-                padding: "5px 10px",
-              }}
-            >
+            <div>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
                 alt=""
-                style={{ height: "20px",}}
+                style={{ height: "3vh"}}
               />
-              Signup/SignIn
             </div>
           </Link>
         </div>
@@ -109,11 +93,11 @@ function Navbar() {
         style={{
           position: "fixed",
           top: 0,
-          right: isOpen ? "0" : "-60%",
-          width: "30%",
+          right: isOpen ? "0" : "-50%",
+          width: "21%",
           height: "100vh",
           overflow: "auto",
-          backgroundColor: "#2a2d2e",
+          backgroundColor: "gray",
           color: "white",
           padding: "30px",
           transition: "right 0.5s ease",
@@ -124,9 +108,9 @@ function Navbar() {
         <span
           onClick={closeSideDiv}
           className="closeButton"
-          style={{ cursor: "pointer", fontSize: "2rem" }}
+          style={{ cursor: "pointer", }}
         >
-          &times;
+          &times; Close sidebar
         </span>
         <div style={{ paddingTop: "20px" }}>
           <p>

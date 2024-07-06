@@ -5,6 +5,7 @@ import main from "../images/dog.webp";
 import { Link } from "react-router-dom";
 import Reportform from "../Forms/Report";
 import Lostandfoundpetdata from "../apicalls.jsx/Lostandfoundpetdata";
+import Footer from "../HomeComponents/Footer";
 
 function Lostandfound() {
   return (
@@ -34,7 +35,7 @@ function Lostandfound() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              background: "#FFCCCC",
+              background: "lightpink",
               height: "60vh",
               padding: "70px",
               borderRadius: "0px 25px 25px 0px",
@@ -85,10 +86,10 @@ function Lostandfound() {
           </div>
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#fff8f8" }}>
+        <section style={{ padding: "50px 300px", background: "#ffe0e6",lineHeight:"1.6" }}>
           <div
             id="report"
-            style={{ overflow: "auto", height: "70vh", padding: "25px" }}
+            style={{ overflow: "auto", height: "75vh", padding: "25px" }}
           >
             <h1
               style={{
@@ -96,6 +97,7 @@ function Lostandfound() {
                 paddingBottom: "50px",
                 color: "crimson",
                 textDecoration: "underline",
+                fontSize:"2em"
               }}
             >
               Report a Lost or Found Pet
@@ -121,7 +123,7 @@ function Lostandfound() {
               Be patient and gentle.Here are some additional details to look out
               for:
             </p>
-            <ul style={{ listStyleType: "disc", padding: 0 }}>
+            <ul>
               <li>
                 Does the pet have any distinguishing marks? Unusual fur
                 patterns, scars, or missing limbs can help identify the owner.
@@ -137,7 +139,7 @@ function Lostandfound() {
             </ul>
 
             <p>
-              By taking these steps and visiting [Your Website Name], you can
+              By taking these steps and visiting [Fluffy], you can
               significantly increase the chances of a lost pet finding their way
               back home. We offer a user-friendly platform to report lost pets
               and browse found animals. Let's work together to create happy
@@ -151,22 +153,18 @@ function Lostandfound() {
         <section>
           <Reportform />
         </section>
-        <section
-          style={{
-            position: "sticky",
-            bottom: "0",
-            borderTop: "1px solid gray",
-            padding: "7px 250px",
-            background: "white",
-            height: "40px",
-          }}
-        >
-          <Link to="/" style={{ textDecoration: "none", color: "crimson" }}>
-            <p>
-              <strong>&lt;&lt; Back</strong>
-            </p>
-          </Link>
-        </section>
+        <Link to="/" style={{textDecoration:"none"}}>
+          <div style={{ display: "flex", justifyContent: "center", margin: "50px" }}>
+            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"crimson"}}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
+              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
+            </div>
+          </div>
+        </Link>
+       <section>
+        <Footer/>
+       </section>
+       
       </div>
     </div>
   );

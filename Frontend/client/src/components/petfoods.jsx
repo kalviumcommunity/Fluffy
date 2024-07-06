@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Black from "../images/adopt1.webp";
 import Black2 from "../images/adopt2.webp";
 import main from "../images/food.png";
+import Footer from "../HomeComponents/Footer";
 
 function Petfoods() {
   return (
@@ -32,7 +33,7 @@ function Petfoods() {
           >
             <h2
               style={{
-                fontSize: "3rem",
+                fontSize: "2.5rem",
                 color: "#388E3C",
                 textAlign: "center",
               }}
@@ -76,18 +77,18 @@ function Petfoods() {
           />
         </section>
 
-        <section style={{ padding: "50px 340px", background: "#e6f3c9" }}>
-          <div id="petfood" style={{overflow:"auto",height:"70vh",padding:"25px"}}>
+        <section style={{ padding: "50px 300px", background: "#e6f3c9",lineHeight:"1.6" }}>
+          <div id="petfood" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
           <h2
             style={{
-              fontSize: "2.5rem",
-              padding: "20px",
+              fontSize: "2rem",
+              padding: "25px",
               textAlign: "center",
               color: "#388E3C",
               textDecoration: "underline",
             }}
             >
-            Tailored Meals: Why Your Pet Needs Specific Food
+            Tailored Meals: <br /> Why Your Pet Needs Specific Food
           </h2>
             <div>
             <p>
@@ -97,8 +98,8 @@ function Petfoods() {
               "one-size-fits-all" pet food isn't ideal:
             </p>
           </div>
-          <div>
-            <h5 style={{ color: "#388E3C" }}>Species Matters</h5>
+          <div style={{paddingTop:"30px"}}>
+            <h4 style={{ color: "#388E3C" }}>Species Matters</h4>
             <p>
               Cats and dogs, our most common companions, have vastly different
               dietary requirements. Cats are obligate carnivores, needing animal
@@ -108,9 +109,9 @@ function Petfoods() {
               protein and dog food offering a more balanced mix.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Life Stages</h5>
+            <h4 style={{ color: "#388E3C" }}>Life Stages</h4>
             <p>
               A spunky puppy needs more protein and calories for growth than a
               senior dog looking to maintain a healthy weight. Similarly,
@@ -120,9 +121,9 @@ function Petfoods() {
               stage.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Activity Level</h5>
+            <h4 style={{ color: "#388E3C" }}>Activity Level</h4>
             <p>
               Think of your pet as a furry athlete! A high-energy Border Collie
               will burn calories much faster than a lounging pug. Active pets
@@ -131,9 +132,9 @@ function Petfoods() {
               management.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Breed Matters</h5>
+            <h4 style={{ color: "#388E3C" }}>Breed Matters</h4>
             <p>
               A Great Dane has different nutritional needs than a Chihuahua.
               Large-breed puppies especially need food designed for healthy bone
@@ -141,9 +142,9 @@ function Petfoods() {
               sizes for easier chewing and digestion.
             </p>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
-            <h5 style={{ color: "#388E3C" }}>Health Concerns</h5>
+            <h4 style={{ color: "#388E3C" }}>Health Concerns</h4>
             <p>
               Just like us, pets can have allergies, digestive issues, or other
               health problems. Special diets with limited ingredients,
@@ -163,242 +164,42 @@ function Petfoods() {
         </div>
         </section>
 
-        <section style={{ padding: "100px 300px" }}>
+        <section style={{margin:"80px 110px" }}>
           <h2
             style={{
               color: "#388E3C",
-              textDecoration: "underline",
               textAlign: "center",
               paddingBottom: "50px",
+              fontSize:"2em"
             }}
             >
             Explore Our Pet's Foods
           </h2>
-          <div style={{ padding: "30px" }}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img
-                src={Black2}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-                />
-              <div style={{ padding: "30px" }}>
-                <h4>From Tiny Tails to Big Barks: Doggie Delights</h4>
-                <p style={{ fontSize: "0.9rem" }}>
-                  Keep tails wagging and woofs booming with our delightful dog
-                  treats! A recipe for boundless energy and mischievous fun. Get
-                  ready for tail-wagging adventures and paw-some memories!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #HappyTails #FuelTheFun #PawsomeEats #HealthyHounds
-                </blockquote>
-                <Link to="/dog-foods">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore dog foods
-                  </button>
-                </Link>
-              </div>
+          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", justifyContent: "space-between", alignItems: "center"}}>
+            <Link to="/dog-foods" style={{textDecoration:"none"}}>
+            <div style={{ border: "2px solid #388E3C", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
+              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Dog food and Treats</div>
+            </div>
+            </Link>
+            <Link to="/cat-foods" style={{textDecoration:"none"}}>
+            <div style={{ border: "2px solid #388E3C", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
+              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Cat food and Treats</div>
+            </div>
+            </Link>
+          </div>
+          <Link to="/" style={{textDecoration:"none"}}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
+            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"#388E3C "}}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
+              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
             </div>
           </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <img
-                src={Black2}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-              />
-              <div style={{ padding: "30px" }}>
-                <h4>Doggie Delights: Treats that Wag!</h4>
-                <p style={{ fontSize: "0.9rem" }}>
-                  From curious pups to treat-loving superstars, our delicious
-                  dog treats guarantee wagging tails with every bite. Treat time
-                  is fun time!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #WagAndTreat #TreatTime #Procrastinate
-                </blockquote>
-                <Link to="/dog-treats">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore dog treats
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
+        </Link>
         </section>
-        <section style={{ padding: "0px 300px" }}>
-          <h2
-            style={{
-              paddingBottom: "50px",
-              color: "#4CAF50",
-              textDecoration: "underline",
-              textAlign: "center",
-            }}
-          >
-            Explore Our Cat's Food
-          </h2>
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>
-                  From Curious Kittens to Agile Hunters: Cat-tastic Cuisine
-                </h3>
-                <p style={{ fontSize: "0.9rem" }}>
-                  Fuel their playful curiosity and support healthy development
-                  for a lifetime of purrs! Our cat food provides the purr-fect
-                  foundation for strong bodies and sharp minds. Let the whisker
-                  adventures begin!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  {" "}
-                  #Purrfection #WhiskerWonder #CatCuisine #MeowMagic
-                </blockquote>
-                <Link to="/cat-foods">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore cat foods
-                  </button>
-                </Link>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-              />
-            </div>
-          </div>
-          <hr style={{ borderTop: "3px solid darkgreen" }} />
-          <div>
-            <div
-              style={{ display: "flex", alignItems: "center", padding: "30px" }}
-            >
-              <div style={{ padding: "20px" }}>
-                <h3>
-                  Unleashing the Inner Purr: Pawsitively Purrfect Cat Treats
-                </h3>
-                <p style={{ fontSize: "0.9rem" }}>
-                  From playful pounces to graceful leaps, our purrfect cat
-                  treats offer a tantalizing mix of flavor and fun! Fuel their
-                  adventures and keep those purrs coming with every tasty bite.
-                  Treat time is playtime!..
-                </p>
-                <blockquote
-                  style={{
-                    color: "#007bff",
-                    fontFamily:
-                      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
-                  }}
-                >
-                  #PurrfectTreats #MeowMoments #NomNomNom{" "}
-                </blockquote>
-                <Link to="/cat-treats">
-                  <button
-                    style={{
-                      background: "#388E3C",
-                      border: "none",
-                      color: "white",
-                      marginTop: "40px",
-                      padding: "5px 15px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Explore cat treats
-                  </button>
-                </Link>
-              </div>
-              <img
-                src={Black}
-                alt=""
-                style={{
-                  height: "40vh",
-                  width: "20vw",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                  boxShadow:"1px 2px 10px 2px rgb(0,0,0.5)"
-                }}
-              />
-            </div>
-          </div>
-        </section>
-        <section
-          style={{
-            position: "sticky",
-            bottom: "0",
-            borderTop: "1px solid gray",
-            padding: "7px 250px",
-            background: "white",
-            height: "40px",
-          }}
-        >
-          <Link to="/" style={{ textDecoration: "none", color: "#388E3C" }}>
-            <p>
-              <strong>&lt;&lt; Back</strong>
-            </p>
-          </Link>
+        <section>
+          <Footer/>
         </section>
       </div>
     </div>
