@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Black from "../images/adopt2.webp";
 import Black2 from "../images/adopt1.webp";
 import main from "../images/dog.webp";
+import Footer from "../HomeComponents/Footer";
 
 function Pettoys() {
   return (
@@ -79,14 +80,14 @@ function Pettoys() {
           <div id="pettoy" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
           <h2
             style={{
-              fontSize: "2.5rem",
-              padding: "20px",
+              fontSize: "2rem",
+              padding: "25px",
               textAlign: "center",
               color: "#00008B",
               textDecoration: "underline",
             }}
             >
-            Why Your Pets Needs Toys
+            Fluffy Toys: <br /> Why Your Pets Needs Toys
           </h2>
           <div>
             <p>
@@ -95,8 +96,8 @@ function Pettoys() {
               furry (or feathery) friend:
             </p>
           </div>
-          <div style={{paddingTop:"30px"}}>
-            <h4 style={{ color: "#00008B" }}>
+          <div style={{paddingTop:"30px "}}>
+            <h4 style={{ color: "#00008B",marginBottom:"5px" }}>
               Mental Stimulation and Stress Relief
             </h4>
             <p>
@@ -108,9 +109,9 @@ function Pettoys() {
               scratching.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#00008B" }} />
           <div>
-            <h4 style={{ color: "#00008B" }}>Exercise and Physical Health</h4>
+            <h4 style={{ color: "#00008B",marginBottom:"5px"  }}>Exercise and Physical Health</h4>
             <p>
               {" "}
               Play with toys gets your pet moving, which is crucial for
@@ -120,9 +121,9 @@ function Pettoys() {
               toys can provide a great workout.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#00008B" }} />
           <div>
-            <h4 style={{ color: "#00008B" }}>Dental Health</h4>
+            <h4 style={{ color: "#00008B",marginBottom:"5px"  }}>Dental Health</h4>
             <p>
               Chew toys, especially for puppies and kittens, help satisfy their
               natural urge to chew. This can help prevent them from chewing on
@@ -130,9 +131,9 @@ function Pettoys() {
               also help scrape away plaque and keep teeth clean.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#00008B" }} />
           <div>
-            <h4 style={{ color: "#00008B" }}>Bonding and Training</h4>
+            <h4 style={{ color: "#00008B",marginBottom:"5px"  }}>Bonding and Training</h4>
             <p>
               Playing fetch, tug-of-war, or other interactive games with your
               pet is a fantastic way to bond with them. You can use toys to
@@ -140,9 +141,9 @@ function Pettoys() {
               fun and positive experience.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#00008B" }} />
           <div>
-            <h4 style={{ color: "#00008B" }}>Stress Relief</h4>
+            <h4 style={{ color: "#00008B",marginBottom:"5px"  }}>Stress Relief</h4>
             <p>
               Just like us, pets can get stressed too. Play provides a healthy
               outlet for their energy and helps them relax. Interactive toys or
@@ -150,9 +151,9 @@ function Pettoys() {
               beneficial in reducing stress levels.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#00008B" }} />
           <div>
-            <h4 style={{ color: "#00008B" }}>Variety is Key</h4>
+            <h4 style={{ color: "#00008B",marginBottom:"5px"  }}>Variety is Key</h4>
             <p>
               Just like us, pets can get bored with the same old toys. Rotate
               their toys periodically to keep things interesting. Consider
@@ -168,48 +169,43 @@ function Pettoys() {
           </div>
           </div>
         </section>
-        <section style={{margin:"100px 110px" }}>
+        <section style={{margin:"80px 110px" }}>
           <h2
             style={{
               color: "#00008B",
-              textDecoration: "underline",
               textAlign: "center",
               paddingBottom: "50px",
+              fontSize:"2em"
             }}
             >
             Explore Our Pet's Toys
           </h2>
-          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", justifyContent: "space-between", alignItems: "center"}}>
+          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", justifyContent: "space-between", alignItems: "center"}}>
             <Link to="/dog-toys" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #00008B", borderRadius: "6.5px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+            <div style={{ border: "2px solid #00008B", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
               <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#00008B",fontWeight:"bold"}}>Explore Dog's Toys</div>
             </div>
             </Link>
             <Link to="/cat-toys" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #00008B", borderRadius: "6.5px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+            <div style={{ border: "2px solid #00008B", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
               <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#00008B",fontWeight:"bold"}}>Explore Cat's Toys</div>
             </div>
             </Link>
           </div>
 
+          <Link to="/" style={{textDecoration:"none"}}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
+            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"#00008B"}}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
+              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
+            </div>
+          </div>
+        </Link>
         </section>
-        <section
-          style={{
-            position: "sticky",
-            bottom: "0",
-            borderTop: "1px solid gray",
-            padding: "7px 250px",
-            background: "white",
-            height: "40px",
-          }}
-        >
-          <Link to="/" style={{ textDecoration: "none", color: "#00008B" }}>
-            <p>
-              <strong>&lt;&lt; Back</strong>
-            </p>
-          </Link>
+        <section>
+          <Footer/>
         </section>
       </div>
     </div>

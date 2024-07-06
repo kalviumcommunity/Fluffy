@@ -16,37 +16,23 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Parallax>
-        <div style={{height:"90vh", display:"flex",justifyContent:"center", alignItems:"center", padding:"20px",backgroundImage: 'linear-gradient(to bottom right,aqua,lightblue,violet,purple)',border:"none" }}>
-          <div style={{display:"flex",flexDirection:"column", textAlign:"start", padding:"30px", height:"50vh", width:"40vw", background:"white", borderRadius:"10px 0px 0px 10px"}}>
-            <h1>Welcome to Fluffy.</h1>
-            <Typewriter/>
-            <div>
-
-            <button
-              style={{
-                width: "90px",
-                height: "90px",
-                marginTop: "100px",
-                padding: "10px",
-                fontSize: "1rem",
-                backgroundImage: "linear-gradient(to top right, red , hotpink)", 
-                color: "white",
-                borderRadius: "100%",
-                border: "none",
-                cursor: "pointer",
-                fontFamily:"monospace"
-              }}
-            >
-              Explore
-            </button>
-
-              <h6 style={{marginTop:"30px"}}>created by, Snegan.</h6>
-            </div>
-          </div>
-          <div>
-          <img src={Pet2} alt="" style={{height:"500px", width:"800px", borderRadius:"10px"}} />
-          </div>
+      <Parallax  className="image" bgImage={Pet} strength={400}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            color: "white",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            textAlign: "center",
+            padding: "20px",
+            borderRadius: "10px",
+          }}
+        >
+          <h1 style={{ margin: 0 }}>Welcome to </h1>
+          <h1 style={{ fontSize: "4em", margin: 0 }}>Fluffy</h1>
         </div>
       </Parallax>
       <Parallax className="image" bgImage={Adopt} strength={400}>

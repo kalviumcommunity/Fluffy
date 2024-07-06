@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function AdoptPetdata() {
+
+function Lostandfoundpetdata() {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState(null);
@@ -77,12 +78,12 @@ function AdoptPetdata() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                     padding: "0px 50px",
                     height: "50vh"
                   }}
                 >
-                  <div style={{ padding: "0px 20px"}}>
+                  <div style={{ padding: "0px 30px"}}>
                     <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
                     <hr style={{ margin: "15px 0" }} />
                     <p>
@@ -116,7 +117,7 @@ function AdoptPetdata() {
                     style={{
                       borderRadius: "10px",
                       height: "350px",
-                      width: "470px",
+                      width: "500px",
                       objectFit: "cover",
                     }}
                   />
@@ -127,12 +128,12 @@ function AdoptPetdata() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                     padding: "0px 50px",
                     height: "50vh"
                   }}
                 >
-                  <div style={{ padding: "0px 20px"}}>
+                  <div style={{ padding: "0px 30px"}}>
                     <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
                     <hr style={{ margin: "15px 0" }} />
                     <p>
@@ -144,7 +145,7 @@ function AdoptPetdata() {
                       {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
                     </p>
                     <hr style={{ margin: "15px 0" }} />
-                    <h5 style={{ fontSize: '1em' }}>Description</h5>
+                    <h5 style={{ fontSize: '1em',fontWeight:"500" }}>Description</h5>
                     <p id="adoption" style={{ fontSize: "0.9rem", paddingTop: "10px", lineHeight: "1.5", width: "35vw", overflowY: "auto", height: "10vh", margin: "0", wordWrap: "break-word" }}>{pet.description}</p>
                     <div style={{ marginTop: "20px" }}>
                       <button
@@ -166,7 +167,7 @@ function AdoptPetdata() {
                     style={{
                       borderRadius: "10px",
                       height: "350px",
-                      width: "470px",
+                      width: "500px",
                       objectFit: "cover",
                     }}
                   />
@@ -176,25 +177,17 @@ function AdoptPetdata() {
             </div>
           ))}
         </div>
-      </section>
-      <section
-        style={{
-          position: "sticky",
-          bottom: "0",
-          borderTop: "1px solid gray",
-          padding: "7px 250px",
-          background: "white",
-          height: "40px",
-        }}
-      >
-        <Link to="/" style={{ textDecoration: "none", color: "#6504b5" }}>
-          <p>
-            <strong>&lt;&lt; Back</strong>
-          </p>
+        <Link to="/" style={{textDecoration:"none"}}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
+            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"#6504b5"}}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
+              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
+            </div>
+          </div>
         </Link>
       </section>
     </div>
   );
 }
 
-export default AdoptPetdata
+export default Lostandfoundpetdata;

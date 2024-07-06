@@ -78,7 +78,7 @@ function Lostandfoundpetdata() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                     padding: "0px 50px",
                     height: "50vh"
                   }}
@@ -117,7 +117,7 @@ function Lostandfoundpetdata() {
                     style={{
                       borderRadius: "10px",
                       height: "350px",
-                      width: "470px",
+                      width: "500px",
                       objectFit: "cover",
                     }}
                   />
@@ -128,7 +128,7 @@ function Lostandfoundpetdata() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between  ",
                     padding: "0px 50px",
                     height: "50vh"
                   }}
@@ -167,7 +167,7 @@ function Lostandfoundpetdata() {
                     style={{
                       borderRadius: "10px",
                       height: "350px",
-                      width: "470px",
+                      width: "500px",
                       objectFit: "cover",
                     }}
                   />
@@ -177,22 +177,7 @@ function Lostandfoundpetdata() {
             </div>
           ))}
         </div>
-      </section>
-      <section
-        style={{
-          position: "sticky",
-          bottom: "0",
-          borderTop: "1px solid gray",
-          padding: "7px 250px",
-          background: "white",
-          height: "40px",
-        }}
-      >
-        <Link to="/" style={{ textDecoration: "none", color: "crimson" }}>
-          <p>
-            <strong>&lt;&lt; Back</strong>
-          </p>
-        </Link>
+        
       </section>
     </div>
   );

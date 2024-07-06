@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Black from "../images/adopt1.webp";
 import Black2 from "../images/adopt2.webp";
 import main from "../images/food.png";
+import Footer from "../HomeComponents/Footer";
 
 function Petfoods() {
   return (
@@ -32,7 +33,7 @@ function Petfoods() {
           >
             <h2
               style={{
-                fontSize: "3rem",
+                fontSize: "2.5rem",
                 color: "#388E3C",
                 textAlign: "center",
               }}
@@ -80,14 +81,14 @@ function Petfoods() {
           <div id="petfood" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
           <h2
             style={{
-              fontSize: "2.5rem",
-              padding: "20px",
+              fontSize: "2rem",
+              padding: "25px",
               textAlign: "center",
               color: "#388E3C",
               textDecoration: "underline",
             }}
             >
-            Tailored Meals: Why Your Pet Needs Specific Food
+            Tailored Meals: <br /> Why Your Pet Needs Specific Food
           </h2>
             <div>
             <p>
@@ -108,7 +109,7 @@ function Petfoods() {
               protein and dog food offering a more balanced mix.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
             <h4 style={{ color: "#388E3C" }}>Life Stages</h4>
             <p>
@@ -120,7 +121,7 @@ function Petfoods() {
               stage.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
             <h4 style={{ color: "#388E3C" }}>Activity Level</h4>
             <p>
@@ -131,7 +132,7 @@ function Petfoods() {
               management.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
             <h4 style={{ color: "#388E3C" }}>Breed Matters</h4>
             <p>
@@ -141,7 +142,7 @@ function Petfoods() {
               sizes for easier chewing and digestion.
             </p>
           </div>
-          <hr style={{ margin: "20px 0" }} />
+          <hr style={{ margin: "20px 0",borderColor:"#388E3C" }} />
           <div>
             <h4 style={{ color: "#388E3C" }}>Health Concerns</h4>
             <p>
@@ -163,48 +164,42 @@ function Petfoods() {
         </div>
         </section>
 
-        <section style={{margin:"100px 110px" }}>
+        <section style={{margin:"80px 110px" }}>
           <h2
             style={{
               color: "#388E3C",
-              textDecoration: "underline",
               textAlign: "center",
               paddingBottom: "50px",
+              fontSize:"2em"
             }}
             >
             Explore Our Pet's Foods
           </h2>
-          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", justifyContent: "space-between", alignItems: "center"}}>
+          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", justifyContent: "space-between", alignItems: "center"}}>
             <Link to="/dog-foods" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #388E3C", borderRadius: "6.5px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+            <div style={{ border: "2px solid #388E3C", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
               <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Dog food and Treats</div>
             </div>
             </Link>
             <Link to="/cat-foods" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #388E3C", borderRadius: "6.5px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "50vh", borderRadius: "5px 5px 0px 0px",width:"100%"}} />
+            <div style={{ border: "2px solid #388E3C", borderRadius: "10px", cursor: "pointer"}}>
+              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
               <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#388E3C",fontWeight:"bold"}}>Cat food and Treats</div>
             </div>
             </Link>
           </div>
-
+          <Link to="/" style={{textDecoration:"none"}}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
+            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"#388E3C "}}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
+              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
+            </div>
+          </div>
+        </Link>
         </section>
-        <section
-          style={{
-            position: "sticky",
-            bottom: "0",
-            borderTop: "1px solid gray",
-            padding: "7px 250px",
-            background: "white",
-            height: "40px",
-          }}
-        >
-          <Link to="/" style={{ textDecoration: "none", color: "#388E3C" }}>
-            <p>
-              <strong>&lt;&lt; Back</strong>
-            </p>
-          </Link>
+        <section>
+          <Footer/>
         </section>
       </div>
     </div>

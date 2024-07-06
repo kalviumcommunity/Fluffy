@@ -9,7 +9,7 @@ function Footer() {
         padding: "60px",
         textAlign: "center",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-        borderTop:"2px dashed black"
+        borderTop:"2px dashed black",
       }}
     >
       <div style={{ marginBottom: "40px" }}>
@@ -17,7 +17,7 @@ function Footer() {
           src="https://cdn-icons-png.flaticon.com/128/2809/2809922.png"
           alt="Fluffy Logo"
           style={{
-            height: "20vh",
+            height: "17vh",
             marginBottom: "0px",
             objectFit: "contain",
           }}
@@ -26,7 +26,7 @@ function Footer() {
         <p
           style={{
             color: "black",
-            fontSize: "2em",
+            fontSize: "1.7em",
             fontWeight: "bold",
             marginBottom: "20px"
           }}

@@ -82,8 +82,8 @@ function Adoption() {
                 color: "#6504b5",
                 textAlign: "center",
                 textDecoration: "underline",
-                paddingBottom: "50px",
-                fontSize:"1.8em"
+                paddingBottom: "30px",
+                fontSize:"2em"
               }}
             >
               Welcome to Fluffy <br /> Where Every Adoption Tells a Story
@@ -104,7 +104,7 @@ function Adoption() {
               choose to adopt from Fluffy, you're not just getting a pet –
               you're making a difference in the lives of animals in need.
             </p>
-            <hr style={{ margin: "20px 0" }} />
+            <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
             <div>
               <h3
                 style={{
@@ -138,7 +138,7 @@ function Adoption() {
                   more time to dedicate to a furry friend.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}> Space and environment</h4>
                 <p>
@@ -150,7 +150,7 @@ function Adoption() {
                   needs of the dog you’re considering.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px" }}>
                   Allergies and health concerns
@@ -163,7 +163,7 @@ function Adoption() {
                   associated costs of veterinary care.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Breed characteristics</h4>
                 <p>
@@ -174,7 +174,7 @@ function Adoption() {
                   outdoor adventures or a more laid-back companion.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Financial commitment</h4>
                 <p>
@@ -185,7 +185,7 @@ function Adoption() {
                   safety net for your pet is crucial.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Time and training</h4>
                 <p>
@@ -195,7 +195,7 @@ function Adoption() {
                   invest in training and socialising your new companion.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Long-term commitment</h4>
                 <p>
@@ -206,7 +206,7 @@ function Adoption() {
                   commitment and responsibility of pet parenthood.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0" }} />
+              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
               <div>
                 <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Shelter or breeder</h4>
                 <p>

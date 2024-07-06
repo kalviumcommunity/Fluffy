@@ -61,7 +61,7 @@ function Report() {
   return (
     <div
       style={{
-        height: "80%",
+        height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-end",
@@ -85,8 +85,8 @@ function Report() {
             padding: "20px",
           }}
         >
-          <h2 style={{ textAlign: "center", color: "crimson" }}>Report Form</h2>
-          <hr />
+          <h1 style={{ textAlign: "center", color: "crimson",fontSize:"1.8em" }}>Report Form</h1>
+          <hr style={{margin:"20px 0"}} />
           <div
             style={{
               display: "grid",
