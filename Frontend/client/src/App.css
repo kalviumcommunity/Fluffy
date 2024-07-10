@@ -12,20 +12,24 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+#body::-webkit-scrollbar {
+  display: none;
+}
+
 .image {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
+.image2 {
+  position: relative;
   height: 100vh;
-  width: 100%;
+  width: 55vw;
+  border-radius: 50% 0 0 50% ;
 }
+
+
 
 /* scroll css for ADOPTION */
 
@@ -34,7 +38,7 @@ body::-webkit-scrollbar {
 }
 
 #adoption::-webkit-scrollbar-track {
-  background: white; 
+  background: gray; 
   border-radius: 25px;
   margin: 100px;
 }
