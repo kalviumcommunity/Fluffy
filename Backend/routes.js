@@ -74,7 +74,17 @@ app.post("/main/addtocart",(req, res)=>{
     .catch(err => res.status(500).json({error: err.message}))
 })
 
+// Delete cart
 
+app.delete('/main/addtocart/:id', (req, res) => {
+    const id = req.params.id;
+    CartModal.findByIdAndDelete(id)
+        .then(product => res.json(product))
+        .catch(err => res.status(500).json({ error: err.message }));
+});
+
+
+// Pet datas
 app.post("/main/postdata",(req, res)=>{
     const data = req.body
     PetModal.create(data)
