@@ -48,6 +48,16 @@ const Cart = () => {
     return total.toFixed(2); // Round the total to two decimal places
   };
 
+  const handleDelete = async (id) => {
+    try {
+      const res = await axios.delete(`http://localhost:1001/main/addtocart/${id}`);
+      console.log(res);
+      setItems(items.filter(item => item._id !== id)); // Update items list after deletion
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -75,7 +85,7 @@ const Cart = () => {
                   alt={item.productname}
                   style={{ height: "100px", marginRight: "20px" }}
                 />
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "35vw" }}>
                   <h4>{item.productname}</h4>
                   <p>Price: 💲{item.productprice}</p>
                   <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
@@ -85,6 +95,7 @@ const Cart = () => {
                   </div>
                   <p style={{ marginLeft: "20px" }}>Total: 💲{(item.productprice * item.quantity).toFixed(2)}</p>
                 </div>
+                <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" onClick={() => handleDelete(item._id)} style={{ height: "25px", cursor: "pointer" }}></img>
               </div>
             ))}
             <hr />
