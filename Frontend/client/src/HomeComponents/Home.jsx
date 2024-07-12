@@ -79,7 +79,7 @@ function Home() {
                 onClick={() => handleScroll(adoptionRef)}
                >
               <img src="https://cdn-icons-png.flaticon.com/128/7438/7438546.png" alt=""  style={{height:"70px"}}/>
-              <p style={{paddingLeft:"30px"}}>BUY PET TOY</p>x
+              <p style={{paddingLeft:"30px"}}>BUY PET TOY</p>
           </div>
            
           </div>
