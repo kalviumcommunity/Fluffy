@@ -51,6 +51,7 @@ function Lostandfoundpetdata() {
                 borderRadius: "5px",
                 background: "crimson",
                 color: "white",
+                cursor:"pointer"
               }}
             >
               Dogs
@@ -63,6 +64,7 @@ function Lostandfoundpetdata() {
                 borderRadius: "5px",
                 background: "crimson",
                 color: "white",
+                cursor:"pointer"
               }}
             >
               Cats
@@ -87,9 +89,7 @@ function Lostandfoundpetdata() {
                     <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
                     <hr style={{ margin: "15px 0" }} />
                     <p>
-                      <span style={{ color: "crimson" }}>{pet.breed}</span> 🔺{" "}
-                      {pet.livesin}
-                    </p>
+                      <span style={{ color: "crimson" }}>{pet.breed}</span> 🔺 {pet.livesin}</p>
                     <hr style={{ margin: "15px 0" }} />
                     <p>
                       {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
@@ -137,8 +137,7 @@ function Lostandfoundpetdata() {
                     <h1 style={{ fontSize: "1.7em" }}>{pet.name}</h1>
                     <hr style={{ margin: "15px 0" }} />
                     <p>
-                      <span style={{ color: "crimson" }}>{pet.breed}</span> 🔺{" "}
-                      {pet.livesin}
+                      <span style={{ color: "crimson" }}>{pet.breed}</span> 🔺 {pet.livesin}
                     </p>
                     <hr style={{ margin: "15px 0" }} />
                     <p>

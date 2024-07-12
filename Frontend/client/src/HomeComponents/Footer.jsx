@@ -5,14 +5,14 @@ import black from '../images/black.jpg';
 
 function Footer() {
   return (
-    <footer style={{background:"black", color:"white",marginTop:"100px"}}>
+    <footer style={{background:"black", color:"#E0E0E0",marginTop:"100px"}}>
         <div style={{
           height:"90vh",
           display:"flex",
           flexDirection:"column",
           justifyContent:"space-between",
           borderTop:"2px solid gray",
-          padding:"100px",
+          padding:"75px",
         }}>
           <div
           style={{
@@ -44,39 +44,11 @@ function Footer() {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-around",
-                width:"50vw",
+                justifyContent: "space-evenly",
+                width:"45vw",
                 lineHeight:"1.7"
               }}
             >
-              <div style={{ textAlign: "start", margin: "0 10px" }}>
-                <div style={{ display: "flex", flexDirection: "column", paddingTop: "10px",fontWeight:"bold" }}>
-                  <Link
-                    to="/adopt-a-pet"
-                    style={{ color: "#6f42c1", textDecoration: "none", }}
-                  >
-                    Adopt a Pet
-                  </Link>
-                  <Link
-                    to="/lost-and-found"
-                    style={{ color: "#dc3545", textDecoration: "none", }}
-                  >
-                    Report Lost Pet
-                  </Link>
-                  <Link
-                    to="/pet-foods"
-                    style={{ color: "#28a745", textDecoration: "none",  }}
-                  >
-                    Buy Pet Foods
-                  </Link>
-                  <Link
-                    to="/pet-toys"
-                    style={{ color: "#007bff", textDecoration: "none", }}
-                  >
-                    Buy Pet Toys
-                  </Link>
-                </div>
-              </div>
               <div style={{textAlign: "start", margin: "0 10px",fontWeight:"bold" }}>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <p>About</p>
@@ -93,12 +65,12 @@ function Footer() {
                   <p>Privacy</p>
                 </div>
               </div>
-              <div style={{ textAlign: "start", margin: "0 10px",fontWeight:"bold" }}>
+              <div style={{ textAlign: "start", margin: "0 10px",fontWeight:"bold",width:"160px" }}>
                 <div style={{ display: "flex", flexDirection: "row",justifyContent:"space-between", }}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png" alt="" style={{height:"40px"}} />
-                  <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="" style={{height:"40px"}}/>
-                  <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="" style={{height:"40px"}}/>
-                  <img src="https://cdn-icons-png.flaticon.com/128/3670/3670151.png" alt="" style={{height:"40px"}}/>
+                  <img src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png" alt="" style={{height:"35px"}} />
+                  <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="" style={{height:"35px"}}/>
+                  <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="" style={{height:"35px"}}/>
+                  <img src="https://cdn-icons-png.flaticon.com/128/3670/3670151.png" alt="" style={{height:"35px"}}/>
                 </div>
               </div>
             </div>
@@ -125,7 +97,7 @@ function Footer() {
               fontSize: "14px",
             }} 
             >
-              <p>Website by <strong style={{textDecoration:"underline",}}>Snegan</strong></p>
+              <p>Website by <strong style={{textDecoration:"underline",color:"white"}}>Snegan</strong></p>
             </div>
             </section>
         </div>
