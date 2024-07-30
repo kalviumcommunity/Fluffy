@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Image from '../images/dog.webp';
+// import Image from '../images/dog.webp';
 // import Cookies from 'js-cookie';
 
 function SignUp() {
@@ -10,6 +10,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +31,15 @@ function SignUp() {
       console.error("Error signing up:", err);
     }
   };
+
+  const handleGoogle = () => {
+    console.log("clicked")
+    axios.post("http://localhost:1001/api/google/")
+    .then((data) => {
+      console.log(data.data.redirectURI)
+      window.location.href = data.data.redirectURI
+    })
+  }
 
   return (
     <div
@@ -125,6 +135,11 @@ function SignUp() {
           >
             Submit
           </button>
+
+          {/* Google Login Button */}
+        <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center" }}>
+            Sign-up with google
+        </div>
           <p style={{ paddingTop: "10px", textAlign:"center" }}>
             New User? <Link to="/signup">SignUp</Link> here.
           </p>

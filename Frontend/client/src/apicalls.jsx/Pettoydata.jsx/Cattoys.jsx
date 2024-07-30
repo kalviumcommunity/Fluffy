@@ -27,7 +27,7 @@ function Cattoys() {
   return (
     <div>
       <Navbar />
-      <h1 style={{ textAlign: "center", padding: "15px", color: "#00008B" }}>
+      <h1 style={{ textAlign: "center", padding: "15px", color: "#27408B", fontSize: "3em" }}>
         All Cat Toys
       </h1>
       <div>
@@ -36,16 +36,18 @@ function Cattoys() {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
-            paddingTop: "10px",
-            border: "1px solid black",
+            padding: "10px 0",
+            backgroundColor: "#27408B"
           }}
         >
           <p
             style={{
-              borderRight: "1px solid black",
-              padding: "5px",
+              padding: "10px 50px",
               cursor: "pointer",
-              color: selectedCategory === "Feather Toy" ? "red" : "#00008B",
+              backgroundColor: selectedCategory === "Feather Toy" ? "white" : "#27408B",
+              color: selectedCategory === "Feather Toy" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
             }}
             onClick={() => handleCategoryClick("Feather Toy")}
           >
@@ -53,21 +55,25 @@ function Cattoys() {
           </p>
           <p
             style={{
-              borderRight: "1px solid black",
-              padding: "5px",
+              padding: "10px 50px",
               cursor: "pointer",
-              color: selectedCategory === "Interactive Toy" ? "red" : "#00008B",
+              backgroundColor: selectedCategory === "Interactive Toy" ? "white" : "#27408B",
+              color: selectedCategory === "Interactive Toy" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
             }}
-            onClick={() => handleCategoryClick("Interactive Toy" )}
+            onClick={() => handleCategoryClick("Interactive Toy")}
           >
             Interactive Toys
           </p>
           <p
             style={{
-              borderRight: "1px solid black",
-              padding: "5px",
+              padding: "10px 50px",
               cursor: "pointer",
-              color: selectedCategory === "Catnip Toy" ? "red" : "#00008B",
+              backgroundColor: selectedCategory === "Catnip Toy" ? "white" : "#27408B",
+              color: selectedCategory === "Catnip Toy" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
             }}
             onClick={() => handleCategoryClick("Catnip Toy")}
           >
@@ -75,10 +81,12 @@ function Cattoys() {
           </p>
           <p
             style={{
-              borderRight: "1px solid black",
-              padding: "5px",
+              padding: "10px 50px",
               cursor: "pointer",
-              color: selectedCategory === "Scratch Post" ? "red" : "#00008B",
+              backgroundColor: selectedCategory === "Scratch Post" ? "white" : "#27408B",
+              color: selectedCategory === "Scratch Post" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
             }}
             onClick={() => handleCategoryClick("Scratch Post")}
           >
@@ -88,44 +96,34 @@ function Cattoys() {
       </div>
 
       {filteredToys.map((toy, index) => (
-        <section key={index} style={{ margin: "30px 360px " }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img src={toy.image} alt="" style={{ height: "300px" }} />
-            <div style={{padding:"15px"}}>
-              <strong
-                style={{
-                  color: "gray",
-                  textTransform: "capitalize",
-                  fontSize: "0.8rem",
-                }}
-              >
-                {toy.brand} | {toy.type}
-              </strong>
-              <h5>{toy.productName}</h5>
-              <hr />
+        <section key={index} style={{ margin: "30px 350px", border: "1px solid gray", padding: "20px", borderRadius: "15px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <img src={toy.image} alt="" style={{ height: "300px", width: "250px", objectFit: "cover" }} />
+            <div style={{ padding: "20px", width: "100%" }}>
+              <div style={{ padding: "10px", width: "100%" }}>
+                <strong style={{ color: "gray", textTransform: "capitalize", fontSize: "0.9rem" }}>
+                  {toy.brand} | {toy.type}
+                </strong>
+                <h3>{toy.productName}</h3>
+              </div>
+              <hr style={{ margin: "10px 0" }} />
               <p>
-                <strong style={{ fontSize: "1.3rem" }}>💲{toy.price}</strong>
+                <strong style={{ fontSize: "1.3rem", padding: "10px" }}>💲{toy.price}</strong>
               </p>
-              <p>
-                Rating : ⭐{toy.rating.stars} | Reviews :{" "}
-                {toy.rating.numberOfReviews}
+              <p style={{ padding: "10px" }}>
+                Rating : ⭐{toy.rating.stars} | Reviews : {toy.rating.numberOfReviews}
               </p>
-              <hr />
-              <div>
+              <hr style={{ margin: "10px 0" }} />
+              <div style={{ padding: "10px" }}>
                 <button
                   style={{
-                    background: "#00008B",
+                    background: "#27408B",
                     color: "white",
-                    padding: "10px 15px",
+                    padding: "10px 25px",
                     border: "none",
                     borderRadius: "5px",
                     marginRight: "20px",
+                    cursor: "pointer",
                   }}
                 >
                   Buy Now
@@ -133,11 +131,12 @@ function Cattoys() {
                 <button
                   style={{
                     background: "white",
-                    color: "#00008B",
+                    color: "#27408B",
                     padding: "5px 10px",
-                    border: "1px solid #00008B",
+                    border: "1px solid #27408B",
                     borderRadius: "5px",
                     marginRight: "20px",
+                    cursor: "pointer",
                   }}
                 >
                   Add to cart
@@ -145,7 +144,6 @@ function Cattoys() {
               </div>
             </div>
           </div>
-          <hr />
         </section>
       ))}
       <section
@@ -156,25 +154,15 @@ function Cattoys() {
           padding: "7px 250px",
           background: "white",
           height: "40px",
-          display:"flex",
-          justifyContent:"space-between",
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        <Link
-          to="/pet-toys"
-          style={{ textDecoration: "none", color: "#00008B" }}
-        >
-          <p>
-            <strong>&lt;&lt; Back</strong>
-          </p>
+        <Link to="/pet-toys" style={{ textDecoration: "none", color: "#00008B" }}>
+          <p><strong>&lt;&lt; Back</strong></p>
         </Link>
-        <Link
-          to="/dog-toys"
-          style={{ textDecoration: "none", color: "#00008B" }}
-        >
-          <p>
-            <strong>Dog toys &gt;&gt;</strong>
-          </p>
+        <Link to="/dog-toys" style={{ textDecoration: "none", color: "#00008B" }}>
+          <p><strong>Dog toys &gt;&gt;</strong></p>
         </Link>
       </section>
     </div>

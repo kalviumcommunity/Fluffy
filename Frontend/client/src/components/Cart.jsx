@@ -61,50 +61,50 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <div
-        style={{
-          marginTop: "20px",
-          border: "1px solid black",
-          padding: "10px",
-        }}
-      >
-        <h2>Cart</h2>
+      <div style={{margin:"50px"}}>
+        <h2 style={{paddingBottom:"30px",fontSize:"4em",textAlign:"center"}}>Cart🛒</h2>
         {items && items.length > 0 ? (
-          <div>
-            {items.map((item) => (
-              <div
-                key={item._id}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
-                <img
-                  src={item.productimage}
-                  alt={item.productname}
-                  style={{ height: "100px", marginRight: "20px" }}
-                />
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "35vw" }}>
-                  <h4>{item.productname}</h4>
-                  <p>Price: 💲{item.productprice}</p>
-                  <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
-                    <button onClick={() => handleQuantityChange(item._id, -1)}>-</button>
-                    <p style={{ margin: "0 10px" }}>{item.quantity}</p>
-                    <button onClick={() => handleQuantityChange(item._id, 1)}>+</button>
-                  </div>
-                  <p style={{ marginLeft: "20px" }}>Total: 💲{(item.productprice * item.quantity).toFixed(2)}</p>
-                </div>
-                <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" onClick={() => handleDelete(item._id)} style={{ height: "25px", cursor: "pointer" }}></img>
-              </div>
-            ))}
-            <hr />
-            <p style={{ textAlign: "right", fontWeight: "bold" }}>
-              Total Cart Value: 💲{calculateTotalCartValue()}
-            </p>
-          </div>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Image</th>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Product Name</th>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Quantity</th>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Price</th>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Total Price</th>
+                <th style={{ border: "1px solid black", padding: "8px" }}>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((item) => (
+                <tr key={item._id}>
+                  <td style={{ border: "1px solid black",textAlign:"center" }}>
+                    <img src={item.productimage} alt={item.productname} style={{ height: "60px" }} />
+                  </td>
+                  <td style={{ border: "1px solid black",textAlign:"center" }}>{item.productname}</td>
+                  <td style={{ border: "1px solid black", textAlign:"center",width:"10vw"  }}>
+                    <div style={{ display: "flex", alignItems: "center",justifyContent:"space-between",border:"1px solid black",margin:"10px" }}>
+                      <button onClick={() => handleQuantityChange(item._id, -1)} style={{padding:"5px 10px"}}> - </button>
+                      <p style={{ margin: "0 10px" }}>{item.quantity}</p>
+                      <button onClick={() => handleQuantityChange(item._id, 1)} style={{padding:"5px 10px"}}> + </button>
+                    </div>
+                  </td>
+                  <td style={{ border: "1px solid black",textAlign:"center" }}>💲{item.productprice}</td>
+                  <td style={{ border: "1px solid black", textAlign:"center" }}>💲{(item.productprice * item.quantity).toFixed(2)}</td>
+                  <td style={{ border: "1px solid black", textAlign:"center"  }}>
+                    <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" alt="Delete" onClick={() => handleDelete(item._id)} style={{ height: "25px", cursor: "pointer" }} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p style={{ textAlign: "center" }}>Your cart is empty</p>
+        )}
+        {items.length > 0 && (
+          <p style={{ textAlign: "right", fontWeight: "bold" }}>
+            Total Cart Value: 💲{calculateTotalCartValue()}
+          </p>
         )}
       </div>
     </>

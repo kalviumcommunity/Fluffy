@@ -9,7 +9,8 @@ const petToysSchema = new mongoose.Schema({
         stars:Number,
         noOfReviews:Number
     },
-    image:String
+    image:String,
+    animal:String
 })
 
 const petToysModal = mongoose.model("pettoys",petToysSchema);

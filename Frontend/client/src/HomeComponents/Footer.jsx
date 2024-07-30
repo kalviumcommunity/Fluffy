@@ -1,11 +1,11 @@
 import React from "react";
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
-import black from '../images/black.jpg';
+
 
 function Footer() {
   return (
-    <footer style={{background:"black", color:"#E0E0E0",marginTop:"100px"}}>
+    <footer style={{background:"black", color:"#E0E0E0"}}>
         <div style={{
           height:"90vh",
           display:"flex",

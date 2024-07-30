@@ -1,83 +1,33 @@
 import React from "react";
 import Navbar from "../HomeComponents/Navbar";
 import { Link } from "react-router-dom";
-import Black from "../images/adopt2.webp";
-import Black2 from "../images/adopt1.webp";
-import main from "../images/dog.webp";
+import Black from "../images/best.jpg";
+import main from "../images/petfood.jpg";
 import Footer from "../HomeComponents/Footer";
+import { Parallax } from "react-parallax";
+import Toyshop from "./Toyshop";
 
 function Pettoys() {
   return (
-    <div>
-      <Navbar />
-      <div>
-        <section
-          style={{
-            display: "flex",
-            padding: "10px",
-            position: "relative",
-            lineHeight: "1.6",
-          }}
-        >
-          <img
-            src={main}
-            alt="Adopt"
-            style={{
-              borderRadius: "25px 0 0 25px",
-              height: "60vh",
-              flex: 1,
-              objectFit: "cover",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center", 
-              background: "#BFE1FF",
-              height: "60vh",
-              padding: "70px",
-              borderRadius: "0px 25px 25px 0px",
-              flex: "1",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "2.5rem",
-                color: "#00008B",
-                textAlign: "center",
-              }}
-            >
-              Pawsome Playtime: Unleash the Fun with Our Pet Toys!
-            </h2>
-            <p
-              style={{ fontSize: "1rem", color: "black", textAlign: "center" }}
-            >
-              Keep boredom at bay with exciting toys that fuel your pet's
-              natural instincts for play.
-            </p>
-            <div style={{ textAlign: "center" }}>
-              <button
-                style={{
-                  width: "100px",
-                  height: "100px",
-                  padding: "10px",
-                  fontSize: "1rem",
-                  background: "#00008B",
-                  color: "white",
-                  borderRadius: "50%",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-        </section>
+    <>
+     <Parallax id="image" bgImage={main} strength={200}>
+  <div style={{ height: "100vh", display: "flex", flexDirection: "column",paddingBottom:"130px",background:"rgba(0,0,0,0.5)" }}>
+    <Navbar />
+    <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row", width: "100vw", alignItems: "center",color:"white" }}>
+      <p style={{ transform: "rotate(90deg)", textAlign: "right", whiteSpace: "nowrap",fontSize:"0.7em" }}>SCROLL DOWN</p>
+        <div style={{textAlign:"center"}}>
+            <p style={{ fontSize: "6em", textAlign: "center",fontWeight:"500" }}>Fluffy <br /> Animal Society</p>
+            <p style={{fontSize:"1.5em",paddingTop:"20px"}}> Bringing Joy to Every Pet with Our Toys</p>
+        </div>
+        <p style={{ transform: "rotate(90deg)", textAlign: "right", whiteSpace: "nowrap",fontSize:"0.7em"   }}>SCROLL DOWN</p>
+      </div>
+    </div>
+  </div>
+</Parallax>
 
-        <section style={{ padding: "50px 300px", background: "#D4E8FF",lineHeight:"1.6" }}>
-          <div id="pettoy" style={{overflow:"auto",height:"75vh",padding:"25px"}}>
+        <section style={{ padding: "50px 350px", background: "#D4E8FF",lineHeight:"1.6" }}>
+          <div>
           <h2
             style={{
               fontSize: "2rem",
@@ -169,46 +119,9 @@ function Pettoys() {
           </div>
           </div>
         </section>
-        <section style={{margin:"80px 110px" }}>
-          <h2
-            style={{
-              color: "#00008B",
-              textAlign: "center",
-              paddingBottom: "50px",
-              fontSize:"2em"
-            }}
-            >
-            Explore Our Pet's Toys
-          </h2>
-          <div style={{ padding: "10px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", justifyContent: "space-between", alignItems: "center"}}>
-            <Link to="/dog-toys" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #00008B", borderRadius: "10px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
-              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#00008B",fontWeight:"bold"}}>Explore Dog's Toys</div>
-            </div>
-            </Link>
-            <Link to="/cat-toys" style={{textDecoration:"none"}}>
-            <div style={{ border: "2px solid #00008B", borderRadius: "10px", cursor: "pointer"}}>
-              <img src={Black} alt="" style={{ height: "45vh", borderRadius: "8.5px 8.5px 0px 0px",width:"100%",objectFit:"cover"}} />
-              <div style={{ padding: "15px", textAlign: "center", fontSize: "1.3em", color: "#00008B",fontWeight:"bold"}}>Explore Cat's Toys</div>
-            </div>
-            </Link>
-          </div>
-
-          <Link to="/" style={{textDecoration:"none"}}>
-          <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-            <div style={{ display: "flex", alignItems: "center",justifyContent:"space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px",backgroundColor:"#00008B"}}>
-              <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
-              <p style={{ margin: "0", marginLeft: "5px",color:"white" }}>Back to Home</p>
-            </div>
-          </div>
-        </Link>
-        </section>
-        <section>
-          <Footer/>
-        </section>
-      </div>
-    </div>
+        <Toyshop/>
+        <Footer/>
+    </>
   );
 }
 
