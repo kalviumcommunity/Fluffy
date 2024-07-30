@@ -27,13 +27,13 @@ function Report() {
   }) 
   const [imageUpload, setImageUpload] = useState(null);
   const navigate = useNavigate();
-  const handleInput = (event) => {
-    {name,value} = event.target
-    setPetInfo((prevState) =>({
-      ...prevState,
-      [name] : value
-    }))
-  }
+  // const handleInput = (event) => {
+  //   {name,value} = event.target
+  //   setPetInfo((prevState) =>({
+  //     ...prevState,
+  //     [name] : value
+  //   }))
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
