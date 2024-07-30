@@ -1,63 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Typewriter from "typewriter-effect";
+import "../App.css";
 
-function Typewriter() {
-  const [textIndex, setTextIndex] = useState(0);
-  const [text, setText] = useState(""); // Add text state variable here
-  const dataText = [
-    "Adopt! Find your furr ever friend!",
-    "Fuel happy tails with nutritious food!",
-    "Unleash the fun with exciting toys!",
-    "Lost pet? We'll help you reunite!",
-  ];
-
-  useEffect(() => {
-    const typeWriter = (text, i, fnCallback) => {
-      if (i < text.length) {
-        const newText = text.substring(0, i + 1);
-        setText(newText);
-        setTimeout(() => {
-          typeWriter(text, i + 1, fnCallback);
-        }, 100);
-      } else if (typeof fnCallback === "function") {
-        setTimeout(fnCallback, 1000);
-      }
-    };
-
-    const startTextAnimation = (index) => {
-      if (typeof dataText[index] === "undefined") {
-        setTimeout(() => {
-          startTextAnimation(0);
-        }, 5000);
-        return;
-      }
-
-      typeWriter(dataText[index], 0, () => {
-        startTextAnimation(index + 1);
-      });
-    };
-
-    startTextAnimation(textIndex);
-
-    return () => {
-        clearInterval()
-    };
-  }, [textIndex]);
-
+function TypewriterComp() {
   return (
-    <div>
-      <h1
-        style={{
-          fontSize: "2.8em",
-          height: "5vh",
-          fontFamily:"monospace",
-          color: "red",
-          textDecoration:"underline", 
-        }}
-      >
-        {text}
-      </h1>
+    <div id="fluffont">
+      <p className="static-text">We are</p>
+      <div className="typewriter-text">
+        <Typewriter
+          options={{
+            strings: [
+              "Fluffy.",
+              "Pet Lovers.",
+              "Adoptive Families.",
+              "Toy Providers.",
+              "Food Experts.",
+              "Pet Finders."
+            ],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </div>
     </div>
   );
 }
 
-export default Typewriter;
+export default TypewriterComp;

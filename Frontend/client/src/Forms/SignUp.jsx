@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Image from "../images/dog.webp";
+// import Image from "../images/dog.webp";
+import { GoogleLogin } from "@react-oauth/google";
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -33,6 +34,15 @@ function SignUp() {
     }
   };
 
+  const handleGoogle = () => {
+    console.log("clicked")
+    axios.post("http://localhost:1001/api/google/")
+    .then((data) => {
+      console.log(data.data.redirectURI)
+      window.location.href = data.data.redirectURI
+    })
+  }
+
   return (
     <div
       style={{
@@ -46,18 +56,17 @@ function SignUp() {
     >
       <div
         style={{
-          display:"flex",
-          justifyContent:"center",
-          alignItems:"center",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           width: "550px",
-          height:"550px",
-          padding:"30px",
+          height: "550px",
+          padding: "30px",
           backgroundColor: "white",
           borderRadius: "50%",
           boxShadow: "0px 0px 10px rgba(0, 0, 0, 1)",
         }}
       >
-
         <form onSubmit={handleSubmit}>
           <h2 style={{ textAlign: "center" }}>Sign Up</h2>
           <hr />
@@ -72,7 +81,7 @@ function SignUp() {
                 width: "100%",
                 padding: "10px",
                 border: "none",
-                borderBottom:"1px solid gray",
+                borderBottom: "1px solid gray",
                 backgroundColor: "white",
                 color: "black",
               }}
@@ -91,7 +100,7 @@ function SignUp() {
                 width: "100%",
                 padding: "10px",
                 border: "none",
-                borderBottom:"1px solid gray",
+                borderBottom: "1px solid gray",
                 backgroundColor: "white",
                 color: "black",
               }}
@@ -110,7 +119,7 @@ function SignUp() {
                 width: "80%",
                 padding: "10px",
                 border: "none",
-                borderBottom:"1px solid gray",
+                borderBottom: "1px solid gray",
                 backgroundColor: "white",
                 color: "black",
               }}
@@ -149,12 +158,16 @@ function SignUp() {
           >
             Submit
           </button>
-          <p style={{ paddingTop: "10px", textAlign:"center" }}>
+          <p style={{ paddingTop: "10px", textAlign: "center" }}>
             Already an User? <Link to="/signin">SignIn</Link> here.
           </p>
         </form>
+        
+        {/* Google Login Button */}
+        <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center" }}>
+            Sign-up with google
+        </div>
       </div>
-     
     </div>
   );
 }

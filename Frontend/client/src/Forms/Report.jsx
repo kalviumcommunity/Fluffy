@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -7,25 +7,33 @@ import { v4 } from "uuid";
 
 function Report() {
   // Pet's Details
-  const [petanimal, setPetAnimal] = useState("");
-  const [petname, setPetName] = useState("");
-  const [petbreed, setPetBreed] = useState("");
-  const [petage, setPetAge] = useState("");
-  const [petgender, setPetGender] = useState("");
-  const [petsize, setPetSize] = useState("");
-  const [petcolor, setPetColor] = useState("");
-  const [petdescription, setPetDescription] = useState("");
-  const [petlastseen, setPetLastSeen] = useState("");
-  const [petdatelost, setPetDateLost] = useState("");
-  const [petlivesin, setpetLivesIn] = useState("");
-  const [petimage, setPetImage] = useState("");
-  const [ownername, setOwnerName] = useState("");
-  const [ownerphone, setOwnerPhone] = useState("");
-  const [owneremail, setOwnerEmail] = useState("");
-  const [owneraddress, setOwnerAddress] = useState("");
+  const [PetInfo, setPetInfo] = useState({
+    petAnimal: '',
+    petName: '',
+    petBreed: '',
+    petAge: '',
+    petGender: '',
+    petColor: '',
+    petSize: '',
+    petDescription: '',
+    petLastSeen: '',
+    petDateLost: '',
+    petLivesIn: '',
+    petImage: '',
+    ownerName: '',
+    ownerPhone: '',
+    ownerEmail: '',
+    ownerAddress: '',
+  }) 
   const [imageUpload, setImageUpload] = useState(null);
   const navigate = useNavigate();
-
+  // const handleInput = (event) => {
+  //   {name,value} = event.target
+  //   setPetInfo((prevState) =>({
+  //     ...prevState,
+  //     [name] : value
+  //   }))
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,29 +46,31 @@ function Report() {
           // Now submit the form data including the image URL
           try {
             const response = await axios.post("http://localhost:1001/main/postdata", {
-              animal: petanimal,
-              name: petname,
-              breed: petbreed,
-              age: petage,
-              gender: petgender,
-              size: petsize,
-              color: petcolor,
-              image: url, // Use the uploaded image URL here
-              description: petdescription,
-              lastSeen: petlastseen,
-              dateLost: petdatelost,
-              livesin: petlivesin,
+              animal: petInfo.petAnimal,
+              name: petInfo.petName,
+              type: petInfo.petType,
+              breed: petInfo.petBreed,
+              age: petInfo.petAge,
+              gender: petInfo.petGender,
+              size: petInfo.petSize,
+              color: petInfo.petColor,
+              image: url,
+              description: petInfo.petDescription,
+              lastSeen: petInfo.petLastSeen,
+              dateLost: petInfo.petDateLost,
+              livesIn: petInfo.petLivesIn,
               owner: {
-                name: ownername,
-                phone: ownerphone,
-                email: owneremail,
-                address: owneraddress,
-              },
+                name: petInfo.ownerName,
+                phone: petInfo.ownerPhone,
+                email: petInfo.ownerEmail,
+                address: petInfo.ownerAddress,
+              },            
             });
             console.log("Posted Successfully", response);
             // Clear form fields after submission
             setPetAnimal("");
             setPetName("");
+            setPetType("");
             setPetBreed("");
             setPetAge("");
             setPetGender("");
@@ -84,46 +94,76 @@ function Report() {
   };
 
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        backgroundImage: "linear-gradient(to bottom right, #FF5733, #FF0000)",
-        color: "black",
-      }}
-    >
+    <div>
       <div
         style={{
           background: "white",
-          height: "100%",
           borderTop: "3px dashed crimson",
           borderBottom: "3px dashed crimson",
           padding: "20px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "5px",
         }}
       >
         <form
           onSubmit={handleSubmit}
           style={{
-            width: "70vw",
+            width: "60vw",
             padding: "20px",
           }}
         >
           <h1 style={{ textAlign: "center", color: "crimson", fontSize: "1.8em" }}>
-            Report Form
+            Adopt and Report Form
           </h1>
           <hr style={{ margin: "20px 0" }} />
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              gap: "20px 40px",
+              gridTemplateColumns: "repeat(3,1fr)",
+              gap: "20px",
               backgroundColor: "white",
-              padding: "30px",
+              padding: "20px",
             }}
           >
-            <div style={{ marginBottom: "20px" }}>
+            <div>
+              <label style={{ color: "black" }}>Form Type :</label>
+              <select
+                onChange={(e) => setPetType(e.target.value)}
+                value={pettype}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              >
+                <option value="">Select form type</option>
+                <option value="adopt">Adopt</option>
+                <option value="report">Report</option>
+              </select>
+            </div> 
+            <div>
+              <label style={{ color: "black" }}>Pet name :</label>
+              <input
+                type="text"
+                placeholder="Enter pet's name"
+                onChange={(e) => setPetName(e.target.value)}
+                value={petname}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
+            <div>
               <label style={{ color: "black" }}>Pet Animal :</label>
               <select
                 onChange={(e) => setPetAnimal(e.target.value)}
@@ -144,24 +184,6 @@ function Report() {
               </select>
             </div>
             <div style={{ marginBottom: "20px" }}>
-              <label style={{ color: "black" }}>Pet name :</label>
-              <input
-                type="text"
-                placeholder="Enter pet's name"
-                onChange={(e) => setPetName(e.target.value)}
-                value={petname}
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  border: "none",
-                  borderBottom: "1px solid gray",
-                  backgroundColor: "white",
-                  color: "black",
-                }}
-                required
-              />
-            </div>
-            <div style={{ marginBottom: "20px" }}>
               <label style={{ color: "black" }}>Pet Breed :</label>
               <input
                 type="text"
@@ -179,7 +201,7 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div>
               <label style={{ color: "black" }}>Pet Age :</label>
               <select
                 onChange={(e) => setPetAge(e.target.value)}
@@ -222,7 +244,7 @@ function Report() {
               </select>
             </div>
 
-            <div style={{ marginBottom: "20px" }}>
+            <div>
               <label style={{ color: "black" }}>Pet Size :</label>
               <select
                 onChange={(e) => setPetSize(e.target.value)}
@@ -261,7 +283,7 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div>
               <label style={{ color: "black" }}>Pet Image :</label>
               <input
                 type="file"
@@ -277,7 +299,7 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div>
               <label style={{ color: "black" }}>Pet Last seen :</label>
               <input
                 type="text"
@@ -295,7 +317,7 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div>
               <label style={{ color: "black" }}>Pet Date Lost :</label>
               <input
                 type="text"
@@ -313,7 +335,7 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div >
               <label style={{ color: "black" }}>Pet From :</label>
               <input
                 type="text"
@@ -331,28 +353,31 @@ function Report() {
                 required
               />
             </div>
-            <div style={{ marginBottom: "20px" }}>
+          </div>
+            <div style={{margin:"0 20px" }}>
               <label style={{ color: "black" }}>Pet Description :</label>
               <textarea
                 placeholder="Enter pet's description"
                 onChange={(e) => setPetDescription(e.target.value)}
                 value={petdescription}
                 style={{
+                  marginTop:"10px",
                   width: "100%",
-                  padding: "5px",
+                  padding: "10px",
                   border: "1px solid gray",
                   backgroundColor: "white",
                   color: "black",
                   resize: "vertical",
+                  height:"100px"
                 }}
                 required
               />
             </div>
-          </div>
           <button
             type="submit"
             style={{
               width: "100%",
+              marginTop:"15px",
               padding: "10px",
               backgroundColor: "black",
               color: "white",

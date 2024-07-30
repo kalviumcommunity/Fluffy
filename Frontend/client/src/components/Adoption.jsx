@@ -1,158 +1,190 @@
-// Adoption.jsx
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../HomeComponents/Navbar.jsx";
-import main from "../images/adopt2.webp";
-import AdoptionPetdata from '../apicalls.jsx/AdoptionPetdata.jsx';
+import main from "../images/adopt4.jpg";
+import AdoptionPetdata from "../apicalls.jsx/AdoptionPetdata.jsx";
 import Footer from "../HomeComponents/Footer.jsx";
+import { Parallax } from "react-parallax";
+import Reportform from "../Forms/Report.jsx";
 
 function Adoption() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
-    <div>
-      <Navbar />
-      <div>
-        <section
+    <>
+      <Parallax id="image" bgImage={main} strength={200}>
+        <div
           style={{
+            height: "100vh",
             display: "flex",
-            position: "relative",
-            padding: "10px",
-            lineHeight: "1.6",
+            flexDirection: "column",
+            paddingBottom: "100px",
+            background: "rgba(0,0,0,0.5)",
           }}
         >
+          <Navbar />
           <div
             style={{
+              flex: 1,
               display: "flex",
-              flexDirection: "column",
               justifyContent: "center",
-              background: "#E6E6FA",
-              height: "60vh",
-              padding: "70px",
-              borderRadius: "25px 0px 0px 25px",
-              lineHeight:"1.6 "
+              alignItems: "center",
+              position: "relative",
             }}
           >
-            <h2
+            <div
               style={{
-                fontSize: "2.5rem",
-                color: "#6504b5",
-                textAlign: "center",
+                display: "flex",
+                justifyContent: "space-between",
+                flexDirection: "row",
+                width: "100vw",
+                alignItems: "center",
+                color: "white",
               }}
             >
-              Spoil Your Furry Friend: Top-Rated Pet Food
-            </h2>
-            <p
-              style={{ fontSize: "1rem", color: "black", textAlign: "center", }}
-            >
-              Our high-quality pet food is packed with essential vitamins and
-              minerals to keep your pet happy and healthy inside and out.
-            </p>
-            <div style={{ textAlign: "center",paddingTop:"30px"}}>
-              <button
+              <p
                 style={{
-                  width: "100px",
-                  height: "100px",
-                  padding: "10px",
-                  fontSize: "1rem",
-                  background: "#6504b5",
-                  color: "white",
-                  borderRadius: "100%",
-                  border: "none",
-                  cursor: "pointer",
+                  transform: "rotate(90deg)",
+                  textAlign: "right",
+                  whiteSpace: "nowrap",
+                  fontSize: "0.7em",
                 }}
               >
-                Explore
-              </button>
+                SCROLL DOWN
+              </p>
+              <div>
+                <p
+                  style={{
+                    fontSize: "5.5em",
+                    textAlign: "center",
+                    fontWeight: "500",
+                  }}
+                >
+                  Fluffy <br /> Animal Society
+                </p>
+                <p
+                  style={{
+                    textAlign: "center",
+                    paddingTop: "20px",
+                    fontSize: "1.1em",
+                  }}
+                >
+                  A non-profit trust helping animals in Coimbatore, India, since
+                  (I don't know)
+                </p>
+              </div>
+              <p
+                style={{
+                  transform: "rotate(90deg)",
+                  textAlign: "right",
+                  whiteSpace: "nowrap",
+                  fontSize: "0.7em",
+                }}
+              >
+                SCROLL DOWN
+              </p>
             </div>
           </div>
-          <img
-            src={main}
-            alt="Adopt"
+        </div>
+      </Parallax>
+      <section
+        style={{
+          padding: "50px 350px",
+          background: "#F5F0FF",
+          lineHeight: "1.6",
+          height: "100%",
+        }}
+      >
+        <div>
+          <h4
             style={{
-              borderRadius: "0px 25px 25px 0px",
-              height: "60vh",
-              flex: "1",
-              objectFit: "cover",
+              color: "#6504b5",
+              textAlign: "center",
+              paddingBottom: "30px",
+              fontSize: "2em",
             }}
-          />
-        </section>
-
-        <section style={{ padding: "50px 300px", background: "#F5F0FF",lineHeight:"1.6" }}>
-          <div id="adoption" style={{ overflow: "auto", height: "75vh", padding: "25px" }}>
-            <h4
+          >
+            Welcome to Fluffy <br /> Where Every Adoption Tells a Story
+          </h4>
+          <p>
+            At Fluffy, we believe in the transformative power of pet adoption.
+            Every year, millions of pets end up in shelters, waiting for their
+            forever homes. By adopting a pet from Fluffy, not only are you
+            giving an animal a second chance at life, but you're also gaining a
+            loyal companion who will bring joy and love into your home.
+          </p>
+          <p>
+            Did you know that adopting a pet can improve your mental and
+            physical health? Studies have shown that having a pet can reduce
+            stress, lower blood pressure, and even decrease the risk of heart
+            disease. Plus, adopting from shelters helps reduce pet
+            overpopulation and supports responsible pet ownership. When you
+            choose to adopt from Fluffy, you're not just getting a pet – you're
+            making a difference in the lives of animals in need.
+          </p>
+          <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
+          <div>
+            <h3
               style={{
                 color: "#6504b5",
                 textAlign: "center",
                 textDecoration: "underline",
-                paddingBottom: "30px",
-                fontSize:"2em"
+                padding: "30px",
+                fontSize: "1.5em",
               }}
             >
-              Welcome to Fluffy <br /> Where Every Adoption Tells a Story
-            </h4>
+              Paws and You <br /> Things to Consider Before Adopting a Dog
+            </h3>
             <p>
-              At Fluffy, we believe in the transformative power of pet adoption.
-              Every year, millions of pets end up in shelters, waiting for their
-              forever homes. By adopting a pet from Fluffy, not only are you
-              giving an animal a second chance at life, but you're also gaining
-              a loyal companion who will bring joy and love into your home.
+              Bringing a furry friend into your life can be an enriching
+              experience but it also comes with its fair share of
+              responsibilities. Before you decide to adopt a dog, it’s essential
+              to consider various factors to ensure a happy and healthy
+              relationship between you and your future four-legged companion.
+              Here are some things to keep in mind before you take the plunge
+              into pet parenthood.
             </p>
-            <p>
-              Did you know that adopting a pet can improve your mental and
-              physical health? Studies have shown that having a pet can reduce
-              stress, lower blood pressure, and even decrease the risk of heart
-              disease. Plus, adopting from shelters helps reduce pet
-              overpopulation and supports responsible pet ownership. When you
-              choose to adopt from Fluffy, you're not just getting a pet –
-              you're making a difference in the lives of animals in need.
-            </p>
-            <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
-            <div>
-              <h3
-                style={{
-                  color: "#6504b5",
-                  textAlign: "center",
-                  textDecoration: "underline",
-                  padding: "30px",
-                  fontSize:"1.5em"
-                }}
-              >
-                Paws and You <br /> Things to Consider Before Adopting a Dog
-              </h3>
-              <p>
-                Bringing a furry friend into your life can be an enriching
-                experience but it also comes with its fair share of
-                responsibilities. Before you decide to adopt a dog, it’s
-                essential to consider various factors to ensure a happy and
-                healthy relationship between you and your future four-legged
-                companion. Here are some things to keep in mind before you take
-                the plunge into pet parenthood.
-              </p>
-                <div style={{display:"flex",justifyContent:"space-between",flexDirection:"column",height:"150vh",paddingTop:"20px"}}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexDirection: "column",
+                paddingTop: "20px",
+              }}
+            >
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px" }}>Lifestyle assessment</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Lifestyle assessment
+                </h4>
                 <p>
                   Start by evaluating your daily routine and lifestyle. Dogs
-                  require time, attention and exercise. This can directly can
-                  affect their behaviour. Consider your work schedule, social
-                  commitments and hobbies. If you lead a hectic life that leaves
+                  require time, attention, and exercise. This can directly affect
+                  their behavior. Consider your work schedule, social
+                  commitments, and hobbies. If you lead a hectic life that leaves
                   little room for a pet, it might be wise to wait until you have
                   more time to dedicate to a furry friend.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}> Space and environment</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Space and environment
+                </h4>
                 <p>
                   Dogs, regardless of their size, need ample space to move
                   around and play. Assess your living situation, whether it’s an
-                  apartment, house or a shared space. Some breeds thrive in
+                  apartment, house, or a shared space. Some breeds thrive in
                   smaller spaces, while others require a yard for exercise.
                   Ensure your living situation is suitable for the specific
                   needs of the dog you’re considering.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px" }}>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
                   Allergies and health concerns
                 </h4>
                 <p>
@@ -163,20 +195,24 @@ function Adoption() {
                   associated costs of veterinary care.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Breed characteristics</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Breed characteristics
+                </h4>
                 <p>
                   Each dog breed has unique characteristics, including size,
-                  energy levels, grooming needs and temperament. Research
+                  energy levels, grooming needs, and temperament. Research
                   different breeds to find one that aligns with your preferences
                   and lifestyle. Consider whether you want an active dog for
                   outdoor adventures or a more laid-back companion.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Financial commitment</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Financial commitment
+                </h4>
                 <p>
                   Caring for a dog comes with various costs, including food,
                   grooming, veterinary care, and supplies. Be prepared for the
@@ -185,19 +221,23 @@ function Adoption() {
                   safety net for your pet is crucial.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Time and training</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Time and training
+                </h4>
                 <p>
                   Dogs require time and patience for training. Puppies, in
                   particular, need consistent training to become well-behaved
                   adults. Consider whether you have the time and energy to
-                  invest in training and socialising your new companion.
+                  invest in training and socializing your new companion.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Long-term commitment</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Long-term commitment
+                </h4>
                 <p>
                   Dogs have relatively long lifespans, and adopting one is a
                   commitment that lasts many years. Consider your plans, such as
@@ -206,9 +246,11 @@ function Adoption() {
                   commitment and responsibility of pet parenthood.
                 </p>
               </div>
-              <hr style={{ margin: "20px 0",borderColor:"#6504b5" }} />
+              <hr style={{ margin: "20px 0", borderColor: "#6504b5" }} />
               <div>
-                <h4 style={{ color: "#6504b5",paddingBottom:"10px"  }}>Shelter or breeder</h4>
+                <h4 style={{ color: "#6504b5", paddingBottom: "10px" }}>
+                  Shelter or breeder
+                </h4>
                 <p>
                   Decide whether to adopt from a shelter or purchase from a
                   reputable breeder. Both options have pros and cons, but
@@ -218,28 +260,92 @@ function Adoption() {
               </div>
               <p>
                 Adopting a dog is a life-changing decision that requires careful
-                consideration. By assessing your lifestyle, living situation and
+                consideration. By assessing your lifestyle, living situation, and
                 personal preferences, you can make an informed choice that leads
                 to a happy and harmonious relationship with your new canine
                 companion. Remember, a dog is not just a pet; they become an
-                integral part of your family, bringing joy, love and loyalty
+                integral part of your family, bringing joy, love, and loyalty
                 into your life.
               </p>
             </div>
-
-
-                </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <AdoptionPetdata />
-        </section>
-        <section>
-          <Footer />
-        </section>
-      </div>
-    </div>
+      <section>
+        <AdoptionPetdata />
+      </section>
+      <section
+        onClick={togglePopup}
+        style={{
+          position: "fixed",
+          top: "85%",
+          right: "0%",
+          cursor: "pointer",
+          display: "flex",
+          background: "#6504b5",
+          color: "white",
+          padding: "10px",
+          borderRadius:"25px 0px 0 25px"
+        }}
+      >
+        <img src="https://cdn-icons-png.flaticon.com/128/2353/2353855.png" alt="" style={{ height: "30px" }} />
+        <button
+          style={{
+            background: "#6504b5",
+            color: "white",
+            border: "none",
+            padding: "5px",
+          }}
+        >
+          Adoption Form
+        </button>
+      </section>
+
+      {isPopupOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              borderRadius: "10px",
+              position: "relative",
+              height: "auto",
+            }}
+          >
+            <button
+              onClick={togglePopup}
+              style={{
+                position: "absolute",
+                top: "40px",
+                right: "40px",
+                background: "crimson",
+                color: "white",
+                border: "none",
+                borderRadius: "50%",
+                width: "30px",
+                height: "30px",
+                cursor: "pointer",
+              }}
+            >
+              X
+            </button>
+            <Reportform />
+          </div>
+        </div>
+      )}
+      <Footer />
+    </>
   );
 }
 

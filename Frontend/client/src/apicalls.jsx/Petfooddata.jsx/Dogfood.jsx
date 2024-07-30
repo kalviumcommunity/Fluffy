@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../HomeComponents/Navbar";
 import Footer from "../../HomeComponents/Footer";
 
-function Catfood() {
+function Dogfood() {
   const [foods, setFoods] = useState([]);
   const [selectedType, setSelectedType] = useState("dog food");
   const [selectedCategory, setSelectedCategory] = useState("puppy");
@@ -59,22 +59,52 @@ function Catfood() {
   });
 
   return (
-    <div>
+    <>
       <Navbar />
       <h1 style={{ textAlign: "center", padding: "15px", color: "#388E3C" }}>
-        All Cat Foods and Treats
+        All Dog Foods
       </h1>
       <div>
-        <strong style={{ display: "flex", justifyContent: "space-around", alignItems: "center", paddingTop: "10px", border: "1px solid black" }}>
-          <p style={{ borderRight: "1px solid black", padding: "5px", cursor: "pointer", color: selectedType === "dog food" ? "red" : "#388E3C" }} onClick={() => setSelectedType("dog food")}>Dog Food</p>
-          <p style={{ borderLeft: "1px solid black", padding: "5px", cursor: "pointer", color: selectedType === "dog treat" ? "red" : "#388E3C" }} onClick={() => setSelectedType("dog treat")}>Dog Treat</p>
-        </strong>
-      </div>
-      <div>
-        <strong style={{ display: "flex", justifyContent: "space-around", alignItems: "center", paddingTop: "10px", border: "1px solid black" }}>
-          <p style={{ borderRight: "1px solid black", padding: "5px", cursor: "pointer", color: selectedCategory === "puppy" ? "red" : "#388E3C" }} onClick={() => handleCategoryClick("puppy")}>Kitten</p>
-          <p style={{ borderRight: "1px solid black", padding: "5px", cursor: "pointer", color: selectedCategory === "adult dog" ? "red" : "#388E3C" }} onClick={() => handleCategoryClick("adult dog")}>Adult</p>
-          <p style={{ borderRight: "1px solid black", padding: "5px", cursor: "pointer", color: selectedCategory === "senior dog" ? "red" : "#388E3C" }} onClick={() => handleCategoryClick("senior dog")}>Senior</p>
+        <strong style={{ display: "flex", justifyContent: "space-around", alignItems: "center", padding: "10px 0", backgroundColor: "#388E3C" }}>
+          <p
+            style={{
+              padding: "10px 50px",
+              cursor: "pointer",
+              backgroundColor: selectedCategory === "puppy" ? "white" : "#388E3C",
+              color: selectedCategory === "puppy" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
+            }}
+            onClick={() => handleCategoryClick("puppy")}
+          >
+            Puppy
+          </p>
+          <p
+            style={{
+              padding: "10px 50px",
+              cursor: "pointer",
+              backgroundColor: selectedCategory === "adult dog" ? "white" : "#388E3C",
+              color: selectedCategory === "adult dog" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
+            }}
+            onClick={() => handleCategoryClick("adult dog")}
+          >
+            Adult Dog
+          </p>
+          <p
+            style={{
+              padding: "10px 50px",
+              cursor: "pointer",
+              backgroundColor: selectedCategory === "senior dog" ? "white" : "#388E3C",
+              color: selectedCategory === "senior dog" ? "red" : "white",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+              margin: "0 5px",
+            }}
+            onClick={() => handleCategoryClick("senior dog")}
+          >
+            Senior Dog
+          </p>
         </strong>
       </div>
       {filteredFoods.map((food) => {
@@ -82,12 +112,12 @@ function Catfood() {
 
         return (
           <section key={food._id} style={{ margin: "30px 350px " }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",border:"1px solid gray",padding:"20px",borderRadius:"15px" }}>
               <img src={food.image} alt="" style={{ height: "300px", width: "250px", objectFit: "cover" }} />
               <div style={{ padding: "20px", width: "100%" }}>
                 <div style={{ padding: "10px", width: "100%" }}>
                   <strong style={{ color: "gray", textTransform: "capitalize", fontSize: "0.9rem" }}>{food.brand} | {food.age} | {food.type}</strong>
-                  <h4>{food.productName}</h4>
+                  <h3>{food.productName}</h3>
                 </div>
                 <hr style={{ margin: "10px 0" }} />
                 <p><strong style={{ fontSize: "1.3rem", padding: "10px" }}>💲{food.price}</strong></p>
@@ -108,7 +138,6 @@ function Catfood() {
                 </div>
               </div>
             </div>
-            <hr style={{ margin: "30px 0" }} />
           </section>
         );
       })}
@@ -116,13 +145,12 @@ function Catfood() {
         <Link to="/pet-foods" style={{ textDecoration: "none", color: "#388E3C" }}>
           <p><strong>&lt;&lt; Back</strong></p>
         </Link>
-        <Link to="/cat-foods" style={{ textDecoration: "none", color: "#388E3C" }}>
-          <p><strong>Cat food and treats &gt;&gt;</strong></p>
+        <Link to="/cat-food" style={{ textDecoration: "none", color: "#388E3C" }}>
+          <p><strong>Cat foods &gt;&gt;</strong></p>
         </Link>
       </section>
-      <Footer />
-    </div>
+    </>
   );
 }
 
-export default Catfood;
+export default Dogfood;

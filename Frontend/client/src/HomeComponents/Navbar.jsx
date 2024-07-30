@@ -15,17 +15,16 @@ function Navbar() {
   return (
     <>
       <nav
-       style={{
-        // position: "fixed",
-        top: 0,
-        padding: "5px",
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-around",
-        alignContent: "center",
-        background: "white", 
-        zIndex: 2,
-      }}
+        style={{
+          padding: "10px",
+          display: "flex",
+          justifyContent: "space-around",
+          alignContent: "center",
+          backdropFilter: "blur(20px)",
+          zIndex: 2,
+          backgroundColor: "rgba(0,0,0,0.3)",
+          
+        }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <Link to="/">
@@ -40,7 +39,7 @@ function Navbar() {
             style={{
               textDecoration: "none",
               fontSize: "1.5rem",
-              color: "black",
+              color: "white",
             }}
           >
             Fluffy
@@ -50,12 +49,17 @@ function Navbar() {
           style={{
             display: "flex",
             alignContent: "center",
-            alignItems:"center",
-            justifyContent: "space-evenly",
-            width: "10vw",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "13vw",
           }}
         >
-          <img onClick={toggleSideDiv} src="https://cdn-icons-png.flaticon.com/128/6015/6015685.png" alt="" style={{height:"3.3vh",cursor:"pointer"}} />
+          <img
+            onClick={toggleSideDiv}
+            src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF"
+            alt=""
+            style={{ height: "3.5vh", cursor: "pointer" }}
+          />
           <Link
             to="/your-cart"
             style={{
@@ -65,9 +69,9 @@ function Navbar() {
           >
             <div>
               <img
-                src="https://cdn-icons-png.flaticon.com/128/3002/3002254.png"
+                src="https://img.icons8.com/?size=100&id=ii6Lr4KivOiE&format=png&color=FFFFFF"
                 alt=""
-                style={{ height: "3.5vh",}}
+                style={{ height: "3.5vh" }}
               />
             </div>
           </Link>
@@ -78,12 +82,15 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <div>
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
-                alt=""
-                style={{ height: "3vh"}}
-              />
+            <div
+              style={{
+                color: "white",
+                border: "1px solid white",
+                padding: "5px 10px",
+                borderRadius: "5px",
+              }}
+            >
+              <p>Signup</p>
             </div>
           </Link>
         </div>
@@ -95,6 +102,7 @@ function Navbar() {
           top: 0,
           right: isOpen ? "0" : "-50%",
           width: "21%",
+          maxWidth: "400px", // Limiting sidebar width
           height: "100vh",
           overflow: "auto",
           backgroundColor: "gray",
@@ -108,20 +116,25 @@ function Navbar() {
         <span
           onClick={closeSideDiv}
           className="closeButton"
-          style={{ cursor: "pointer", }}
+          style={{ cursor: "pointer" }}
         >
           &times; Close sidebar
         </span>
         <div style={{ paddingTop: "20px" }}>
           <p>
-            <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            <Link
+              to="/"
+              style={{ color: "white", textDecoration: "none" }}
+              onClick={closeSideDiv}
+            >
               Home
             </Link>
           </p>
           <p>
             <Link
-              to="/adopt-a-pet"
+              to="/adopt-pets"
               style={{ color: "white", textDecoration: "none" }}
+              onClick={closeSideDiv}
             >
               Adopt a pet
             </Link>
@@ -130,6 +143,7 @@ function Navbar() {
             <Link
               to="/pet-foods"
               style={{ color: "white", textDecoration: "none" }}
+              onClick={closeSideDiv}
             >
               Buy petfood for your pet
             </Link>
@@ -138,14 +152,16 @@ function Navbar() {
             <Link
               to="/pet-toys"
               style={{ color: "white", textDecoration: "none" }}
+              onClick={closeSideDiv}
             >
               Buy pettoy for your pet
             </Link>
           </p>
           <p>
             <Link
-              to="/lost-and-found"
+              to="/report-pets"
               style={{ color: "white", textDecoration: "none" }}
+              onClick={closeSideDiv}
             >
               Report your lost pet
             </Link>
