@@ -13,9 +13,9 @@ const Cart = () => {
     try {
       const response = await axios.get("http://localhost:1001/main/yourcart");
       if (response.data && Array.isArray(response.data)) {
-        const updatedItems = response.data.map(item => ({
+        const updatedItems = response.data.map((item) => ({
           ...item,
-          quantity: parseInt(item.quantity, 10) || 1 // Set default quantity to 1 if not provided
+          quantity: parseInt(item.quantity, 10) || 1, // Set default quantity to 1 if not provided
         }));
         setItems(updatedItems);
       } else {
@@ -27,12 +27,12 @@ const Cart = () => {
   };
 
   const handleQuantityChange = (productId, change) => {
-    const updatedItems = items.map(item => {
+    const updatedItems = items.map((item) => {
       if (item._id === productId) {
         const newQuantity = item.quantity + change;
         return {
           ...item,
-          quantity: newQuantity > 0 ? newQuantity : item.quantity 
+          quantity: newQuantity > 0 ? newQuantity : item.quantity,
         };
       }
       return item;
@@ -42,7 +42,7 @@ const Cart = () => {
 
   const calculateTotalCartValue = () => {
     let total = 0;
-    items.forEach(item => {
+    items.forEach((item) => {
       total += item.productprice * item.quantity;
     });
     return total.toFixed(2); // Round the total to two decimal places
@@ -50,19 +50,26 @@ const Cart = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:1001/main/addtocart/${id}`);
-      console.log(res);
-      setItems(items.filter(item => item._id !== id)); // Update items list after deletion
+      await axios.delete(`http://localhost:1001/main/addtocart/${id}`);
+      setItems(items.filter((item) => item._id !== id)); // Update items list after deletion
     } catch (err) {
-      console.log(err);
+      console.error("Error deleting item:", err);
     }
+  };
+
+  const handleCheckout = () => {
+    axios.delete("http://localhost:1001/main/yourcart/clear").catch((error) =>
+      console.error("Error clearing cart on backend:", error)
+  );
+  setItems([]); 
+  alert("Checkout successful! All items will be removed from your cart.");
   };
 
   return (
     <>
       <Navbar />
-      <div style={{margin:"50px"}}>
-        <h2 style={{paddingBottom:"30px",fontSize:"4em",textAlign:"center"}}>Cart🛒</h2>
+      <div style={{ margin: "50px" }}>
+        <h2 style={{ paddingBottom: "30px", fontSize: "4em", textAlign: "center" }}>Cart🛒</h2>
         {items && items.length > 0 ? (
           <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
@@ -78,21 +85,50 @@ const Cart = () => {
             <tbody>
               {items.map((item) => (
                 <tr key={item._id}>
-                  <td style={{ border: "1px solid black",textAlign:"center" }}>
+                  <td style={{ border: "1px solid black", textAlign: "center" }}>
                     <img src={item.productimage} alt={item.productname} style={{ height: "60px" }} />
                   </td>
-                  <td style={{ border: "1px solid black",textAlign:"center" }}>{item.productname}</td>
-                  <td style={{ border: "1px solid black", textAlign:"center",width:"10vw"  }}>
-                    <div style={{ display: "flex", alignItems: "center",justifyContent:"space-between",border:"1px solid black",margin:"10px" }}>
-                      <button onClick={() => handleQuantityChange(item._id, -1)} style={{padding:"5px 10px"}}> - </button>
+                  <td style={{ border: "1px solid black", textAlign: "center" }}>{item.productname}</td>
+                  <td style={{ border: "1px solid black", textAlign: "center", width: "10vw" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        border: "1px solid black",
+                        margin: "10px",
+                      }}
+                    >
+                      <button
+                        onClick={() => handleQuantityChange(item._id, -1)}
+                        style={{ padding: "5px 10px" }}
+                      >
+                        {" "}
+                        -{" "}
+                      </button>
                       <p style={{ margin: "0 10px" }}>{item.quantity}</p>
-                      <button onClick={() => handleQuantityChange(item._id, 1)} style={{padding:"5px 10px"}}> + </button>
+                      <button
+                        onClick={() => handleQuantityChange(item._id, 1)}
+                        style={{ padding: "5px 10px" }}
+                      >
+                        {" "}
+                        +{" "}
+                      </button>
                     </div>
                   </td>
-                  <td style={{ border: "1px solid black",textAlign:"center" }}>💲{item.productprice}</td>
-                  <td style={{ border: "1px solid black", textAlign:"center" }}>💲{(item.productprice * item.quantity).toFixed(2)}</td>
-                  <td style={{ border: "1px solid black", textAlign:"center"  }}>
-                    <img src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png" alt="Delete" onClick={() => handleDelete(item._id)} style={{ height: "25px", cursor: "pointer" }} />
+                  <td style={{ border: "1px solid black", textAlign: "center" }}>
+                    💲{item.productprice}
+                  </td>
+                  <td style={{ border: "1px solid black", textAlign: "center" }}>
+                    💲{(item.productprice * item.quantity).toFixed(2)}
+                  </td>
+                  <td style={{ border: "1px solid black", textAlign: "center" }}>
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/6861/6861362.png"
+                      alt="Delete"
+                      onClick={() => handleDelete(item._id)}
+                      style={{ height: "25px", cursor: "pointer" }}
+                    />
                   </td>
                 </tr>
               ))}
@@ -102,9 +138,27 @@ const Cart = () => {
           <p style={{ textAlign: "center" }}>Your cart is empty</p>
         )}
         {items.length > 0 && (
-          <p style={{ textAlign: "right", fontWeight: "bold" }}>
-            Total Cart Value: 💲{calculateTotalCartValue()}
-          </p>
+          <>
+            <p style={{ textAlign: "right", fontWeight: "bold" }}>
+              Total Cart Value: 💲{calculateTotalCartValue()}
+            </p>
+            <button
+              onClick={handleCheckout}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                backgroundColor: "#27408B",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+                display: "block",
+                marginLeft: "auto",
+              }}
+            >
+              Checkout
+            </button>
+          </>
         )}
       </div>
     </>

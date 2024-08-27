@@ -41,7 +41,7 @@ function Lostandfoundpetdata() {
      <section style={{ padding: "50px 150px", backgroundColor: "#f9f9f9" }}>
   <h2 style={{ color: "crimson", fontSize: "1.9em", textAlign: "center" }}>Hall Of Rescued</h2>
   <hr style={{ margin: "20px 0" }} />
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)",justifyContent:"center",alignContent:"center", gap: " 30px 40px" }}>
+  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)",justifyContent:"center",alignContent:"center", gap: " 20px" }}>
     {rescuePets.map((pet, index) => (
       <div key={index} style={{  overflow: "hidden" }}>
         <img
@@ -157,15 +157,6 @@ function Lostandfoundpetdata() {
           ))}
         </div>
       </section>
-      
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px", backgroundColor: "crimson" }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
-            <p style={{ margin: "0", marginLeft: "5px", color: "white" }}>Back to Home</p>
-          </div>
-        </div>
-      </Link>
     </div>
   );
 }

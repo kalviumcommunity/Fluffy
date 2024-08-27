@@ -195,7 +195,7 @@ const Foodshop = () => {
                     color: "white",
                   }}
                 >
-                  See More
+                  See More..
                 </button>
               </Link>
             )}
@@ -235,7 +235,7 @@ const Foodshop = () => {
                     color: "white",
                   }}
                 >
-                  See More
+                  See More..
                 </button>
               </Link>
             )}
@@ -275,7 +275,7 @@ const Foodshop = () => {
                     color: "white",
                   }}
                 >
-                  See More
+                  See More..
                 </button>
               </Link>
             )}
@@ -315,7 +315,7 @@ const Foodshop = () => {
                     color: "white",
                   }}
                 >
-                  See More
+                  See More..
                 </button>
               </Link>
             )}

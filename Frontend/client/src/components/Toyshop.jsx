@@ -67,7 +67,7 @@ const Toyshop = () => {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  padding: "10px",
+                  padding: "25````px",
                 }}
               >
                 <img
@@ -165,11 +165,12 @@ const Toyshop = () => {
               gridTemplateColumns: "repeat(2, 1fr)",
               gap: "20px",
               padding: "20px",
+
             }}
           >
             {renderToys("cat")}
           </div>
-          <div style={{ textAlign: "center", padding: "5px" }}>
+          <div style={{ textAlign: "center", padding: "10px" }}>
             {toys.filter(
               (toy) => toy.animal.toLowerCase() === "cat"
             ).length > 2 && (
@@ -239,8 +240,6 @@ const Toyshop = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };
