@@ -59,14 +59,6 @@ function Lostandfound() {
       <section>
         <Lostandfoundpetdata />
       </section>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <div style={{ display: "flex", justifyContent: "center", margin: "50px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px", backgroundColor: "crimson" }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
-            <p style={{ margin: "0", marginLeft: "5px", color: "white" }}>Back to Home</p>
-          </div>
-        </div>
-      </Link>
       <section
         onClick={togglePopup}
         style={{

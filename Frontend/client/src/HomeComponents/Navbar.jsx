@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -12,6 +12,27 @@ function Navbar() {
     setIsOpen(false);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.ctrlKey && e.code === 'Slash') { // Check for Ctrl + M
+      toggleSideDiv();
+    }
+  };
+
+  const handleClickOutside = (e) => {
+    if (isOpen && !e.target.closest('.sideDiv') && !e.target.closest('.toggle-button')) {
+      closeSideDiv();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <nav
@@ -23,7 +44,6 @@ function Navbar() {
           backdropFilter: "blur(20px)",
           zIndex: 2,
           backgroundColor: "rgba(0,0,0,0.3)",
-          
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -55,6 +75,7 @@ function Navbar() {
           }}
         >
           <img
+            className="toggle-button"
             onClick={toggleSideDiv}
             src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF"
             alt=""
@@ -101,72 +122,102 @@ function Navbar() {
           position: "fixed",
           top: 0,
           right: isOpen ? "0" : "-50%",
-          width: "21%",
-          maxWidth: "400px", // Limiting sidebar width
+          width: "100%",
+          maxWidth: "350px", // Limiting sidebar width
           height: "100vh",
           overflow: "auto",
-          backgroundColor: "gray",
-          color: "white",
-          padding: "30px",
+          background: "white",
+          color: "black",
+          padding: "30px 0",
           transition: "right 0.5s ease",
           boxShadow: "0 0 10px rgba(0, 0 , 0, 0.5)",
           zIndex: 3,
         }}
-      >
-        <span
+        >
+        <div
           onClick={closeSideDiv}
           className="closeButton"
-          style={{ cursor: "pointer" }}
+          style={{
+            cursor: "pointer",
+            fontSize: "1.1em",
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            fontWeight:"bolder"
+          }}
         >
           &times; Close sidebar
-        </span>
-        <div style={{ paddingTop: "20px" }}>
+        </div>
+        <hr style={{ margin: "20px 0" }} />
+
+        <div style={{ padding: "20px " }}>
           <p>
             <Link
               to="/"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ textDecoration: "none", fontWeight: "bold", color: "black" }}
               onClick={closeSideDiv}
             >
-              Home
+              HOME
             </Link>
           </p>
+          <p style={{ margin: "20px 0", border: "0.1px solid gray" }} />
           <p>
             <Link
               to="/adopt-pets"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ textDecoration: "none", fontWeight: "bold", color: "#6504b5" }}
               onClick={closeSideDiv}
             >
-              Adopt a pet
+              FLUFFY ADOPT PETS
             </Link>
           </p>
+          <hr style={{ margin: "20px 0", border: "0.1px solid gray" }} />
           <p>
             <Link
               to="/pet-foods"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ textDecoration: "none", fontWeight: "bold", color: "#388E3C" }}
               onClick={closeSideDiv}
             >
-              Buy petfood for your pet
+              FLUFFY FOOD
             </Link>
           </p>
+          <hr style={{ margin: "20px 0", border: "0.1px solid gray" }} />
           <p>
             <Link
               to="/pet-toys"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ textDecoration: "none", fontWeight: "bold", color: "#00008B" }}
               onClick={closeSideDiv}
             >
-              Buy pettoy for your pet
+              FLUFFY TOYS
             </Link>
           </p>
+          <hr style={{ margin: "20px 0", border: "0.1px solid gray" }} />
           <p>
             <Link
               to="/report-pets"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ textDecoration: "none", fontWeight: "bold", color: "crimson" }}
               onClick={closeSideDiv}
             >
-              Report your lost pet
+              FLUFFY REPORTED PETS
             </Link>
           </p>
-          <p style={{ border: "2px solid white" }}></p>
+          <hr style={{ margin: "20px 0", border: "0.1px solid gray" }} />
+          <div
+            style={{
+              textAlign: "center",
+              position:"fixed",
+              top:"94vh",
+              padding:"5px ",
+              fontSize:"0.8em",
+              width:"20.5%",
+              display:"flex",
+              justifyContent:"center",
+              alignItems:"center",
+              fontWeight:"bolder",
+              borderTop:"3px dotted black"
+            }}
+          >
+            Press " Ctrl + / "  to Open & Close Navbar
+          </div>
         </div>
       </div>
     </>

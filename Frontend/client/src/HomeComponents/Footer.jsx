@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer style={{background:"black", color:"#E0E0E0"}}>
+    <footer style={{background:"#2b2b2b", color:"#E0E0E0"}}>
         <div style={{
-          height:"90vh",
+          height:"60vh",
           display:"flex",
           flexDirection:"column",
           justifyContent:"space-between",
           borderTop:"2px solid gray",
-          padding:"75px",
+          padding:"60px",
         }}>
           <div
           style={{

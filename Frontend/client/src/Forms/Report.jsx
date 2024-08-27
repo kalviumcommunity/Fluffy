@@ -6,8 +6,7 @@ import { storage } from "./firebase";
 import { v4 } from "uuid";
 
 function Report() {
-  // Pet's Details
-  const [PetInfo, setPetInfo] = useState({
+  const [petInfo, setPetInfo] = useState({
     petAnimal: '',
     petName: '',
     petBreed: '',
@@ -20,76 +19,79 @@ function Report() {
     petDateLost: '',
     petLivesIn: '',
     petImage: '',
-    ownerName: '',
-    ownerPhone: '',
-    ownerEmail: '',
-    ownerAddress: '',
-  }) 
+    // ownerName: '',
+    // ownerPhone: '',
+    // ownerEmail: '',
+    // ownerAddress: '',
+  });
+
   const [imageUpload, setImageUpload] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // const handleInput = (event) => {
-  //   {name,value} = event.target
-  //   setPetInfo((prevState) =>({
-  //     ...prevState,
-  //     [name] : value
-  //   }))
-  // }
+
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+    setPetInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     if (imageUpload) {
       const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then((snapshot) => {
         getDownloadURL(snapshot.ref).then(async (url) => {
-          setPetImage(url); // Set the uploaded image URL to the petimage state
-          
+          setPetInfo((prevState) => ({
+            ...prevState,
+            petImage: url
+          }));
+
           // Now submit the form data including the image URL
           try {
             const response = await axios.post("http://localhost:1001/main/postdata", {
-              animal: petInfo.petAnimal,
-              name: petInfo.petName,
-              type: petInfo.petType,
-              breed: petInfo.petBreed,
-              age: petInfo.petAge,
-              gender: petInfo.petGender,
-              size: petInfo.petSize,
-              color: petInfo.petColor,
-              image: url,
-              description: petInfo.petDescription,
-              lastSeen: petInfo.petLastSeen,
-              dateLost: petInfo.petDateLost,
-              livesIn: petInfo.petLivesIn,
-              owner: {
-                name: petInfo.ownerName,
-                phone: petInfo.ownerPhone,
-                email: petInfo.ownerEmail,
-                address: petInfo.ownerAddress,
-              },            
+              ...petInfo,
+              petImage: url,
             });
+
             console.log("Posted Successfully", response);
             // Clear form fields after submission
-            setPetAnimal("");
-            setPetName("");
-            setPetType("");
-            setPetBreed("");
-            setPetAge("");
-            setPetGender("");
-            setPetSize("");
-            setPetColor("");
-            setPetDescription("");
-            setPetLastSeen("");
-            setPetDateLost("");
-            setpetLivesIn("");
-            setOwnerName("");
-            setOwnerPhone("");
-            setOwnerEmail("");
-            setOwnerAddress("");
+            setPetInfo({
+              petAnimal: '',
+              petName: '',
+              petBreed: '',
+              petAge: '',
+              petGender: '',
+              petColor: '',
+              petSize: '',
+              petDescription: '',
+              petLastSeen: '',
+              petDateLost: '',
+              petLivesIn: '',
+              petImage: '',
+              // ownerName: '',
+              // ownerPhone: '',
+              // ownerEmail: '',
+              // ownerAddress: '',
+            });
             setImageUpload(null);
           } catch (err) {
             console.error("Error signing up:", err);
+          } finally {
+            setTimeout(() => {
+              setLoading(false);
+              navigate("/your-success-page");
+            }, 5000);
           }
         });
       });
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 5000);
     }
   };
 
@@ -128,8 +130,9 @@ function Report() {
             <div>
               <label style={{ color: "black" }}>Form Type :</label>
               <select
-                onChange={(e) => setPetType(e.target.value)}
-                value={pettype}
+                name="petType"
+                onChange={handleInput}
+                value={petInfo.petType}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -144,14 +147,15 @@ function Report() {
                 <option value="adopt">Adopt</option>
                 <option value="report">Report</option>
               </select>
-            </div> 
+            </div>
             <div>
               <label style={{ color: "black" }}>Pet name :</label>
               <input
                 type="text"
+                name="petName"
                 placeholder="Enter pet's name"
-                onChange={(e) => setPetName(e.target.value)}
-                value={petname}
+                onChange={handleInput}
+                value={petInfo.petName}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -166,8 +170,9 @@ function Report() {
             <div>
               <label style={{ color: "black" }}>Pet Animal :</label>
               <select
-                onChange={(e) => setPetAnimal(e.target.value)}
-                value={petanimal}
+                name="petAnimal"
+                onChange={handleInput}
+                value={petInfo.petAnimal}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -187,9 +192,10 @@ function Report() {
               <label style={{ color: "black" }}>Pet Breed :</label>
               <input
                 type="text"
+                name="petBreed"
                 placeholder="Enter pet's breed"
-                onChange={(e) => setPetBreed(e.target.value)}
-                value={petbreed}
+                onChange={handleInput}
+                value={petInfo.petBreed}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -204,8 +210,9 @@ function Report() {
             <div>
               <label style={{ color: "black" }}>Pet Age :</label>
               <select
-                onChange={(e) => setPetAge(e.target.value)}
-                value={petage}
+                name="petAge"
+                onChange={handleInput}
+                value={petInfo.petAge}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -226,8 +233,9 @@ function Report() {
             <div style={{ marginBottom: "20px" }}>
               <label style={{ color: "black" }}>Pet Gender :</label>
               <select
-                onChange={(e) => setPetGender(e.target.value)}
-                value={petgender}
+                name="petGender"
+                onChange={handleInput}
+                value={petInfo.petGender}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -247,8 +255,9 @@ function Report() {
             <div>
               <label style={{ color: "black" }}>Pet Size :</label>
               <select
-                onChange={(e) => setPetSize(e.target.value)}
-                value={petsize}
+                name="petSize"
+                onChange={handleInput}
+                value={petInfo.petSize}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -269,9 +278,10 @@ function Report() {
               <label style={{ color: "black" }}>Pet Color :</label>
               <input
                 type="text"
+                name="petColor"
                 placeholder="Enter pet's color"
-                onChange={(e) => setPetColor(e.target.value)}
-                value={petcolor}
+                onChange={handleInput}
+                value={petInfo.petColor}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -303,9 +313,10 @@ function Report() {
               <label style={{ color: "black" }}>Pet Last seen :</label>
               <input
                 type="text"
+                name="petLastSeen"
                 placeholder="Enter pet's last seen location"
-                onChange={(e) => setPetLastSeen(e.target.value)}
-                value={petlastseen}
+                onChange={handleInput}
+                value={petInfo.petLastSeen}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -318,12 +329,12 @@ function Report() {
               />
             </div>
             <div>
-              <label style={{ color: "black" }}>Pet Date Lost :</label>
+              <label style={{ color: "black" }}>Pet Date lost :</label>
               <input
-                type="text"
-                placeholder="Enter pet's lost date"
-                onChange={(e) => setPetDateLost(e.target.value)}
-                value={petdatelost}
+                type="date"
+                name="petDateLost"
+                onChange={handleInput}
+                value={petInfo.petDateLost}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -335,13 +346,14 @@ function Report() {
                 required
               />
             </div>
-            <div >
-              <label style={{ color: "black" }}>Pet From :</label>
+            <div style={{ marginBottom: "20px" }}>
+              <label style={{ color: "black" }}>Pet Lives in :</label>
               <input
                 type="text"
-                placeholder="Enter where do you live?"
-                onChange={(e) => setpetLivesIn(e.target.value)}
-                value={petlivesin}
+                name="petLivesIn"
+                placeholder="Enter pet's living area"
+                onChange={handleInput}
+                value={petInfo.petLivesIn}
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -353,36 +365,113 @@ function Report() {
                 required
               />
             </div>
-          </div>
-            <div style={{margin:"0 20px" }}>
+
+            <div style={{ marginBottom: "20px" }}>
               <label style={{ color: "black" }}>Pet Description :</label>
-              <textarea
+              <input
+                type="text"
+                name="petDescription"
                 placeholder="Enter pet's description"
-                onChange={(e) => setPetDescription(e.target.value)}
-                value={petdescription}
+                onChange={handleInput}
+                value={petInfo.petDescription}
                 style={{
-                  marginTop:"10px",
                   width: "100%",
                   padding: "10px",
-                  border: "1px solid gray",
+                  border: "none",
+                  borderBottom: "1px solid gray",
                   backgroundColor: "white",
                   color: "black",
-                  resize: "vertical",
-                  height:"100px"
                 }}
                 required
               />
             </div>
+{/* 
+            <div>
+              <label style={{ color: "black" }}>Owner name :</label>
+              <input
+                type="text"
+                name="ownerName"
+                placeholder="Enter owner's name"
+                onChange={handleInput}
+                value={petInfo.ownerName}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
+            <div>
+              <label style={{ color: "black" }}>Owner phone :</label>
+              <input
+                type="tel"
+                name="ownerPhone"
+                placeholder="Enter owner's phone number"
+                onChange={handleInput}
+                value={petInfo.ownerPhone}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
+            <div>
+              <label style={{ color: "black" }}>Owner email :</label>
+              <input
+                type="email"
+                name="ownerEmail"
+                placeholder="Enter owner's email"
+                onChange={handleInput}
+                value={petInfo.ownerEmail}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
+            <div>
+              <label style={{ color: "black" }}>Owner address :</label>
+              <input
+                type="text"
+                name="ownerAddress"
+                placeholder="Enter owner's address"
+                onChange={handleInput}
+                value={petInfo.ownerAddress}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div> */}
+          </div>
           <button
             type="submit"
             style={{
               width: "100%",
-              marginTop:"15px",
               padding: "10px",
-              backgroundColor: "black",
-              color: "white",
               border: "none",
-              borderRadius: "5px",
+              backgroundColor: "crimson",
+              color: "white",
+              fontSize: "16px",
               cursor: "pointer",
             }}
           >

@@ -24,7 +24,9 @@ function Adoptionpetdata() {
 
   useEffect(() => {
     if (selectedAnimal) {
-      const filtered = pets.filter((pet) => pet.animal === selectedAnimal && pet.type === "adopt");
+      const filtered = pets.filter(
+        (pet) => pet.animal === selectedAnimal && pet.type === "adopt"
+      );
       setFilteredPets(filtered);
     } else {
       const filtered = pets.filter((pet) => pet.type === "adopt");
@@ -36,33 +38,68 @@ function Adoptionpetdata() {
     setSelectedAnimal(animal);
   };
 
+  const handleAdoptClick = (petId) => {
+    const confirmed = window.confirm("Do you wish to adopt this pet?");
+    if (confirmed) {
+      axios
+        .put(`http://localhost:1001/main/update/${petId}`, { type: "adopted" })
+        .then((response) => {
+          setPets((prevPets) =>
+            prevPets.map((pet) =>
+              pet._id === petId ? { ...pet, type: "adopted" } : pet
+            )
+          );
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <div>
       <section style={{ padding: "50px 150px", backgroundColor: "#f9f9f9" }}>
-  <h2 style={{ color: "#6504b5", fontSize: "1.9em", textAlign: "center" }}>Hall Of Adopted</h2>
-  <hr style={{ margin: "20px 0" }} />
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)",justifyContent:"center",alignContent:"center", gap: " 30px 40px" }}>
-    {adoptedPets.map((pet, index) => (
-      <div key={index} style={{  overflow: "hidden" }}>
-        <img
-          src={pet.image}
-          alt={pet.name}
+        <h2 style={{ color: "#6504b5", fontSize: "1.9em", textAlign: "center" }}>
+          Hall Of Adopted
+        </h2>
+        <hr style={{ margin: "20px 0" }} />
+        <div
           style={{
-            width: "100%",
-            height: "45vh",
-            objectFit: "cover",
-            borderRadius: "10px 10px 0 0",
-            border:"1px solid #6504b5",
-            marginBottom: "-5px" // Adjust this to control the gap
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: "20px",
           }}
-        />
-        <div style={{ padding: "10px", textAlign: "center", border: "2px solid #6504b5",borderRadius:"0 0 10px 10px" }}>
-          <h3 style={{ fontSize: "1.2em",color:"#6504b5" }}>{pet.name}</h3>
+        >
+          {adoptedPets.map((pet, index) => (
+            <div key={index} style={{ overflow: "hidden" }}>
+              <img
+                src={pet.image}
+                alt={pet.name}
+                style={{
+                  width: "100%",
+                  height: "45vh",
+                  objectFit: "cover",
+                  borderRadius: "10px 10px 0 0",
+                  border: "1px solid #6504b5",
+                  marginBottom: "-5px", // Adjust this to control the gap
+                }}
+              />
+              <div
+                style={{
+                  padding: "10px",
+                  textAlign: "center",
+                  border: "2px solid #6504b5",
+                  borderRadius: "0 0 10px 10px",
+                }}
+              >
+                <h3 style={{ fontSize: "1.2em", color: "#6504b5" }}>
+                  {pet.name}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
 
       <section style={{ padding: "50px 150px" }}>
         <div
@@ -72,7 +109,9 @@ function Adoptionpetdata() {
             alignItems: "center",
           }}
         >
-          <h1 style={{ color: "#6504b5", fontSize: "1.9em" }}>Pets in Our Care</h1>
+          <h1 style={{ color: "#6504b5", fontSize: "1.9em" }}>
+            Pets in Our Care
+          </h1>
           <div>
             <button
               onClick={() => handleAnimalChange("dog")}
@@ -111,7 +150,7 @@ function Adoptionpetdata() {
                   alignItems: "center",
                   justifyContent: "space-between",
                   padding: "0px 50px",
-                  height: "50vh"
+                  height: "50vh",
                 }}
               >
                 <div style={{ padding: "0px 30px" }}>
@@ -126,19 +165,35 @@ function Adoptionpetdata() {
                     {pet.age} 🔺 {pet.gender} 🔺 {pet.size} 🔺 {pet.color}
                   </p>
                   <hr style={{ margin: "15px 0" }} />
-                  <h5 style={{ fontSize: '1em' }}>Description</h5>
-                  <p id="adoption" style={{ fontSize: "0.9rem", paddingTop: "10px", lineHeight: "1.5", width: "35vw", overflowY: "auto", height: "10vh", margin: "0", wordWrap: "break-word" }}>{pet.description}</p>
+                  <h5 style={{ fontSize: "1em" }}>Description</h5>
+                  <p
+                    id="adoption"
+                    style={{
+                      fontSize: "0.9rem",
+                      paddingTop: "10px",
+                      lineHeight: "1.5",
+                      width: "35vw",
+                      overflowY: "auto",
+                      height: "10vh",
+                      margin: "0",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    {pet.description}
+                  </p>
                   <div style={{ marginTop: "20px" }}>
                     <button
+                      onClick={() => handleAdoptClick(pet._id)}
                       style={{
                         background: "#6504b5",
                         border: "none",
                         color: "white",
                         padding: "10px 20px",
                         borderRadius: "5px",
+                        cursor:"pointer"
                       }}
                     >
-                      Call us
+                      Adopt Me
                     </button>
                   </div>
                 </div>
@@ -158,15 +213,6 @@ function Adoptionpetdata() {
           ))}
         </div>
       </section>
-      
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly", padding: "10px", width: "11.5vw", borderRadius: "5px", backgroundColor: "#6504b5" }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/8213/8213587.png" alt="" style={{ height: "2.2vh" }} />
-            <p style={{ margin: "0", marginLeft: "5px", color: "white" }}>Back to Home</p>
-          </div>
-        </div>
-      </Link>
     </div>
   );
 }

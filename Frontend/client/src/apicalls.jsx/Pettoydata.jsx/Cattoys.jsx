@@ -6,6 +6,8 @@ import Navbar from "../../HomeComponents/Navbar";
 function Cattoys() {
   const [toys, setToys] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Feather Toy");
+  const [cartItems, setCartItems] = useState([]);
+  const [addingToCartId, setAddingToCartId] = useState(null);
 
   useEffect(() => {
     axios
@@ -18,6 +20,31 @@ function Cattoys() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+  };
+
+  const addToCart = (selectedProduct) => {
+    setAddingToCartId(selectedProduct.id);
+
+    const { productName, image, price } = selectedProduct;
+
+    const cartItemData = {
+      productname: productName,
+      productimage: image,
+      productprice: price,
+    };
+
+    axios
+      .post("http://localhost:1001/main/addtocart", cartItemData)
+      .then((response) => {
+        console.log("Item added to cart:", response.data);
+        setCartItems((prevItems) => [...prevItems, response.data]);
+      })
+      .catch((error) => {
+        console.error("Error adding item to cart:", error);
+      })
+      .finally(() => {
+        setAddingToCartId(null);
+      });
   };
 
   const filteredToys = selectedCategory
@@ -95,63 +122,60 @@ function Cattoys() {
         </strong>
       </div>
 
-      {filteredToys.map((toy, index) => (
-        <section key={index} style={{ margin: "30px 350px", border: "1px solid gray", padding: "20px", borderRadius: "15px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <img src={toy.image} alt="" style={{ height: "300px", width: "250px", objectFit: "cover" }} />
-            <div style={{ padding: "20px", width: "100%" }}>
-              <div style={{ padding: "10px", width: "100%" }}>
-                <strong style={{ color: "gray", textTransform: "capitalize", fontSize: "0.9rem" }}>
-                  {toy.brand} | {toy.type}
-                </strong>
-                <h3>{toy.productName}</h3>
-              </div>
-              <hr style={{ margin: "10px 0" }} />
-              <p>
-                <strong style={{ fontSize: "1.3rem", padding: "10px" }}>💲{toy.price}</strong>
-              </p>
-              <p style={{ padding: "10px" }}>
-                Rating : ⭐{toy.rating.stars} | Reviews : {toy.rating.numberOfReviews}
-              </p>
-              <hr style={{ margin: "10px 0" }} />
-              <div style={{ padding: "10px" }}>
-                <button
-                  style={{
-                    background: "#27408B",
-                    color: "white",
-                    padding: "10px 25px",
-                    border: "none",
-                    borderRadius: "5px",
-                    marginRight: "20px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Buy Now
-                </button>
-                <button
-                  style={{
-                    background: "white",
-                    color: "#27408B",
-                    padding: "5px 10px",
-                    border: "1px solid #27408B",
-                    borderRadius: "5px",
-                    marginRight: "20px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Add to cart
-                </button>
+      {filteredToys.map((toy) => {
+        const isAddingToCart = addingToCartId === toy.id;
+
+        return (
+          <section key={toy._id} style={{ margin: "30px 350px", border: "1px solid gray", padding: "20px", borderRadius: "15px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <img src={toy.image} alt="" style={{ height: "300px", width: "250px", objectFit: "cover" }} />
+              <div style={{ padding: "20px", width: "100%" }}>
+                <div style={{ padding: "10px", width: "100%" }}>
+                  <strong style={{ color: "gray", textTransform: "capitalize", fontSize: "0.9rem" }}>
+                    {toy.brand} | {toy.type}
+                  </strong>
+                  <h3>{toy.productName}</h3>
+                </div>
+                <hr style={{ margin: "10px 0" }} />
+                <p>
+                  <strong style={{ fontSize: "1.3rem", padding: "10px" }}>💲{toy.price}</strong>
+                </p>
+                <p style={{ padding: "10px" }}>
+                  Rating : ⭐{toy.rating.stars} | Reviews : {toy.rating.numberOfReviews}
+                </p>
+                <hr style={{ margin: "10px 0" }} />
+                <div style={{ padding: "10px" }}>
+                  {cartItems.some((item) => item.productname === toy.productName) ? (
+                    <p style={{ color: "green" }}>Added to Cart</p>
+                  ) : (
+                    <button
+                      style={{
+                        background: "#27408B",
+                        color: "white",
+                        padding: "10px 25px",
+                        border: "none",
+                        borderRadius: "5px",
+                        marginRight: "20px",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => addToCart(toy)}
+                      disabled={isAddingToCart}
+                    >
+                      {isAddingToCart ? 'Adding...' : 'Add to Cart'}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
       <section
         style={{
           position: "sticky",
           bottom: "0",
           borderTop: "1px solid gray",
-          padding: "7px 250px",
+          padding: "10px 250px",
           background: "white",
           height: "40px",
           display: "flex",
@@ -161,7 +185,7 @@ function Cattoys() {
         <Link to="/pet-toys" style={{ textDecoration: "none", color: "#00008B" }}>
           <p><strong>&lt;&lt; Back</strong></p>
         </Link>
-        <Link to="/dog-toys" style={{ textDecoration: "none", color: "#00008B" }}>
+        <Link to="/dog-toy" style={{ textDecoration: "none", color: "#00008B" }}>
           <p><strong>Dog toys &gt;&gt;</strong></p>
         </Link>
       </section>
