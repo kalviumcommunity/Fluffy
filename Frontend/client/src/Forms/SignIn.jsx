@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// import Image from '../images/dog.webp';
-// import Cookies from 'js-cookie';
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -32,14 +30,7 @@ function SignUp() {
     }
   };
 
-  const handleGoogle = () => {
-    console.log("clicked")
-    axios.post("http://localhost:1001/api/google/")
-    .then((data) => {
-      console.log(data.data.redirectURI)
-      window.location.href = data.data.redirectURI
-    })
-  }
+
 
   return (
     <div
@@ -138,13 +129,7 @@ function SignUp() {
             Submit
           </button>
 
-          {/* Google Login Button */}
-          <p style={{ paddingTop: "10px", textAlign:"center" }}>
-            New User? <Link to="/signup">SignUp</Link> here.
-          </p>
-          <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center",color:"#0000FF",cursor:"pointer" }}>
-              Sign-up with google
-          </div>
+         
         </form>
       </div>
     </div>
