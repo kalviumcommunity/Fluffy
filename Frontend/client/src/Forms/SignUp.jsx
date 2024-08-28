@@ -26,6 +26,7 @@ function SignUp() {
       setName("");
       setEmail("");
       setPassword("");
+    
       
       navigate("/");
     } catch (err) {
@@ -33,7 +34,14 @@ function SignUp() {
     }
   };
 
-  
+  const handleGoogle = () => {
+    console.log("clicked");
+    axios.post("http://localhost:1001/api/google/")
+      .then((data) => {
+        console.log(data.data.redirectURI);
+        window.location.href = data.data.redirectURI;
+      });
+  };
 
   return (
     <div
@@ -151,9 +159,13 @@ function SignUp() {
           >
             Submit
           </button>
-         
+          <p style={{ paddingTop: "10px", textAlign: "center" }}>
+            Already a User? <Link to="/signin">Sign In</Link> here.
+          </p>
+          <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center",color:"#0000FF",cursor:"pointer" }}>
+              Sign up with Google
+          </div>
         </form>
-        
       </div>
     </div>
   );
