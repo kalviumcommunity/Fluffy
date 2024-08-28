@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
+const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require('google-auth-library');
 const PetModal = require("./models/petdata");
 const PetUsersModal = require("./models/petusers");
@@ -19,6 +20,29 @@ app.use(express.json());
 
 const client = new OAuth2Client("71348526409-ntnmedaji0lgc5h1qiclj35fqv054haa.apps.googleusercontent.com");
 
+// JWT Secret
+const JWT_SECRET = "your_jwt_secret"; // Replace with a secure secret
+
+// Generate JWT Token
+const generateToken = (payload) => {
+    return jwt.sign(payload, JWT_SECRET, { expiresIn: '21h' });
+}
+
+// Authentication Middleware
+const authenticate = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (!token || !token.startsWith('Bearer ')) {
+        return res.status(401).send('Unauthorized: No token provided');
+    }
+    const authToken = token.split('Bearer ')[1];
+    try {
+        const decoded = jwt.verify(authToken, JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(403).send('Forbidden: Invalid token');
+    }
+}
 
 // SignUp route request-response
 app.get('/logins', (req, res) => {
