@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import Cookies from 'js-cookie'; // Import Cookies for handling cookies
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [usernameInitial, setUsernameInitial] = useState(null);
+  const navigate = useNavigate(); // Hook for navigation
+  const username = Cookies.get('Username');
+  const email = Cookies.get('Useremail');
 
   const toggleSideDiv = () => {
     setIsOpen(!isOpen);
@@ -13,7 +18,7 @@ function Navbar() {
   };
 
   const handleKeyPress = (e) => {
-    if (e.ctrlKey && e.code === 'Slash') { // Check for Ctrl + M
+    if (e.ctrlKey && e.code === 'Slash') { // Check for Ctrl + /
       toggleSideDiv();
     }
   };
@@ -24,14 +29,29 @@ function Navbar() {
     }
   };
 
+  const handleLogout = () => {
+    // Remove cookies
+    Cookies.remove('Username');
+    Cookies.remove('Useremail');
+    
+    // Redirect to home page and force reload
+    navigate('/', { replace: true });
+    window.location.reload(); // Force a page reload to ensure the state is reset
+  };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
     document.addEventListener('click', handleClickOutside);
+
+    if (username) {
+      setUsernameInitial(username.charAt(0).toUpperCase());
+    }
+
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, username]);
 
   return (
     <>
@@ -43,7 +63,7 @@ function Navbar() {
           alignContent: "center",
           backdropFilter: "blur(20px)",
           zIndex: 2,
-          backgroundColor: "rgba(0,0,0,0.3)",
+          backgroundColor: "black",
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -71,7 +91,7 @@ function Navbar() {
             alignContent: "center",
             alignItems: "center",
             justifyContent: "space-between",
-            width: "13vw",
+            width: "12vw",
           }}
         >
           <img
@@ -96,24 +116,41 @@ function Navbar() {
               />
             </div>
           </Link>
-          <Link
-            to="/signup"
-            style={{
-              color: "black",
-              textDecoration: "none",
-            }}
-          >
+          {usernameInitial ? (
             <div
               style={{
                 color: "white",
                 border: "1px solid white",
-                padding: "5px 10px",
-                borderRadius: "5px",
+                padding: "7px 12px",
+                borderRadius: "50%",
+                textAlign: "center",
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                background: "red"
               }}
             >
-              <p>Signup</p>
+              {usernameInitial}
             </div>
-          </Link>
+          ) : (
+            <Link
+              to="/signup"
+              style={{
+                color: "black",
+                textDecoration: "none",
+              }}
+            >
+              <div
+                style={{
+                  color: "white",
+                  border: "1px solid white",
+                  padding: "5px 10px",
+                  borderRadius: "5px",
+                }}
+              >
+                <p>Signup</p>
+              </div>
+            </Link>
+          )}
         </div>
       </nav>
       <div
@@ -132,8 +169,10 @@ function Navbar() {
           transition: "right 0.5s ease",
           boxShadow: "0 0 10px rgba(0, 0 , 0, 0.5)",
           zIndex: 3,
+          display: 'flex',
+          flexDirection: 'column',
         }}
-        >
+      >
         <div
           onClick={closeSideDiv}
           className="closeButton"
@@ -143,14 +182,15 @@ function Navbar() {
             textAlign: "center",
             display: "flex",
             justifyContent: "center",
-            fontWeight:"bolder"
+            fontWeight: "bolder",
+            marginBottom: "10px" // Added margin to separate from the sidebar content
           }}
         >
           &times; Close sidebar
         </div>
         <hr style={{ margin: "20px 0" }} />
 
-        <div style={{ padding: "20px " }}>
+        <div style={{ padding: "20px" }}>
           <p>
             <Link
               to="/"
@@ -201,19 +241,61 @@ function Navbar() {
             </Link>
           </p>
           <hr style={{ margin: "20px 0", border: "0.1px solid gray" }} />
+        </div>
+        <div style={{ padding: "30px", textAlign: "center" }}>
+          {usernameInitial && (
+            <div>
+              <div
+                style={{
+                  color: "white",
+                  border: "1px solid white",
+                  padding: "15px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                  fontSize: "2rem",
+                  fontWeight: "bold",
+                  background: "red",
+                  width: "5vw",
+                  margin: "auto"
+                }}
+              >
+                {usernameInitial}
+              </div>
+              <div style={{ lineHeight: "1.7", padding: "10px" }}>
+                <p style={{ fontSize: "1.2em" }}>{username}</p>
+                <p style={{ fontSize: "1.2em" }}>{email}</p>
+                <div>
+                  <button
+                    onClick={handleLogout}
+                    style={{
+                      backgroundColor: "red",
+                      color: "white",
+                      border: "none",
+                      padding: "10px 15px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      fontSize: "1rem",
+                      marginTop: "20px" // Adjusted margin for space above logout button
+                    }}
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
           <div
             style={{
               textAlign: "center",
-              position:"fixed",
-              top:"94vh",
-              padding:"5px ",
-              fontSize:"0.8em",
-              width:"20.5%",
-              display:"flex",
-              justifyContent:"center",
-              alignItems:"center",
-              fontWeight:"bolder",
-              borderTop:"3px dotted black"
+              padding: "11px",
+              fontSize: "0.8em",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: "bolder",
+              borderTop: "3px dotted black",
+              position: "fixed",
+              bottom: "0" // Position at the bottom of the sidebar
             }}
           >
             Press " Ctrl + / "  to Open & Close Navbar

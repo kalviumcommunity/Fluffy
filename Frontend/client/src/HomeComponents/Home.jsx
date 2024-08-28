@@ -30,11 +30,11 @@ function Home() {
       <section style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%",padding:"100px",background:"#f8d7da" }}>
   <div style={{ flex: "1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",padding:"20px" }}>
     <h1 style={{ fontSize: "5.5em" }}>Support Animal Welfare at Fluffy</h1>
-    <p style={{ fontSize: "1.1em", lineHeight: "1.6", textAlign: "left" }}>
+    <div style={{ fontSize: "1.1em", lineHeight: "1.6", textAlign: "left" }}>
       At Fluffy, we are dedicated to rescuing pets, facilitating adoptions, and reuniting missing pets with their families. Join us in our mission to create a better world for pets.
       <br /><br />
       <p style={{fontWeight:"bold",color:"#007bff"}}>#AdoptDontShop #PetRescue #AnimalWelfare #FluffyCares #SupportAnimals</p>
-    </p>
+    </div>
   </div>
   <section id="hithere" ref={hithereRef} style={{ padding: "50px 0", width: "50vw", background: "#af4cd1", height: "100%", display: "flex", alignItems: "center", justifyContent: "center",borderRadius:"50% 0 0 50%" }}>
     <section style={{ display: "grid", gridTemplateColumns: "repeat(2, 300px)", gap: "25px", justifyContent: "center", alignItems: "center" }}>
