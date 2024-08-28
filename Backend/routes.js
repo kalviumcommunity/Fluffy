@@ -1,11 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
+const { OAuth2Client } = require('google-auth-library');
 const PetModal = require("./models/petdata");
 const PetUsersModal = require("./models/petusers");
 const PetFoodModal = require("./models/petfood");
 const petToysModal = require("./models/pettoys");
 const CartModal = require("./models/cart");
+const AuthRouter = require("./googleauth");
 const punycode = require('punycode');
 
 
@@ -15,7 +17,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-                                
+const client = new OAuth2Client("71348526409-ntnmedaji0lgc5h1qiclj35fqv054haa.apps.googleusercontent.com");
+
+
 // SignUp route request-response
 app.get('/logins', (req, res) => {
     PetUsersModal.find()
@@ -33,6 +37,8 @@ app.post("/users", (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
+// Route for Google OAuth login
+app.use(AuthRouter);
 
 // 4 API requests
 
