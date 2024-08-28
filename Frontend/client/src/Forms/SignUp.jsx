@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Cookies from 'js-cookie'; // Import Cookies for handling cookies
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -26,7 +27,11 @@ function SignUp() {
       setName("");
       setEmail("");
       setPassword("");
-    
+      
+      // Set cookies with username and token
+      Cookies.set("Username", name);
+      Cookies.set("Token", response.data.token);
+      Cookies.set("Useremail",email);
       
       navigate("/");
     } catch (err) {
@@ -166,6 +171,8 @@ function SignUp() {
               Sign up with Google
           </div>
         </form>
+        
+        {/* Google Login Button */}
       </div>
     </div>
   );
