@@ -65,8 +65,8 @@ function SignUp() {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <h2 style={{ textAlign: "center" }}>Sign In</h2>
-          <hr />
+          <h2 style={{ textAlign: "center",fontSize:"2.5em" }}>Sign In</h2>
+          <hr style={{margin:"20px 0"}} />
           <div style={{ marginBottom: "20px" }}>
             <label style={{ color: "black" }}>Name :</label>
             <input
@@ -76,7 +76,7 @@ function SignUp() {
               value={name}
               style={{
                 width: "100%",
-                padding: "10px",
+                padding: "15px",
                 border: "none",
                 borderBottom:"1px solid gray",
                 backgroundColor: "white",
@@ -86,32 +86,34 @@ function SignUp() {
             />
           </div>
 
-          <div style={{ marginBottom: "20px" }}>
-            <label style={{ color: "black" }}>Password :</label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="use atleast 7 characters"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              style={{
-                width: "80%",
-                padding: "10px",
-                border: "none",
-                borderBottom:"1px solid gray",
-                backgroundColor: "white",
-                color: "black",
-              }}
-              required
-            />
+          <div style={{ marginBottom: "10px",display:"flex",alignItems:"center" }}>
+            <div>
+              <label style={{ color: "black" }}>Password :</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Use at least 7 characters"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                style={{
+                  width: "100%",
+                  padding: "15px ",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               style={{
-                marginLeft: "7px",
-                padding: "10px 5px",
-                width: "60px",
+                width: "50px",
+                height:"35px",
                 backgroundColor: "white",
                 border: "1px solid black",
+                color: "black",
                 borderRadius: "5px",
                 cursor: "pointer",
                 textAlign: "center",
@@ -137,12 +139,12 @@ function SignUp() {
           </button>
 
           {/* Google Login Button */}
-        <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center" }}>
-            Sign-up with google
-        </div>
           <p style={{ paddingTop: "10px", textAlign:"center" }}>
             New User? <Link to="/signup">SignUp</Link> here.
           </p>
+          <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center",color:"#0000FF",cursor:"pointer" }}>
+              Sign-up with google
+          </div>
         </form>
       </div>
     </div>

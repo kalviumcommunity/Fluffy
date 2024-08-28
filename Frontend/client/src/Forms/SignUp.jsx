@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import Image from "../images/dog.webp";
-import { GoogleLogin } from "@react-oauth/google";
+import Cookies from 'js-cookie'; // Import Cookies for handling cookies
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -28,6 +27,12 @@ function SignUp() {
       setName("");
       setEmail("");
       setPassword("");
+      
+      // Set cookies with username and token
+      Cookies.set("Username", name);
+      Cookies.set("Token", response.data.token);
+      Cookies.set("Useremail",email);
+      
       navigate("/");
     } catch (err) {
       console.error("Error signing up:", err);
@@ -35,13 +40,13 @@ function SignUp() {
   };
 
   const handleGoogle = () => {
-    console.log("clicked")
+    console.log("clicked");
     axios.post("http://localhost:1001/api/google/")
-    .then((data) => {
-      console.log(data.data.redirectURI)
-      window.location.href = data.data.redirectURI
-    })
-  }
+      .then((data) => {
+        console.log(data.data.redirectURI);
+        window.location.href = data.data.redirectURI;
+      });
+  };
 
   return (
     <div
@@ -68,8 +73,8 @@ function SignUp() {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <h2 style={{ textAlign: "center" }}>Sign Up</h2>
-          <hr />
+          <h2 style={{ textAlign: "center",fontSize:"2.5em" }}>Sign Up</h2>
+          <hr style={{margin:"20px 0"}} />
           <div style={{ marginBottom: "10px" }}>
             <label style={{ color: "black" }}>Name :</label>
             <input
@@ -79,7 +84,7 @@ function SignUp() {
               value={name}
               style={{
                 width: "100%",
-                padding: "10px",
+                padding: "15px",
                 border: "none",
                 borderBottom: "1px solid gray",
                 backgroundColor: "white",
@@ -98,7 +103,7 @@ function SignUp() {
               value={email}
               style={{
                 width: "100%",
-                padding: "10px",
+                padding: "15px",
                 border: "none",
                 borderBottom: "1px solid gray",
                 backgroundColor: "white",
@@ -108,30 +113,31 @@ function SignUp() {
             />
           </div>
 
-          <div style={{ marginBottom: "10px" }}>
-            <label style={{ color: "black" }}>Password :</label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="use atleast 7 characters"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              style={{
-                width: "80%",
-                padding: "10px",
-                border: "none",
-                borderBottom: "1px solid gray",
-                backgroundColor: "white",
-                color: "black",
-              }}
-              required
-            />
+          <div style={{ marginBottom: "10px",display:"flex",alignItems:"center" }}>
+            <div>
+              <label style={{ color: "black" }}>Password :</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Use at least 7 characters"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                style={{
+                  width: "100%",
+                  padding: "15px ",
+                  border: "none",
+                  borderBottom: "1px solid gray",
+                  backgroundColor: "white",
+                  color: "black",
+                }}
+                required
+              />
+            </div>
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               style={{
-                marginLeft: "7px",
-                padding: "10px 5px",
-                width: "60px",
+                width: "50px",
+                height:"35px",
                 backgroundColor: "white",
                 border: "1px solid black",
                 color: "black",
@@ -159,14 +165,14 @@ function SignUp() {
             Submit
           </button>
           <p style={{ paddingTop: "10px", textAlign: "center" }}>
-            Already an User? <Link to="/signin">SignIn</Link> here.
+            Already a User? <Link to="/signin">Sign In</Link> here.
           </p>
+          <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center",color:"#0000FF",cursor:"pointer" }}>
+              Sign up with Google
+          </div>
         </form>
         
         {/* Google Login Button */}
-        <div onClick={handleGoogle} style={{ marginTop: "20px", textAlign: "center" }}>
-            Sign-up with google
-        </div>
       </div>
     </div>
   );

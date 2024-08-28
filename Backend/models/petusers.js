@@ -9,9 +9,7 @@ const petUsersSchema = new mongoose.Schema({
         required:function(){
             return this.provider!== "google"
         }
-    },
-    // address:String,
-    // phone:Number
+    }
 })
 
 const petUsersModal = mongoose.model("petusers",petUsersSchema);
