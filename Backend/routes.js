@@ -15,8 +15,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const client = new OAuth2Client("71348526409-ntnmedaji0lgc5h1qiclj35fqv054haa.apps.googleusercontent.com
-
                                 
 // SignUp route request-response
 app.get('/logins', (req, res) => {
